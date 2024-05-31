@@ -1,0 +1,33 @@
+part1 : 최초 강의실에서 git 연결하기
+1. github 회원가입 + 로그인
+2. github desktop 프로그램 설치
+3. github desktop에서 이메일과 이름 확인
+4. 3번(create new repository....) 메뉴 선택
+5. 폴더를 생성할 위치 결정 + 폴더 생성
+6. 생성한 폴더에 집으로 가져갈 파일 생성 or 붙여넣기
+7. github desktop 상단의 publish repository 클릭
+8. name은 변경하지말고 그대로 생성!
+9. commit- > push
+
+part2 : 최초 집에서 git 연결하기
+1. github desktop 프로그램 설치
+2. github desktop에서 이메일과 이름 확인
+3. github에 올린 파일들을 내려받을 폴더 지정
+4. clone repository... 선택
+5. workspace repository를 선택
+6. 선택한  repository를 내려받을 폴더를 지정
+
+part3 : 강의실에서 작업한 내용 집으로 가져가기
+1. [fetch origin]-> pull
+2. commit -> push
+
+part4 : 집에서 작업한 내용 강의실로 가져오기
+1. [fetch origin] -> pull
+2. commit -> push
+
+
+
+
+
+
+
