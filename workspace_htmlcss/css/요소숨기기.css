@@ -1,0 +1,15 @@
+.img1{
+  /* 
+    기본값 visible 
+    hidden : 사라짐
+  */
+  visibility: visible;
+}
+
+.img2{
+  /* display: none; */
+}
+
+.img3{
+  opacity: .3;
+}

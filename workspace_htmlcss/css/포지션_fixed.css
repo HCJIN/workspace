@@ -1,0 +1,35 @@
+body{
+  background-color: black;
+  color: white;
+}
+
+a{
+  color: black;
+  list-style: none;
+}
+
+.arrow_up{
+  background-color: salmon;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 50%;
+  transition: all .3s;
+}
+
+.arrow_up:hover{
+  background-color: black;
+  color: #fff;
+}
+
+.arrow{
+  position: fixed;
+  bottom: 50px;
+  right: 30px;
+  font-size: 30px;
+}
+
+div{
+  background-color: bisque;
+  color: brown;
+}

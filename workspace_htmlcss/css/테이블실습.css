@@ -1,0 +1,111 @@
+.wrap{
+  width: 100vw;
+}
+
+.table_1{
+  margin: 20px auto;
+  text-align: center;
+  font-size: 10px;
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-left: none;
+  border-right: none;
+}
+
+.table_1 thead{
+  background-color: rgb(171, 109, 230);
+  border-top: 1px solid navy;
+  border-bottom: 1.5px solid navy;
+  text-align: center;
+  color: #fff;
+}
+
+thead td{
+  font-size: 10px;
+  padding: 10px;
+}
+
+thead > td:first-child{
+  text-align: left;
+}
+
+.bordertr{
+  border-bottom: 1px solid rgba(0, 0, 0, .2);;
+}
+
+tr > td{
+  padding: 3px 5px;
+  font-size: 8px;
+}
+
+.bordertr > td:nth-child(2){
+  text-align: left;
+}
+
+tr > td:first-child{
+  font-weight: bold;
+}
+
+tr > td:nth-child(4){
+  font-weight: bold;
+}
+
+tr > td:nth-child(5){
+  font-weight: bold;
+}
+
+.tr1{
+  background-color: rgba(0, 0, 0, .1)
+}
+
+.bordertr:hover{
+  background-color: rgba(0, 0, 0, .4);
+}
+
+/* 1번 끝 */
+
+.container{
+  width: 100vw;
+  height: 500px;
+  background-color: skyblue;
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main{
+  width: 300px;
+  background-color: #fff;
+  display: flex;
+  margin: 10px auto;
+  padding: 5px;
+  transition: all .3s;
+  border-radius: 5px;
+}
+
+.main > img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+  margin-left: 5px;
+  border: 1px solid rgba(0, 0, 0, .3);
+}
+
+.text_box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text_box > p{
+  font-weight: bold;
+}
+
+.text_box > div{
+  font-size: 13px;
+}
+
+.main:hover{
+  scale: 1.1;
+}

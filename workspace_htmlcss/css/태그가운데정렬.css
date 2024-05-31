@@ -1,0 +1,25 @@
+.d1{
+  background-color: salmon;
+  width: 300px;
+  margin: auto;
+}
+
+table, tr, td{
+  border: 1px solid black;
+}
+
+table{
+  border-collapse: collapse;
+  margin: 0 auto;
+  margin-top: 16px;
+  width: 300px;
+}
+
+button{
+  width: 100px;
+  margin-top: 10px;
+}
+
+.d2{
+  text-align: center;
+}

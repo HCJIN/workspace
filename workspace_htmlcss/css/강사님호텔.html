@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>강사님호텔</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="./강사님호텔.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="./강사님호텔.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="img-div">
+      <img src="house.jpg" alt="">
+      <span>
+        <i id="i_heart" class="fa-regular fa-heart"></i>
+      </span>
+    </div>
+    <div class="detail-div">
+      <div class="detail1">
+        <div style="font-weight: bold;">
+          Green Hotel 4th floor suite room
+        </div>
+        <div style="color: red; font-size: 2rem; font-weight: 450; margin: 3px 0;">
+          $599,999
+        </div>
+        <div style="color: gray;">
+          with terrace & wine bar
+        </div>
+      </div>
+      <div class="detail2">
+        <div>
+          <span>
+            <i class="fa-solid fa-bed"></i>
+          </span>
+          <span>
+            <b>4</b> 
+            Bedrooms
+          </span>
+        </div>
+        <div>
+          <span>
+            <i class="fa-solid fa-bath"></i>
+          </span>
+          <span>
+            <b>3</b> 
+            Bathroom
+          </span>
+        </div>
+      </div>
+      <div class="detail3">
+        <div>
+          Real Estate Agent
+        </div>
+        <div>
+          <img src="./face-01.jpg" alt="">
+          <div>
+            <div>
+              <b>Sandy Foxx</b>
+            </div>
+            <div>052-7777-8888</div>
+          </div>
+          <button type="button">
+            INQUIRE
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+
+    const i_tag = document.querySelector('.img-div i');
+
+    i_tag.addEventListener('click', function (e) {
+      e.target.classList.toggle('fa-regular');
+      e.target.classList.toggle('fa-solid');
+    })
+
+  </script>
+</body>
+</html>

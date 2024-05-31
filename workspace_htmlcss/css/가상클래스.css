@@ -1,0 +1,83 @@
+.container1{
+  display: flex;  
+  width: 300px;
+  background-color: red;
+  justify-content: space-between;
+  margin: 30px;
+}
+
+.container1 > div{
+  width: 80px;
+  height: 80px;
+  background-color: blueviolet;
+  border: 1px solid black;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* 변환 : 전체 1초동안 */
+  transition: all .3s;
+}
+
+/* hover : 선택자에 마우스를 올리면 발생 */
+.d1:hover{
+  background-color: red;
+  width: 120px;
+  height: 120px;
+}
+
+.d2:hover{
+  width: 120px;
+  height: 120px;
+  background-color: black;
+}
+
+.d3:hover{
+  position: relative;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+
+/* --------------------------------- */
+
+input{
+  margin-left: 30px;
+  width: 200px;
+  padding: 10px 4px;
+  border-radius: 8px;
+  border: 1px solid gray;
+  outline: none;
+  transition: all .3s;
+}
+
+/* input, button을 클릭하면 발생 */
+input:focus{
+  width: 300px;
+  border: 1.5px solid green
+}
+
+/* --------------------------------- */
+
+ul{
+  margin-left: 30px;
+}
+
+/* before : 선택자 앞에 인라인 요소 추가 */
+.li-1::before{
+  content: "신";
+  color: red;
+  font-weight: bold;
+  background-color: black;
+  border-radius: 6px;
+  padding: 2px 6px;
+  margin: 0 6px 0 0;
+}
+
+/* after : 선택자 뒤에 인라인 요소 추가 */
+.li-1::after{
+  content: "css";
+}

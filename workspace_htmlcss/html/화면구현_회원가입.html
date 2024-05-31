@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>화면구현_회원가입</title>
+  <link rel="stylesheet" href="./화면구현_회원가입.css">
+</head>
+<body>
+  <div class="wrap">
+    <table class="tb_1">
+      <thead>
+        <h3 class="join">회원 가입</h3>
+      </thead>
+      <tr>
+        <td>
+          회원구분
+          <span>*</span>
+        </td>
+        <td>
+          <input type="radio" name="man" checked style="vertical-align: middle;">개인회원
+          <input type="radio" name="man" style="vertical-align: middle;">외국인회원(foreigner)
+        </td>
+      </tr>
+      <colgroup>
+        <col width="15%">
+        <col width="80%">
+      </colgroup>
+    </table>
+    <table class="tb_2">
+      <br>
+      <tr>
+        <div class="default">
+          <h3>기본정보</h3>
+          <span>
+            <span class="red_star">
+              <sub>*</sub></span>
+            필수입력사항</span>
+        </div>
+      </tr>
+      <tr>
+        <td>
+          아이디
+          <span>*</span>
+        </td>
+        <td class="text">
+          <input type="text"> (영문소문자/숫자,4~16자)
+        </td>
+      </tr>
+      <tr>
+        <td>
+          비밀번호
+          <span>*</span>
+        </td>
+        <td class="text">
+          <input type="password"> (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8~16자)
+        </td>
+      </tr>
+      <tr>
+        <td>
+          비밀번호 확인
+          <span>*</span>
+        </td>
+        <td>
+          <input type="password">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          이름
+          <span>*</span>
+        </td>
+        <td>
+          <input type="text">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          주소
+        </td>
+        <td>
+          <div class="addrres">
+            <input type="text" style="width: 70px;">
+            <input type="button" value="우편번호  >"
+            style="height: 22px;" onclick="alert('주소찾기')">
+          </div>
+          <div class="addrres">
+            <input type="text" style="width: 300px;"> 기본주소
+          </div>
+          <div class="addrres">
+            <input type="text" style="width: 300px;"> 나머지주소(선택입력가능)
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>일반전화</td>
+        <td class="tel_input">
+          <select >
+            <option class="number">02</option>
+          </select> -
+          <input type="text"> -
+          <input type="text">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          휴대전화
+          <span>*</span>
+        </td>
+        <td>
+          <select>
+            <option>010</option>
+          </select> -
+          <input type="text"> -
+          <input type="text">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          SMS 수신여부
+          <span>*</span>
+        </td>
+        <td>
+          <div>
+            <input type="checkbox" style="vertical-align: middle;">동의함
+          </div>
+          <div class="SMS">
+            쇼핑몰에서 제공하는 유익한 이벤트 소식을 SMS로 받으실 수 있습니다.
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          이메일
+          <span>*</span>
+        </td>
+        <td>
+          <input type="email" style="width: 200px;">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          이메일 수신여부
+          <span>*</span>
+        </td>
+        <td>
+          <div>
+            <input type="checkbox" style="vertical-align: middle;">동의함
+          </div>
+          <div class="SMS">
+            쇼핑몰에서 제공하는 유익한 이벤트 소식을 이메일로 받으실 수 있습니다.
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          평생회원
+        </td>
+        <td>
+          <div>
+            <input type="radio" name="yes" style="vertical-align: middle;">동의함
+            <input type="radio" name="yes" checked style="vertical-align: middle;">동의안함
+          </div>
+          <div class="yes">
+            -평생회원으로 가입하시면 스타일맨 회원 탈퇴시까지는 휴먼회원으로 전환되지 않으며, 고객님의 개인정보가 탈퇴시까지 안전하게 보관됩니다.
+          </div>
+          <div class="yes">
+            -지금 평생회원으로 가입하시면 쿠폰혜택을 드립니다. (쿠폰혜택을 받으신 경우, 3개월간 평생회원을 유지하셔야 합니다.)
+          </div>
+        </td>
+      </tr>
+      <colgroup>
+        <col width="15%">
+        <col width="80%">
+      </colgroup>
+    </table>
+    <br>
+    <table class="tb_3">
+      <thead>
+        <h3>추가정보</h3>
+      </thead>
+      <tr>
+        <td>
+          생년월일
+          <span>*</span>
+        </td>
+        <td>
+          <input type="text" style="width: 100px;">년
+          <input type="text" style="width: 50px;">월
+          <input type="text" style="width: 50px;">일 
+          <input type="radio" class="birth" checked>양력
+          <input type="radio">음력(14세 미만 회원가입을 제한하고 있습니다.)
+        </td>
+      </tr>
+      <tr>
+        <td>성별</td>
+        <td>
+          <input type="radio" style="vertical-align: middle;">남자
+          <input type="radio" style="vertical-align: middle;">여자
+        </td>
+      </tr>
+      <tr>
+        <td>
+          상의 사이즈
+        </td>
+        <td>
+          <input type="checkbox" style="vertical-align: middle;">90~95
+          <input type="checkbox" style="vertical-align: middle;">100~105
+          <input type="checkbox" style="vertical-align: middle;">110~115
+          <input type="checkbox" style="vertical-align: middle;">120~125
+          <input type="checkbox" style="vertical-align: middle;">130~
+        </td>
+      </tr>
+      <tr>
+        <td>하의 사이즈</td>
+        <td class="size">
+          <input type="checkbox" style="vertical-align: middle;">~30
+          <input type="checkbox" style="vertical-align: middle;">32
+          <input type="checkbox" style="vertical-align: middle;">33
+          <input type="checkbox" style="vertical-align: middle;">34
+          <input type="checkbox" style="vertical-align: middle;">35
+          <input type="checkbox" style="vertical-align: middle;">36
+          <input type="checkbox" style="vertical-align: middle;">37
+          <input type="checkbox" style="vertical-align: middle;">38
+          <input type="checkbox" style="vertical-align: middle;">39
+          <input type="checkbox" style="vertical-align: middle;">40
+          <input type="checkbox" style="vertical-align: middle;">42~
+        </td>
+      </tr>
+      <colgroup>
+        <col width="15%">
+        <col width="80%">
+      </colgroup>
+    </table>
+  </div>
+</body>
+</html>

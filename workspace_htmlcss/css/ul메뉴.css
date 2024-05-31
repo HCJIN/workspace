@@ -1,0 +1,13 @@
+ul{
+  list-style-type: none;
+  display: ;
+}
+
+ul > li{
+  border: 1px solid black;
+}
+
+body{
+  background-image: url(./인물_3.jpg);
+  background-size: cover;
+}

@@ -1,0 +1,127 @@
+.wrap{
+  width: 1200px;
+  background-color: blue;
+  margin: 0 auto;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 100px;
+}
+
+.header{
+  height: 100px;
+  background-color: red;
+}
+
+.section{
+  width: 100%;
+  height: 500px;
+  display: flex;
+}
+
+.box1{
+  width: 20%;
+  background-color: orange;
+}
+
+.box2{
+  width: 80%;
+  background-color: skyblue;
+}
+
+.footer{
+  height: 100px;
+  background-color: blueviolet;
+}
+
+/* 1번 문제 _ end  */
+
+.header2{
+  height: 100px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.left_box{
+  width: 60%;
+  background-color: red;
+}
+
+.right_box{
+  width: 40%;
+  background-color: green;
+}
+
+.section{
+  line-height: 500px;
+}
+
+.footer2{
+  height: 100px;
+  display: flex;
+  line-height: 100px;
+}
+
+.bottom_left_box{
+  width: 60%;
+  background-color: gray;
+}
+
+.bottom_right_box{
+  width: 40%;
+  background-color: yellow;
+}
+
+/* 2번문제 _ end */
+
+.wrap2{
+  width: 1200px;
+  background-color: blue;
+  margin: 0 auto;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.header3{
+  width: 100%;
+  height: 100px;
+  background-color: yellow;
+}
+
+.section2{
+  height: 500px;
+  display: flex;
+}
+
+.left_box_2{
+  width: 60%;
+  background-color: blue;
+}
+
+.right_box_2{
+  width: 40%;
+  height: 500px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.top{
+  background-color: red;
+  flex: 1;
+}
+
+.mid{
+  flex: 1;
+  background-color: gray;
+}
+
+.bootom{
+  background-color: bisque;
+  flex: 1;
+}

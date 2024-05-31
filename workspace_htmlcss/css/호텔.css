@@ -1,0 +1,154 @@
+a{
+  text-decoration: none;
+  color: black;
+}
+
+.wrap{
+  background-color: skyblue;
+  width: 100vw;
+  height: 100vh;
+}
+
+.inner{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  width: 360px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 2px;
+  overflow: hidden;
+}
+
+.main_img{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 200px;
+}
+
+.main_img > img{
+  width: 360px;
+  border-radius: 10px 10px 0 0;
+  transition: all .3s;
+}
+
+.main_img > img:hover{
+  scale: 1.1;
+}
+
+.fa-heart{
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* main_img_end */
+
+.top{
+  width: 100%;
+  padding: 8px;
+}
+
+.top p{
+  margin-bottom: 3px;
+}
+
+.top_txt{
+  font-weight: bold;
+}
+
+.mid_txt{
+  color: red;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.bottom_txt{
+  border-bottom: 1px solid rgba(0, 0, 0, .3);
+  padding-bottom: 10px;
+}
+
+/* top_end */
+
+.mid{
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid rgba(0, 0, 0, .3);
+  margin: 0 8px 0 8px;
+}
+
+.left{
+  margin-bottom: 10px;
+}
+
+.right{
+  margin-bottom: 10px;
+}
+
+.mid i + span{
+  font-weight: bold;
+}
+
+/* mid_end */
+
+.bottom > P:first-child{
+  padding: 10px 10px 0 10px;
+  font-size: 13px;
+}
+
+.footer{
+  display: flex;
+  padding: 10px;
+}
+
+.footer > img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, .3);
+}
+
+.txt{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.txt_left{
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.txt_left > p{
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.txt_right > button{
+  background-color: rgb(43, 233, 43);
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  width: 70px;
+  transition: all .3s;
+}
+
+.txt_right > button:hover{
+  background-color: rgb(23, 213, 23);
+  cursor: pointer;
+}
+
+.txt_right > button > a{
+  color: #fff;
+  font-size: 10px;
+}
+
+/* bottom_end */

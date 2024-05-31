@@ -1,0 +1,17 @@
+.p1{
+  color: red;
+  background-color: black;
+}
+
+div{
+  color: blueviolet !important;
+  background-color: black;
+}
+
+.d1{
+  color: red;
+}
+
+#d1{
+  color: yellow;
+}

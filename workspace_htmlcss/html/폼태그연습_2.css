@@ -1,0 +1,31 @@
+table{
+  border-collapse: collapse;
+  border: 1px solid rgba(0, 0, 0);
+  width: 600px;
+  margin: 0 auto;
+}
+
+tr, td{
+  border: 1px solid #000;   
+}
+
+.header{
+  text-align: center;
+  background-color: skyblue;
+}
+
+span{
+  color: red;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+tr > td:first-child{
+  text-align: center;
+  font-weight: bold;
+}
+
+.d1{
+  text-align: center;
+  margin-top: 10px;
+}

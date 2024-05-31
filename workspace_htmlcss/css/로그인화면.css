@@ -1,0 +1,147 @@
+.wrap{
+  width: 100vw;
+  margin: 0 auto;
+}
+
+a{
+  color: black;
+  text-decoration: none;
+}
+
+.container{
+  width: 800px;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 7px;
+  margin: 100px auto;
+  box-shadow: 0px 0px 4px lightgray;
+  padding: 7px;
+}
+
+.header{
+  padding: 15px;
+}
+
+.header h2{
+  border-bottom: 1px solid rgba(0, 0, 0, .3);
+  line-height: 50px;
+}
+
+/* header_end */
+
+.section{
+  display: flex;
+  padding: 15px;
+}
+
+.left_box{
+  width: 60%;
+  background-color: rgba(216, 216, 216, 0.377);
+  border-radius: 10px;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(0, 0, 0, .1);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, .3);
+}
+
+.left_box p{
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.email{
+  width: 95%;
+  height: 30px;
+  background-color: #fff;
+  opacity: 1;
+  border-radius: 5px;
+  border: 1px solid rgba(68, 68, 68, 0.3);
+  margin-bottom: 10px;
+  color: rgba(68, 68, 68, 0.6);
+  outline: none;
+}
+
+.password{
+  width: 95%;
+  height: 30px;
+  background-color: #fff;
+  opacity: 1;
+  border-radius: 5px;
+  border: 1px solid rgba(68, 68, 68, 0.3);
+  margin-bottom: 10px;
+  color: rgba(68, 68, 68, 0.6);
+  outline: none;
+}
+
+.email:focus,
+.password:focus{
+  border: 1px solid rgb(230, 89, 230);
+}
+
+.check{
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.join_btn{
+  margin-top: 10px;
+  width: 110px;
+  height: 30px;
+  background-color: #615EFC;
+  border-radius: 5px;
+  border: 1px solid #615EFC;
+  color: #fff;
+  font-size: 13px;
+  transition: all .3s;
+}
+
+.join_btn:hover{
+  color: rgb(255, 255, 255);
+  background-color: rgb(20, 16, 231);
+  border: 1px solid rgb(20, 16, 231);
+  cursor: pointer;
+}
+
+input[type="checkbox"]{
+  position: relative;
+  top: 1px;
+}
+
+/* left_box_end */
+
+.right_box{
+  margin-left: 5px;
+  padding: 7px;
+}
+
+.right_box > .main_text{
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.right_box span{
+  color: green;
+  opacity: .4;
+}
+
+.right_box p{
+  margin-bottom: 7px;
+  font-size: 13px;
+}
+
+.right_box_btn{
+  width: 300px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: orange;
+  color: #fff;
+  border: none;
+  opacity: .7;
+  margin-bottom: 5px;
+}
+
+.right_box_bottom_box{
+  color: green;
+  text-align: center;
+  font-size: 13px;
+}

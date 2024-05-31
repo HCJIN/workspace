@@ -1,0 +1,27 @@
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h3{
+  margin: 0;
+  padding: 0;
+  height: 10vh;
+}
+
+.content{
+  background-image: url(./배경.jpg);
+  /* 기본값 : repeat */
+  background-repeat: no-repeat;
+  /* 기본값 : auto */
+  /* 
+    cover : 영역에 여백없이 꽉채움.
+            이미지의 비율은 유지.
+  */
+  background-size: cover;
+  width: 100vw;
+  height: 90vh;
+  border: 1px solid black;
+  box-sizing: border-box;
+}

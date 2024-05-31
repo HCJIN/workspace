@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블_2</title>
+    <style>
+      *{
+        margin: 0 auto;
+      }
+
+      table{
+        border-collapse: collapse;
+        border: 1px solid rgba(78, 166, 201, 0.979);
+        width: 300px;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+
+      tr, td{
+        border: 1px solid #000;   
+      }
+
+    </style>
+  </head>
+<body>
+
+  <!-- 
+    table 태그 안에는 thead, tbody, tfoot, tr, caption, colgroup 태그만 올 수 있다.
+  -->
+  
+  <table>
+    <colgroup>
+      <col width="50%">
+      <col width="20%">
+      <col width="*">
+    </colgroup>
+    <caption>학생 정보</caption>
+    <thead>
+      <tr>
+        <td>이름</td>
+        <td>나이</td>
+        <td>점수</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>김길동</td>
+        <td>20</td>
+        <td>90</td>
+      </tr>
+      <tr>
+        <td>임꺽정</td>
+        <td>30</td>
+        <td>80</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>평균</td>
+        <td>25</td>
+        <td>85</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <hr>
+
+
+</body>
+</html>
