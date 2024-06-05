@@ -19,7 +19,7 @@ public class 배열문제_12 {
         score[2] = ma;
 
         int sum = score[0] + score[1] + score[2];
-        int avg = sum / 3;
+        double avg = sum / 3.0;
 
         System.out.println("총 점 : " + sum);
         System.out.println("평 균 : " + avg);

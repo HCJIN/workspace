@@ -17,10 +17,26 @@ public class 배열문제_1 {
 
         for (int i = 0; i < arr.length; i++ ) {
             arr[i] = i + 1;
-            avg = avg + i+1;
+            avg = avg + i + 1;
         }
         System.out.println(avg / (double)num);
 
+        System.out.println("---------------강사님 풀이----------------");
+
+        System.out.print("배열의 크기 : ");
+        int length = sc.nextInt();
+
+        int[] arr2 = new int[length];
+
+        for (int i = 0; i < arr2.length; i++){
+            arr2[i] = i + 1;
+        }
+
+        int sum = 0;
+        for (int e : arr2){
+            sum = sum + e;
+        }
+        System.out.println(sum / (double)length);
 
 
 

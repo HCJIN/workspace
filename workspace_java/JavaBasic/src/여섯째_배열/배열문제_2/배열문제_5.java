@@ -13,5 +13,14 @@ public class 배열문제_5 {
         }
         System.out.println(Arrays.toString(newArr));
 
+        System.out.println("---------------강사님 풀이----------------");
+
+        for (int e : newArr){
+            System.out.print("[ " + e + " " + "]");
+        }
+
+
+
+
     }
 }
