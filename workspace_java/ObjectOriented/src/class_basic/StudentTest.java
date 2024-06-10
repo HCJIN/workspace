@@ -18,7 +18,6 @@ public class StudentTest {
         System.out.println("-------이름 변경----------");
         stu1.change("더 빨리");
 
-
         stu1.introduce();
 
         System.out.println("-------나이 변경----------");
