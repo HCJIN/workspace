@@ -1,4 +1,4 @@
-package class_basic.memberservice;
+package class_basic.account_member;
 
 public class MembersServiceTest {
     public static void main(String[] args) {
