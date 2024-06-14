@@ -17,7 +17,7 @@ public class MyArray implements MyArrayUtil{
         for (int i = 0; i < arr3.length; i++){
             sum = sum + arr3[i];
         }
-        avg = sum / arr3.length;
+        avg = sum / (double)arr3.length;
         return avg;
     }
 
