@@ -57,6 +57,7 @@ public class TestStudent {
         }
         System.out.println(avg);
 
+
         System.out.println("------------------------------");
 
         //문제 9 - 4
@@ -69,6 +70,19 @@ public class TestStudent {
             }
         }
         System.out.println(maxStudent);
+
+        System.out.println("-----강사님 풀이------------");
+
+        int index = 0; // 총점이 1등인 학생의 index
+        int max2 =  0; // 가장 높은 총점
+        for (int i = 0; i < student.size(); i++){
+            if (max2 <= student.get(i).getTotalScore()){
+                max2 = student.get(i).getTotalScore();
+                index = i;
+            }
+        }
+
+        System.out.println(student.get(index));
 
     }
 

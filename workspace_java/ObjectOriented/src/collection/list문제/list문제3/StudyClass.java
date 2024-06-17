@@ -1,82 +1,29 @@
 package collection.list문제.list문제3;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class StudyClass {
-    Student stu = new Student();
-    List<Student> students = new ArrayList<>();
     private String className;
-    private String tName;
+    private String teacher;
+    private List<Student_1> stuList;
 
-    public StudyClass(){
-
-    }
-    public StudyClass(Student stu, String className, String tName){
-        this.stu = stu;
+    public StudyClass(String className, String teacher, List<Student_1> stuList){
         this.className = className;
-        this.tName = tName;
+        this.teacher = teacher;
+        this.stuList = stuList;
     }
 
-    public List<Student> getStudents() {
-        return students;
-    }
-
-    public void setStudents(List<Student> students) {
-        this.students = students;
-    }
-
-    public String getClassName() {
-        return className;
-    }
-
-    public void setClassName(String className) {
-        this.className = className;
-    }
-
-    public String getTname() {
-        return tName;
-    }
-
-    public void setTname(String tName) {
-        this.tName = tName;
-    }
-
-
-    public void infoAll(List<Student> students){
-        for ( Student stu : students){
-            System.out.println(stu.toString());
+    //1) 해당 반의 모든 학생의 모든 정보를 출력하는 기능
+    public void printStuAll(){
+        for (Student_1 stu : stuList){
+            System.out.println(stu);
         }
     }
 
-    public double avgScore(List<Student> students){
-        int sum = 0;
-        double avg = 0;
-        for(int i = 0; i < students.size(); i++){
-            sum = sum + students.get(i).getScore();
-        }
-        avg = sum / (double)students.size();
-        return avg;
+    //2) 해당 반의 평균 성적을 리턴하는 기능
+    //3) 해당 반에서 최고 성적을 지닌 학생을 리턴하는 기능
+
+    public List<Student_1> getStuList(){
+        return stuList;
     }
-
-    public Student bestStudent(List<Student> students){
-        Student best = null;
-        int max = 0;
-        for (int i = 0; i < students.size(); i++){
-            if (students.get(i).getScore() >= max){
-                best = students.get(i);
-                max = students.get(i).getScore();
-            }
-        }
-        return best;
-    }
-
-
-
-
-
-
-
-
-
 }
