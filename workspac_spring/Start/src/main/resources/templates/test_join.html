@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      margin: 5px 0;
+    }
+
+    .box2{
+      width: 700px;
+      height: 700px;
+      border: 1px solid #000;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: lightgray;
+    }
+
+    .join_box > a > input{
+      width: 100px;
+      height: 30px;
+      background-color: skyblue;
+      color: #fff;
+      border: 1px solid skyblue;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    tr{
+      margin: 10px 0;
+    }
+
+    .list{
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .list > thead,tr{
+      text-align: center;
+    }
+
+    tr,td{
+      border-collapse: collapse;
+    }
+
+
+  </style>
+</head>
+<body>
+    <div class="box2">
+      <table>
+        <tr>
+          <td>
+            <span>이름</span>
+          </td>
+          <td>
+            <input type="text">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span>연락처</span>
+          </td>
+          <td>
+            <input type="password">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span>성별</span>
+          </td>
+          <td>
+            <input type="radio" checked> 남
+            <input type="radio" > 여
+          </td>
+        </tr>
+        <tr>
+          <td>
+            취미
+          </td>
+          <td>
+            <input type="checkbox" checked> 독서
+            <input type="checkbox" > 게임
+            <input type="checkbox" > 운동
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span>가입경로</span>
+          </td>
+          <td>
+            <select name="" id="" style="width: 169.5px;">
+              <option value="">1.인터넷</option>
+              <option value="">2.지인추천</option>
+              <option value="">3.신문</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+      <div class="join_box">
+        <a>
+          <input type="submit" value="회원가입">
+        </a>
+        <a href="/m1">
+          <input type="submit" value="뒤로가기">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div th:each="member : ${memberList}">[[${member.name}]]</div>
+
+  <th:block th:each="m : ${memberList}">
+    [[${m.age}]]
+  </th:block>
+
+  <table class="list" border="1">
+    <thead>
+      <td>이름</td>
+      <td>나이</td>
+      <td>점수</td>
+    </thead>
+    <tr th:each="m1 : ${memberList}" >
+      <td>[[${m1.name}]]</td>
+      <td>[[${m1.age}]]</td>
+      <td>[[${m1.score}]]</td>
+    </tr>
+  </table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test_join</title>
+  <style>
+    .box{
+      width: 700px;
+      height: 700px;
+      border: 1px solid #000;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: lightgray;
+    }
+
+    .in_box > div{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .in_box > div > p{
+      margin-right: 5px;
+    }
+
+    .box > .join > input{
+      width: 150px;
+      height: 30px;
+      background-color: skyblue;
+      color: #fff;
+      border: 1px solid skyblue;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="in_box">
+        <div>
+          <p>아이디</p> 
+          <input type="text">
+        </div>
+        <div>
+          <p>비밀번호</p> 
+          <input type="text">
+        </div>
+    </div>
+    <a href="/join" class="join">
+      <input type="submit" value="가입하러가기">
+    </a>
+  </div>
+  [[${abc[0]}]]
+  [[${member.name}]]
+  [[${member.age}]]
+  <div></div>
+</body>
+</html>
