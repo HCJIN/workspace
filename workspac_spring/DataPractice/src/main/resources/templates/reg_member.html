@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reg_member</title>
+  <link rel="stylesheet" href="/member.css">
+</head>
+<body>
+  <form action="/member_info" method="post">
+      <div class="wrap">
+        <table>
+          <tr>
+            <td>
+              <span>아이디</span>
+            </td>
+            <td>
+              <input type="text" name="id">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>비밀번호</span>
+            </td>
+            <td>
+              <input type="password" name="pw">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>이름</span>
+            </td>
+            <td>
+              <input type="text" name="name">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>연락처</span>
+            </td>
+            <td>
+              <input type="tel" name="tel">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>이메일</span>
+            </td>
+            <td>
+              <input type="email" name="email">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>생일</span>
+            </td>
+            <td>
+              <input type="date" name="date">
+            </td>
+          </tr>
+        </table>
+        <input type="submit" value="회원가입" class="joinBtn">
+      </div>
+  </form>
+</body>
+</html>

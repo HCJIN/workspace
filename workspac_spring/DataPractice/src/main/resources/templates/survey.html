@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>survery</title>
+  <link rel="stylesheet" href="/survey.css">
+</head>
+<body>
+  <form action="/result" method="post">
+      <div class="wrap1">
+        <table>
+          <tr>
+            <td>
+              <span>자기소개</span>
+            </td>
+            <td>
+              <textarea rows="3" cols="20" name="intro"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>성별</span>
+            </td>
+            <td>
+              <input type="radio" value="남" name="man"> 남
+              <input type="radio" value="여" name="man"> 여
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>취미</span>
+            </td>
+            <td>
+              <input type="checkbox" value="독서" name="check"> 독서
+              <input type="checkbox" value="게임" name="check"> 게임
+              <input type="checkbox" value="운동" name="check"> 운동
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>가입경로</span>
+            </td>
+            <td>
+              <select style="width: 170px; text-align: center;" name="select">
+                <option value=" 인터넷">1.인터넷</option>
+                <option value=" 지인추천">2.지인추천</option>
+                <option value=" 신문">3.신문</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+        <div>
+          <input type="submit" value="회원가입" class="joinBtn">
+        </div>
+      </div>
+  </form>
+</body>
+</html>

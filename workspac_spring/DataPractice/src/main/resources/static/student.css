@@ -1,0 +1,34 @@
+.wrap{
+  width: 500px;
+  height: 500px;
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+table{
+  margin: 0 auto;
+}
+
+tr > td:last-child{
+  text-align: left;
+}
+
+a{
+  text-decoration: none;
+  color: #000;
+}
+
+.btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.btn > input{
+  margin-right: 5px;
+}

@@ -1,0 +1,26 @@
+<!DOCTYspanE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewspanort" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/survey.css">
+</head>
+<body>
+  <form action="/survey" method="get">
+      <div class="wrap">
+        <div>
+          <span>자기소개 : </span> [[${survey.intro}]] 
+          <br> 
+          <span>성별 : </span> [[${survey.man}]] 
+          <br>
+          <span>취미 : <span th:each="check : ${survey.check}" th:text="${check} "></span></span> 
+          <br>
+          <span>가입경로 : </span> [[${survey.select}]] 
+          <br>
+          <input type="submit" value="뒤로가기" class="joinBtn">
+        </div>
+      </div>
+  </form>
+</body>
+</html>

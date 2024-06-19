@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/student.css">
+</head>
+<body>
+  <div class="wrap">
+    <form action="/final" method="post">
+      <input type="hidden" name="name" th:value="${name}">
+      <input type="hidden" name="classNum" th:value="${classNum}">
+      <input type="hidden" name="path" th:value="${path}">
+      <input type="hidden" name="tel" th:value="${tel}">
+      <input type="hidden" name="gender" th:value="${gender}">
+      <h2>학생 성적 입력 프로그램</h2>
+      <h4>[[${name}]] 학생의 성적을 입력합니다</h4>
+      <table>
+        <tr>
+          <td>
+            <span>국어</span>
+          </td>
+          <td>
+            <input type="text" name="ko">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span>영어</span>
+          </td>
+          <td>
+            <input type="text" name="en">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span>수학</span>
+          </td>
+          <td>
+            <input type="text" name="math">
+          </td>
+        </tr>
+      </table>
+      <div>
+        <input type="submit" value="확인">
+      </div>
+    </form>
+  </div>
+</body>
+</html>

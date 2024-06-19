@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>member_info</title>
+    <link rel="stylesheet" href="/member.css">
+</head>
+<body>
+    <form action="/member" method="post">
+        <div class="wrap">
+            <table border="1" class="infotabel">
+                <tr>
+                    <td>
+                        <span>아이디</span>
+                    </td>
+                    <td>
+                        [[${memberInfo.id}]]
+                    </td>
+                    <td>
+                        <span>이름</span>
+                    </td>
+                    <td>
+                        [[${memberInfo.name}]]
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>연락처</span>
+                    </td>
+                    <td>
+                        [[${memberInfo.tel}]]
+                    </td>
+                    <td>
+                        이메일
+                    </td>
+                    <td>
+                        [[${memberInfo.email}]]
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>생일</span>
+                    </td>
+                    <td colspan="3">
+                        [[${memberInfo.date}]]
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" value="뒤로가기" class="joinBtn">
+        </div>
+    </form>
+</body>
+</html>

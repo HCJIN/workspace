@@ -1,0 +1,37 @@
+.wrap{
+  width: 500px;
+  height: 500px;
+  border: 1px solid #000;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrap > table{
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+tr,td{
+  border: 1px solid #000;
+  padding: 10px;
+}
+
+.joinBtn{
+  background-color: rgb(135, 206, 235);
+  border: 1px solid rgba(125, 196, 225, .8);
+  border-radius: 3px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  padding: 5px 10px 5px 10px;
+  color: #fff;
+}
+
+.infotabel{
+  text-align: center;
+}

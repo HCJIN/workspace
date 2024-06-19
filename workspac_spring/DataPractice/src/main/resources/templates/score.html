@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/student.css">
+</head>
+<body>
+  <div class="wrap">
+      <h2>학생 성적 입력 프로그램</h2>
+      <h4>[[${name}]] 학생의 기본정보를 입력합니다</h4>
+    <form action="/scoreIn" method="post">
+      <input type="hidden" name="name" th:value="${name}">
+      <table>
+        <tr>
+          <td>
+            <span>학년</span>
+          </td>
+          <td>
+            <input type="text" name="classNum">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span>연락처</span>
+          </td>
+          <td>
+            <select name="path">
+              <option value="010">010</option>
+              <option value="011">011</option>
+              <option value="012">012</option>
+            </select>
+            <input type="text" name="tel">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span>성별</span>
+          </td>
+          <td>
+            <input type="radio" name="gender" value="남"> 남
+            <input type="radio" name="gender" value="여"> 여
+          </td>
+        </tr>
+      </table>
+      <div class="btn">
+        <input type="submit" value="확인">
+    </form>
+        <form action="/student" method="get">
+            <input type="submit" value="뒤로가기">
+        </form>
+      </div>
+  </div>
+</body>
+</html>
