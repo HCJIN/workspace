@@ -4,24 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="/chicken.css">
 </head>
 <body>
-  <div class="wrap">
-    <h3>치킨 종류와 상관 없이 무조건 만원!</h3>
-    <div>
-      <input type="radio" value="chicken" name="chicken"> 후라이드 치킨
-      <input type="radio" value="chicken" name="chicken"> 양념치킨
-      <input type="radio" value="chicken" name="chicken"> 간장치킨 <br>
-      <input type="radio" value="chicken" name="chicken"> 고추바사삭 
-      <input type="radio" value="chicken" name="chicken"> 뿌링클
-      <input type="radio" value="chicken" name="chicken"> 매운핫치킨 
-    </div>
-    <div>
-      몇마리 <input type="number" name="num">
-    </div>
-    <div>
-      <h3>추가할게요(추가 시 1000원)</h3>
-    </div>
-  </div>
+  <form action="/delivery" method="post">
+    <div class="wrap">
+      <h3>치킨 종류와 상관 없이 무조건 만원!</h3>
+      <div>
+        <input type="radio" value="후라이드 치킨" name="chicken"> 후라이드 치킨
+        <input type="radio" value="양념치킨" name="chicken"> 양념치킨
+        <input type="radio" value="간장치킨" name="chicken"> 간장치킨 <br>
+        <input type="radio" value="고추바사삭" name="chicken"> 고추바사삭 
+        <input type="radio" value="뿌링클" name="chicken"> 뿌링클
+        <input type="radio" value="매운핫치킨" name="chicken"> 매운핫치킨 
+      </div>
+      <div>
+        몇마리 <input type="number" name="num" min="0">
+      </div>
+      <div>
+        <h3>추가할게요(추가 시 1000원)</h3>
+        <input type="checkbox" value="양념추가" name="check"> 양념 추가
+        <input type="checkbox" value="머스터드추가" name="check"> 머스터드 추가
+        <input type="checkbox" value="콜라추가" name="check"> 콜라 추가
+      </div>
+      <div>
+        <h3>요청사항</h3>
+        <textarea name="review" rows="3" cols="50"></textarea>
+      </div>
+      <input type="submit" value="주문하러 가기">
+      </div>
+  </form>
 </body>
 </html>

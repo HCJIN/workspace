@@ -1,9 +1,11 @@
 package com.green.DataPractice.vo;
 
+import java.util.Arrays;
+
 public class ChickenVO {
     private String chicken;
     private int num;
-    private String check;
+    private String[] check;
     private String review;
     private String order;
     private String tel;
@@ -25,11 +27,11 @@ public class ChickenVO {
         this.num = num;
     }
 
-    public String getCheck() {
+    public String[] getCheck() {
         return check;
     }
 
-    public void setCheck(String check) {
+    public void setCheck(String[] check) {
         this.check = check;
     }
 
@@ -70,7 +72,7 @@ public class ChickenVO {
         return "ChickenVO{" +
                 "chicken='" + chicken + '\'' +
                 ", num=" + num +
-                ", check='" + check + '\'' +
+                ", check=" + Arrays.toString(check) +
                 ", review='" + review + '\'' +
                 ", order='" + order + '\'' +
                 ", tel='" + tel + '\'' +

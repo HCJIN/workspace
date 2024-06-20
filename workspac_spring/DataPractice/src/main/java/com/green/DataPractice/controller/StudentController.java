@@ -10,17 +10,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class StudentController {
 
+    //시작페이지로 이동
     @GetMapping("/student")
     public String student(){
         return "student";
     }
 
+    //학생이름을 입력받아 두번째 페이지로 이동
     @PostMapping("/score")
     public String score(@RequestParam(name="name")String name,Model model){
         model.addAttribute("name",name);
         return "score";
     }
 
+    //학년, 성별, 연락처 입력받아 세번째 페이지로 이동
     @PostMapping("/scoreIn")
     public String scoreIn(@RequestParam(name="name")String name,
                           @RequestParam(name="classNum") String classNum,
@@ -35,6 +38,7 @@ public class StudentController {
         return "scoreIn";
     }
 
+    //출력페이지로 이동
     @PostMapping("/final")
     public String studentFinal(@RequestParam(name="name")String name,
                                @RequestParam(name="classNum") String classNum,

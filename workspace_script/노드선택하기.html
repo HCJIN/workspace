@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>노드선택하기</title>
+</head>
+<body>
+  <input type="text" id="a">
+  <input type="button" value="값 읽기" class="btn" onclick="readValue()">
+  <input type="button" value="값 세팅" class="btn" onclick="setValue()">
+  <input type="button" value="값 초기화" class="btn" onclick="removeValue()">
+
+  <script>
+    function readValue(){
+      const tag = document.querySelector('#a');
+      console.log(tag.type); //text
+      console.log(tag.id); //a
+      console.log(tag.value); //입력값
+      alert(tag.value);
+    }
+
+    function setValue(){
+      const a = document.querySelector('#a');
+      a.value = 30;
+    }
+
+    function removeValue(){
+      const a = document.querySelector('#a');
+      a.value = "";
+    }
+
+
+  </script>
+</body>
+</html>

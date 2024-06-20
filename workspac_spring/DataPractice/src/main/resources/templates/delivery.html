@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/chicken.css">
+</head>
+<body>
+  <form action="/orderInfo" method="post">
+    <input type="hidden" name="chicken" th:value="${chickenVO.chicken}">
+    <input type="hidden" name="num" th:value="${chickenVO.num}">
+    <input th:each="check : ${chickenVO.check}" type="hidden" name="check" th:value="${check}">
+    <!-- <th:block th:each="check : ${chickenVO.check}">
+      <input type="hidden" name="check" th:value="${chek}">
+    </th:block> -->
+    <textarea name="review" hidden>[[${chickenVO.review}]]</textarea>
+    <div class="wrap">
+      <h3>배달 정보</h3>
+      <p>주문자</p>
+      <input type="text" name="order">
+      <p>연락처</p>
+      <input type="text" name="tel" placeholder="010-0000-0000 형태로 입력">
+      <p>배달 주소</p>
+      <input type="text" name="add">
+      <input type="submit" value="주문">
+    </div>
+  </form>
+</body>
+</html>

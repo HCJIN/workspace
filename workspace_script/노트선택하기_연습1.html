@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" id="num1"> + 
+  <input type="text" id="num2">
+  <input type="button" value="더하기" onclick="plus()">  <br>
+  <input type="text" id="result">
+
+  
+
+  <script>
+
+    function plus(){
+      const a = document.querySelector('#num1');
+      const b = document.querySelector('#num2');
+      const c = document.querySelector('#result')
+
+      const num1 = Number(a.value);
+      const num2 = Number(b.value);
+      const sum = num1 + num2;
+
+      c.value = sum;
+    }
+
+
+
+
+  </script>
+</body>
+</html>

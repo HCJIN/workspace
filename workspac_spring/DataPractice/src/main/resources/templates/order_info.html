@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/chicken.css">
+</head>
+<body>
+  <div class="wrap">
+    <h2>주문서</h2>
+    <h3>주문정보</h3>
+    <div>
+      [[${chickenVO.chicken}]] <span>([[${chickenVO.num}]]마리)</span> <br>
+      <span>추가사항 : <span th:each="sorce : ${chickenVO.check}" th:text="${ sorce }"></span></span> <br>
+      <span>주문 금액 : </span> [[${sum}]]<br>
+      <!-- [[${chickenVO.num * 10000 + #arrays.length(chickenVO.check * 1000)}]]원 -->
+      <span>요청사항 : </span> [[${chickenVO.review}]]
+    </div>
+    <h3>배달배달</h3>
+    <div>
+      <span>주문자 : </span> [[${chickenVO.order}]] <br>
+      <span>연락처 : </span> [[${chickenVO.tel}]] <br>
+      <span>배달주소 : </span> [[${chickenVO.add}]]
+    </div>
+  </div>
+</body>
+</html>
