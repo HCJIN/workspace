@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>board_list</title>
+  <link rel="stylesheet" href="/reset.css">
+  <link rel="stylesheet" href="/board_list.css">
+  <script src="/board_list.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="list-div">
+      <table class="list-table">
+        <colgroup>
+          <col width="10%">
+          <col width="*">
+          <col width="15%">
+          <col width="15%*">
+        </colgroup>
+        <thead>
+          <tr>
+            <td>글번호</td>
+            <td>제목</td>
+            <td>작성자</td>
+            <td>작성일</td>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 게시글이 없으면  -->
+          <th:block th:if="${#lists.isEmpty(boardList)}">
+            <tr>
+              <td colspan="4">등록된 게시글이 없습니다.</td>
+            </tr>
+          </th:block>
+          <!-- 게시글이 있으면 -->
+          <th:block th:unless="${#lists.isEmpty(boardList)}">
+            <tr th:each="board : ${boardList}">
+              <td>[[${board.boardNum}]]</td>
+              <td><a th:href="@{/detail(boardNum=${board.boardNum})}">[[${board.title}]]</a></td>
+              <td>[[${board.writer}]]</td>
+              <td>[[${board.createDate}]]</td>
+            </tr>
+          </th:block>
+        </tbody>
+      </table>
+    </div>
+    <div class="btn-div">
+      <input type="button" value="글쓰기" onclick="goWrite()">
+    </div>
+  </div>
+</body>
+</html>

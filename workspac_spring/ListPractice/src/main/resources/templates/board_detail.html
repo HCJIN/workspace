@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>board_detail</title>
+  <link rel="stylesheet" href="/reset.css">
+  <link rel="stylesheet" href="/board_write_form.css">
+</head>
+<body>
+  <div class="container">
+    <div class="table-div">
+      <table>
+        <tr>
+          <td>글번호</td>
+          <td>[[${boardList.boardNum}]]</td>
+          <td>작성자</td>
+          <td>[[${boardList.writer}]]</td>
+          <td>작성일</td>
+          <td>[[${boardList.createDate}]]</td>
+        </tr>
+        <tr>
+          <td>제목</td>
+          <td>[[${boardList.title}]]</td>
+        </tr>
+        <tr>
+          <td>내용</td>
+          <td>[[${boardList.content}]]</td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <a href="/list">뒤로가기</a>
+      <!-- 현재 상세보기하고 있는 게시글을 삭제하고 게시글 목록 페이지로 이동 -->
+      <!-- 1번 -->
+      <a th:href="@{/remove(boardNum=${boardList.boardNum})}">글 삭제</a>
+      <!-- 2번 -->
+      <input type="button" value="삭제하기" th:onclick="goRemove([[${boardList.boardNum}]])">
+    </div>
+  </div>
+
+  <script>
+    function goRemove(boardNum) {
+      //confirm 실행 후 확인을 클릭하면 true 리턴,
+      //취소를 클릭하면 false를 리턴
+      const result = confirm('정말 삭제하시겠어요?');
+
+      //확인을 클릭했을 때만 삭제를 위해 자바로 이동
+      if(result){
+        // location.href = '/delete?boardNum=' + boardNum ; // /delete?boardNum = 1
+        location.href = `/delete?boardNum=${boardNum}`;
+      }
+    }
+  </script>
+</body>
+</html>

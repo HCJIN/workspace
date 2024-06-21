@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>a1</title>
+</head>
+<body>
+  <!-- /a2로 이동 할때 'java'라는 데이터를 'name'이라는 이름으로 전달 -->
+  <a href="/a2?address=java">
+    <h3>두번째 페이지로 이동</h3>
+  </a>
+  [[${stuName}]]
+  [[${score}]]
+
+  <br>
+
+  <a href="/a3?name=kim&age=30">
+    <h3>세번째 페이지로 이동</h3>
+  </a>
+
+  <br>
+
+  <a th:href="@{/a3(name=${stuName}, age=${score})}">
+    <h3>세번째 페이지로 이동</h3>
+  </a>
+
+
+</body>
+</html>
