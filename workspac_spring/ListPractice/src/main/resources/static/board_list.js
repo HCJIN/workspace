@@ -3,3 +3,7 @@
 function goWrite() {
   location.href = '/writeForm';
 }
+
+function goWrite2(){
+  location.href = '/writeForm2'
+}

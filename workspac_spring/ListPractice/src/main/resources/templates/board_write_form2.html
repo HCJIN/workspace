@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/board_write_form.css">
+</head>
+<body>
+  <form action="/regBoard2" method="post">
+    <div class="container">
+      <div class="table-div">
+        <table class="list-table">
+          <tr>
+            <td>글번호</td>
+            <td><input type="text" name="boardNum"></td>
+          </tr>
+          <tr>
+            <td>제목</td>
+            <td>
+              <input type="text" name="title">
+            </td>
+          </tr>
+          <tr>
+            <td>작성자</td>
+            <td>
+              <input type="text" name="writer">
+            </td>
+          </tr>
+          <tr>
+            <td>작성일</td>
+            <td>
+              <input type="date" name="createDate">
+            </td>
+          </tr>
+          <tr>
+            <td>내용</td>
+            <td>
+              <textarea name="content" rows="3" cols="30"></textarea>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="btn-div">
+        <input type="submit" value="글등록">
+      </div>
+    </div>
+  </form>
+</body>
+</html>

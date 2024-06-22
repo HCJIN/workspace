@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/reset.css">
+  <link rel="stylesheet" href="/board_write_form.css">
+</head>
+<body>
+  <div class="container">
+    <div class="table-div">
+      <table>
+        <tr>
+          <td>글 번호</td>
+          <td>[[${boardList.boardNum}]]</td>
+          <td>작성자</td>
+          <td>[[${boardList.writer}]]</td>
+          <td>작성일</td>
+          <td>[[${boardList.createDate}]]</td>
+        </tr>
+        <tr>
+          <td>제목</td>
+          <td>[[${boardList.title}]]</td>
+        </tr>
+        <tr>
+          <td>내용</td>
+          <td>
+            [[${boardList.content}]]
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="btn-div">
+      <a href="/list2">      
+        <input type="button" value="뒤로가기">
+      </a>
+      <input type="button" value="글삭제" th:onclick="goDelete2([[${boardList.boardNum}]])">
+    </div>
+  </div>
+  <script>
+    function goDelete2(boardNum){
+      const result = confirm('정말 삭제하시겠어요?');
+
+      if(result){
+        location.href = `/delete2?boardNum=${boardNum}`;
+      }
+
+
+    }
+
+
+
+
+
+  </script>
+</body>
+</html>
