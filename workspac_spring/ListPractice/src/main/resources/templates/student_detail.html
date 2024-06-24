@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>student_detial</title>
+  <link rel="stylesheet" href="/student_list.css">
+</head>
+<body>
+  <div class="container">
+    <div class="table_div">
+      <table class="table_list">
+        <tr>
+          <td>학번</td>
+          <td>[[${student.studentNum}]]</td>
+          <td>이름</td>
+          <td>[[${student.name}]]</td>
+        </tr>
+        <tr>
+          <td>국어점수</td>
+          <td>[[${student.ko}]]</td>
+          <td>영어점수</td>
+          <td>[[${student.en}]]</td>
+        </tr>
+        <tr>
+          <td>자기소개</td>
+          <td colspan="3">[[${student.intro}]]</td>
+        </tr>
+      </table>
+    </div>
+    <div class="btn_div">
+      <input type="button" value="뒤로가기" onclick="goBack()">
+      <input type="button" value="학생수정" th:onclick="goUpdateForm([[${student.studentNum}]])">
+      <input type="button" value="학생삭제" th:onclick="goDelete([[${student.studentNum}]])">
+    </div>
+  </div>
+  
+  <script>
+    //뒤로가기 버튼 클릭시 실행하는 함수
+    function goBack(){
+      //1번 보기전 상태로 보내줌 새로운 글이 안보임
+      // history.back(-1);
+      //2번 새로운 글이 보임
+      location.href = '/list3';
+    }
+
+    //학생 삭제 클릭시실행
+    function goDelete(studentNum){
+      const result = confirm('정말 삭제하시겠습니까?');
+
+      if(result){
+        location.href = `/stuDelete?studentNum=${studentNum}`;
+      }
+    }
+
+    //학생 수정 버튼 클릭 -> 학생정보를 수정 할 수 있는 페이지로 이동
+    function goUpdateForm(studentNum){
+      location.href = `/updateForm?studentNum=${studentNum}`
+    } 
+
+
+
+  </script>
+</body>
+</html>

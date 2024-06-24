@@ -1,0 +1,29 @@
+.container{
+  width: 800px;
+  margin: 30px auto;
+}
+
+.table_list{
+  border: 1px solid black;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.table_list tr, .table_list td{
+  border: 1px solid #000;
+}
+
+.table_list td{
+  padding: 8px;
+}
+
+.btn_div{
+  margin-top: 20px;
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+  color: #000;
+}

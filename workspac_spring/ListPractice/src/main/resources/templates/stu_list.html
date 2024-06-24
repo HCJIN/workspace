@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>stu_list</title>
+  <link rel="stylesheet" href="/student_list.css">
+</head>
+<body>
+  <div class="container">
+    <div class="table_div">
+      <table class="table_list">
+        <tr>
+          <td>학번</td>
+          <td>학생명</td>
+          <td>국어점수</td>
+          <td>영어점수</td>
+          <td>총점</td>
+        </tr>
+        <!-- 게시글이 없으면  -->
+        <th:block th:if="${#lists.isEmpty(studentList)}">
+          <tr>
+            <td colspan="5">등록된 게시글이 없습니다.</td>
+          </tr>
+        </th:block>
+        <!-- 게시글이 있으면  타임리프 문법 안에서는 주석 조심 주석 안에서 
+        /* */ 이렇게 적고 안에다가 작성해야함-->
+        <th:block th:unless="${#lists.isEmpty(studentList)}">
+          <tr th:each="studentList : ${studentList}">
+            <td>[[${studentList.studentNum}]]</td>
+            <td>
+              <a th:href="@{/stuDetail(studentNum=${studentList.studentNum})}">
+                [[${studentList.name}]]
+              </a>
+              </td>
+            <td>[[${studentList.ko}]]</td>
+            <td>[[${studentList.en}]]</td>
+            <td>[[${studentList.ko + studentList.en}]]</td>
+          </tr>
+        </th:block>
+      </table>
+    </div>
+    <div class="btn_div">
+      <a th:href="@{/regStudent}">
+        <input type="button" value="학생등록">
+      </a>
+    </div>
+  </div>
+</body>
+</html>

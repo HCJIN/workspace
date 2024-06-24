@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reg_student</title>
+  <link rel="stylesheet" href="/student_list.css">
+</head>
+<body>
+  <form action="/join" method="post">
+      <div class="container">
+        <div class="table_div">
+          <table class="table_list">
+            <colgroup>
+              <col width="15%">
+              <col width="*">
+            </colgroup>
+            <tr>
+              <td>학번</td>
+              <td>
+                <input type="text" name="studentNum" style="width: 500px;">
+              </td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>
+                <input type="text" name="name" style="width: 500px;">
+              </td>
+            </tr>
+            <tr>
+              <td>국어점수</td>
+              <td>
+                <input type="text" name="ko" style="width: 500px;">
+              </td>
+            </tr>
+            <tr>
+              <td>영어점수</td>
+              <td>
+                <input type="text" name="en" style="width: 500px;">
+              </td>
+            </tr>
+            <tr>
+              <td>학생소개</td>
+              <td>
+                <textarea name="intro" rows="3" cols="70"></textarea>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="btn_div">
+          <input type="submit" value="등록 완료">
+        </div>
+      </div>
+  </form>
+</body>
+</html>

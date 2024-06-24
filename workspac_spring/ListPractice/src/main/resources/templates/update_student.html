@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/student_list.css">
+</head>
+<body>
+  <form action="/correction" method="post">
+      <div class="container">
+        <div class="table_div">
+          <table class="table_list">
+            <colgroup>
+              <col width="25%">
+              <col width="25%">
+              <col width="25%">
+              <col width="25%">
+            </colgroup>
+            <tr>
+              <td>학번</td>
+              <td>[[${student.studentNum}]]</td>
+              <input type="hidden" name="studentNum" th:value="${student.studentNum}" />
+              <td>이름</td>
+              <td>
+                <input type="text" name="name" th:value="${student.name}">
+              </td>
+            </tr>
+            <tr>
+              <td>국어점수</td>
+              <td>
+                <input type="text" name="ko" th:value="${student.ko}">
+              </td>
+              <td>영어점수</td>
+              <td>
+                <input type="text" name="en" th:value="${student.en}">
+              </td>
+            </tr>
+            <tr>
+              <td>자기소개</td>
+              <td colspan="3">
+                <textarea name="intro" rows="3" cols="70">[[${student.intro}]]</textarea>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="btn_div">  
+          <input type="button" value="뒤로가기" th:onclick="goDetail([[${student.studentNum}]])">
+          <input type="submit" value="정보수정">
+        </div>
+      </div>
+  </form>
+  <script>
+    function goDetail(studentNum){
+      location.href = `/stuDetail?studentNum=${studentNum}`;
+    }
+
+
+  </script>
+</body>
+</html>
