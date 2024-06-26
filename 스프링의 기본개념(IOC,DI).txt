@@ -1,0 +1,115 @@
+스프링의 지향점
+- 클래스 간 결합도는 낮추고 
+  한 클래스의 응집도는 높인다. 
+  -> 좋은(유지보수) 프로그램이다.
+- 결합도를 낮추기 위해서 IOC, DI 개념을 도입
+- 응집도를 높이기 위해서 AOP 개념을 도입
+
+*IOC,DI 개념
+IOC(Inversion of Control) : 제어의 역전
+- 객체를 생성하는 주체가 개발자에서 스프링으로 변경됨을 이야기함.
+
+*그럼 개발자가 객체 생성을 하지 않고 스프링이 객체를 생성해준다면
+ 스프링은 어떤 방식으로 객체를 생성해주는것인가?
+
+DI(Dependency Injectino) : 의존성 주입
+- IOC를 통해 자동으로 생성된 객체를 개발자가 사용할 때 진행되는 방식 
+
+스프링이 자동으로 객체를 생성하도록 코드를 작성하는 방법
+1. 객체를 자동으로 생성하고 싶은 클래스는 반드시 프로젝트의 
+   기본패키지 안에 생성한다. (기본패키지 안에 있다고 해서 객체가 자동으로 생성X)
+2. 클래스 위에 어노테이션을 사용해서 클래스의 객체를
+   프로젝트가 시작되자마자 자동으로 생성한다.
+   클래스 위에 선언하여 객체를 생성해주는 어노테이션
+
+   @Component
+   @Controller @Service @Reqository
+
+ 그럼,스프링이 자동으로 생성해준 객체를 우리가 어떻게 써야할까?
+ - 어노테이션을 사용하여 스프링이 자동생성해준 객체를 우리가 사용할 수 있다.
+ - 아래 두 어노테이션은 생성된 객체를 사용할 때 사용하며, 맴버변수 위에 작성한다.
+   @Autowired : 생성된 객체의 자료형을 비교하여 생성된 객체를 사용 함.
+   @Resource : 생성된 객체의 이름을 비교하여 생성된 객체를 사용 함.
+
+객체 생성과 생성된 객체를 사용하는 예시1
+@Conponent
+class Aaa{} -> Aaa aaa = new Aaa();
+
+@Service("b")
+class Bbb{} -> Bbb b = new Bbb();
+
+class Ccc{
+  @Autowired
+  private Aaa a; // Aaa a = aaa;
+}
+
+객체 생성과 생성된 객체를 사용하는 예시2
+class Animal{}
+
+@Conponent
+class Dog extends Animal{} -> Dog dog = new Dog();
+
+@Conponent
+class Cat extends Animal{} -> Cat cat = new Cat();
+
+
+class AnimalHouse{
+
+  @Resource(name="dog")
+  private Animal a;
+
+  @Autowired
+  private Dog d;
+
+}
+
+객체 생성과 생성된 객체를 사용하는 예시3
+interface BoardService{}
+
+@Service("boardService")
+class BoardServiceImpl implements BoardService{}
+	-> BoardServiceImpl boardService = new BoardServiceImpl();
+
+@Service
+class MyBoard implements BoardService{}
+	-> MyBoard myBoard = new MyBoard();
+
+@Component
+class SqlSession{} -> SqlSession sqlSession = new SqlSession();
+
+class BoardController{
+
+  @Resource(name = "boardService")
+  private BoardService boardService;
+
+  @Autowired @리소스도 가능
+  private SqlSession sqlSession;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
