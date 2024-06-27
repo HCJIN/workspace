@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/student.css">
+</head>
+<body>
+  <form action="/update" method="post">
+    <div class="container">
+      <div class="table-div">
+        <table class="list-table">
+          <input type="hidden" name="stuNum" th:value="${stuDB.stuNum}">
+          <tr>
+            <td>학번</td>
+            <td>
+              [[${stuDB.stuNum}]]
+            </td>
+            <td>이름</td>
+            <td>
+              <input type="text" name="stuName" th:value="${stuDB.stuName}">
+            </td>
+          </tr>
+          <tr>
+            <td>국어점수</td>
+            <td>
+              <input type="text" name="korScore" th:value="${stuDB.korScore}">
+            </td>
+            <td>영어점수</td>
+            <td>
+              <input type="text" name="engScore" th:value="${stuDB.engScore}">
+            </td>
+          </tr>
+          <tr>
+            <td>자기소개</td>
+            <td colspan="3">
+              <textarea name="intro">[[${stuDB.intro}]]</textarea>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="btn-div">
+        <input type="button" value="뒤로가기" th:onclick="goGoBack([[${stuDB.stuNum}]])">
+        <input type="submit" value="정보수정">
+      </div>
+    </div>
+  </form>
+
+  <script>
+    function goGoBack(stuNum){
+      location.href = `/detail?stuNum=${stuNum}`;
+    }
+  </script>
+</body>
+</html>

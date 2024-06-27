@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 해당 파일에 모든 쿼리문을 작성 -->
+<mapper namespace="scoreMapper">
+
+    <resultMap id="score" type="com.green.DB_Score.vo.StudentScoreVO">
+        <result  column="STU_NUM" property="stuNum"/>
+        <result  column="STU_NAME" property="stuName"/>
+        <result  column="KOR_SCORE" property="korScore"/>
+        <result  column="ENG_SCORE" property="engScore"/>
+        <result  column="INTRO" property="intro"/>
+    </resultMap>
+
+
+    <select id="select" resultMap="score">
+        SELECT STU_NUM
+            , STU_NAME
+            , KOR_SCORE
+            , ENG_SCORE
+            , INTRO
+        FROM score_info;
+    </select>
+
+    <select id="detail" resultMap="score">
+        SELECT STU_NUM
+        , STU_NAME
+        , KOR_SCORE
+        , ENG_SCORE
+        , INTRO
+        FROM score_info
+        WHERE STU_NUM = #{stuNum};
+    </select>
+
+    <insert id="insert">
+        INSERT
+        INTO score_info
+        VALUES(
+         #{stuNum}
+        , #{stuName}
+        , #{korScore}
+        , #{engScore}
+        , #{intro}
+        );
+    </insert>
+
+    <update id="update">
+        UPDATE
+        score_info
+        SET
+            STU_NAME = #{stuName}
+            , KOR_SCORE = #{korScore}
+            , ENG_SCORE = #{engScore}
+            , INTRO = #{intro}
+        WHERE STU_NUM = #{stuNum}
+    </update>
+
+    <delete id="delete">
+        DELETE
+        FROM score_info
+        WHERE STU_NUM = #{stuNum}
+    </delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

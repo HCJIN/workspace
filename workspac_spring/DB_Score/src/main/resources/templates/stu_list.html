@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/student.css">
+</head>
+<body>
+  <div class="container">
+    <div class="table-div">
+      <table class="list-table">
+        <tr>
+          <td>학번</td>
+          <td>학생명</td>
+          <td>국어점수</td>
+          <td>영어점수</td>
+          <td>총점</td>
+        </tr>
+        <!-- 게시글이 없으면  -->
+        <th:block th:if="${#lists.isEmpty(stuDB)}">
+          <tr>
+            <td colspan="5">등록된 게시글이 없습니다.</td>
+          </tr>
+        </th:block>
+        <!-- 게시글이 있으면 -->
+        <th:block th:unless="${#lists.isEmpty(stuDB)}">
+          <tr th:each="stu : ${stuDB}">
+            <td>[[${stu.stuNum}]]</td>
+            <td><a th:href="@{/detail(stuNum=${stu.stuNum})}">[[${stu.stuName}]]</a></td>
+            <td>[[${stu.korScore}]]</td>
+            <td>[[${stu.engScore}]]</td>
+            <td>[[${stu.korScore} + ${stu.engScore}]]</td>
+          </tr>
+        </th:block>
+      </table>
+    </div>
+    <div class="btn-div">
+      <input type="button" value="학생등록" onclick="goRegStudent()">
+    </div>
+  </div>
+  <script>
+    function goRegStudent(){
+      location.href = `/regStudent`;
+    }
+
+
+  </script>
+</body>
+</html>
