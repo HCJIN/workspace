@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 해당 파일에 모든 쿼리문을 작성 -->
+<mapper namespace="boardMapper">
+	<resultMap id="board" type="com.green.DB_Score.vo.BoardVO">
+        <result column="BOARD_NUM" property="boardNum"/>
+        <result column="TITLE" property="title"/>
+        <result column="WRITER" property="writer"/>
+        <result column="CONTENT" property="content"/>
+        <result column="READ_CNT" property="readCnt"/>
+    </resultMap>
+
+    <select id="select" resultMap="board">
+        SELECT BOARD_NUM
+            ,TITLE
+            ,WRITER
+            ,CONTENT
+            ,READ_CNT
+        FROM simple_board;
+    </select>
+
+    <select id="detail" resultMap="board">
+        SELECT BOARD_NUM
+        ,TITLE
+        ,WRITER
+        ,CONTENT
+        ,READ_CNT
+        FROM simple_board
+        WHERE BOARD_NUM = #{boardNum};
+    </select>
+
+    <insert id="insert">
+        INSERT
+        INTO simple_board
+        VALUES (
+            #{boardNum}
+            ,#{title}
+            ,#{writer}
+            ,#{content}
+            ,#{readCnt}
+        );
+    </insert>
+
+    <delete id="delete">
+        DELETE
+        FROM simple_board
+        WHERE BOARD_NUM = #{boardNum};
+    </delete>
+
+    <update id="update">
+        UPDATE simple_board
+        SET
+        TITLE = #{title},
+        WRITER = #{writer},
+        CONTENT = #{content},
+        READ_CNT = #{readCnt}
+        WHERE BOARD_NUM = #{boardNum}
+    </update>
+
+    <update id="readUpdate">
+        UPDATE simple_board
+        SET
+            READ_CNT = READ_CNT + 1
+        WHERE BOARD_NUM = #{boardNum};
+    </update>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

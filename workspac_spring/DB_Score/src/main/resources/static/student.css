@@ -2,6 +2,10 @@
   width: 800px;
   margin: 30px auto;
   text-align: center;
+  border: 1px solid rgba(255, 228, 196, .8);
+  border-radius: 6px;
+  padding: 20px;
+  background-color: rgba(255, 228, 196, .8);
 }
 
 a{
@@ -11,24 +15,78 @@ a{
 
 a:hover{
   font-weight: 600;
+  cursor: pointer;
 }
 
 .table-div{
-  border: 1px solid black;
+  border: 1px solid rgba(125, 196, 225, .8);
   width: 100%;
   text-align: center;
+  border-radius: 6px;
+  background-color: rgba(155, 226, 255, .8);
+  color: rgba(0, 0, 0, .7);
+  font-weight: 700;
+}
+
+.table-div-main{
+  border: 1px solid rgba(125, 196, 225, .8);
+  width: 100%;
+  text-align: center;
+  border-radius: 6px;
+  background-color: rgba(155, 226, 255, .8);
+  color: rgba(0, 0, 0, .7);
+}
+
+.main-title{
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .list-table{
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
 }
 
 .list-table tr, .list-table td{
-  border: 1px solid black;
+  border: 1px solid rgba(125, 196, 225, .8);
+  padding: 5px;
   text-align: center;
+}
+
+.list-table input{
+  border: 1px solid rgba(0, 0, 0, .4);
+  border-radius: 6px;
 }
 
 .btn-div{
   margin-top: 20px;
+}
+
+.btn-div > input{
+  padding: 5px;
+  background-color: rgb(135, 206, 235);
+  border: 1px solid rgba(125, 196, 225, .8);
+  color: aliceblue;
+  border-radius: 7px;
+}
+
+.btn-div > input:hover{
+  font-weight: 700;
+  background-color: rgb(125, 196, 225);
+  cursor: pointer;
+}
+
+.list-table input{
+  width: 100%;
+  height: 35px;
+  box-sizing: border-box;
+}
+
+.content{
+  vertical-align: middle;
+}
+
+textarea{
+  border: 1px solid rgba(0, 0, 0, .4);
+  border-radius: 6px;
 }

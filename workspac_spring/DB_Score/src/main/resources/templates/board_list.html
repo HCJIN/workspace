@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>게시글목록화면</title>
+  <link rel="stylesheet" href="/reset.css">
+  <link rel="stylesheet" href="/student.css">
+</head>
+<body>
+  <div class="container">
+    <div class="table-div-main">
+      <table class="list-table">
+        <colgroup>
+          <col width="10% ">
+          <col width="*">
+          <col width="10%">
+          <col width="10%">
+        </colgroup>
+        <tr class="main-title">
+          <td>글번호</td>
+          <td>제목</td>
+          <td>작성자</td>
+          <td>조회수</td>
+        </tr>
+        <th:block th:if="${#lists.isEmpty(boardDB)}">
+        <tr>
+          <td colspan="4">등록된 게시글이 없습니다.</td>
+        </tr>
+        </th:block>
+        <th:block th:unless="${#lists.isEmpty(boardDB)}">
+          <tr th:each="board : ${boardDB}">
+            <td>[[${board.boardNum}]]</td>
+            <td>
+              <a th:href="@{/boardDetail(boardNum=${board.boardNum})}">
+                [[${board.title}]]
+              </a>
+            </td>
+            <td>[[${board.writer}]]</td>
+            <td>[[${board.readCnt}]]</td>
+          </tr>
+        </th:block>
+      </table>
+    </div>
+    <div class="btn-div">
+      <input type="button" value="글쓰기" onclick="goBoardWriteForm()">
+    </div>
+  </div>
+
+  <script>
+    function goBoardWriteForm(){
+      location.href = `/writeForm`;
+    }
+
+  </script>
+</body>
+</html>
