@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+  <div class="container">
+    <div class="table-div">
+      <table class="list-table">
+        <colgroup>
+          <col width="25%">
+          <col width="25%">
+          <col width="25%">
+          <col width="25%">
+        </colgroup>
+        <tr>
+          <td>글번호</td>
+          <td>[[${boardDB.boardNum}]]</td>
+          <td>조회수</td>
+          <td>[[${boardDB.readCnt}]]</td>
+        </tr>
+        <tr>
+          <td>작성일</td>
+          <td>[[${boardDB.date}]]</td>
+          <td>작성자</td>
+          <td>[[${boardDB.writer}]]</td>
+        </tr>
+        <tr>
+          <td>제목</td>
+          <td colspan="3">[[${boardDB.title}]]</td>
+        </tr>
+        <tr>
+          <td>내용</td>
+          <td colspan="3">[[${boardDB.content}]]</td>
+        </tr>
+      </table>
+    </div>
+    <div class="btn-div">
+      <input type="button" value="목록가기" onclick="goBack()">
+      <input type="button" value="수정" th:onclick="goUpdate([[${boardDB.boardNum}]])">
+      <input type="button" value="삭제" th:onclick="goDelete([[${boardDB.boardNum}]])">
+    </div>
+  </div>
+  <script>
+    function goBack(){
+      location.href = `/list`;
+    }
+
+    function goUpdate(boardNum){
+      location.href = `/update_form?boardNum=${boardNum}`;
+    }
+
+    function goDelete(boardNum){
+      const result = confirm('정말 삭제할꺼야?');
+      if(result){
+        location.href = `/delete?boardNum=${boardNum}`;
+      }
+    }
+  </script>
+</body>
+</html>

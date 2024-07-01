@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <form action="/list" method="post">
+        <div class="select-div">
+          <select name="searchKeyword">
+            <option value="TITLE">제목</option>
+            <option value="WRITER">작성자</option>
+          </select>
+          <input type="text" class="search" name="searchValue">
+          <input type="submit" value="검색" class="join_btn">
+        </div>
+      </form>
+    </div>
+    <div class="table-div">
+      <table class="list-table">
+        <colgroup>
+          <col width="20%">
+          <col width="30%">
+          <col width="15%">
+          <col width="*">
+          <col width="15%">
+        </colgroup>
+        <tr class="title"> 
+          <td>글번호</td>
+          <td>제목</td>
+          <td>작성자</td>
+          <td>작성일</td>
+          <td>조회수</td>
+        </tr>
+        <th:block th:if="${#lists.isEmpty(boardList)}">
+          <tr>
+            <td colspan="5">
+              등록된 게시글이 없습니다.
+            </td>
+          </tr>
+        </th:block>
+        <th:block th:unless="${#lists.isEmpty(boardList)}">
+          <tr th:each="board : ${boardList}">
+            <td>[[${board.boardNum}]]</td>
+            <td>
+              <a th:href="@{/boardDetail(boardNum = ${board.boardNum})}">[[${board.title}]]</a>
+            </td>
+            <td>[[${board.writer}]]</td>
+            <td>[[${board.date}]]</td>
+            <td>[[${board.readCnt}]]</td>
+          </tr>
+        </th:block>
+      </table>
+    </div>
+    <div class="btn-div">
+      <input type="button" value="글쓰기" onclick="goWriteForm()">
+    </div>
+  </div>
+
+  <script>
+    function goWriteForm(){
+      location.href = `/writeForm`;
+    }
+  </script>
+</body>
+</html>

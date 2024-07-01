@@ -72,4 +72,9 @@ public class BoardController {
         boardService.update(board);
         return "redirect:/boardDetail?boardNum=" + boardNum;
     }
+
+    @GetMapping("/delete")
+    public String delete(){
+        return "redirect:/list";
+    }
 }

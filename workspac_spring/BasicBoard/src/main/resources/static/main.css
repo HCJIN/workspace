@@ -1,0 +1,95 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a{
+  color: #000;
+  text-decoration: none;
+}
+
+.container{
+  width: 800px;
+  margin: 30px auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.table-div{
+  width: 100%;
+}
+
+.list-table{
+  width: 100%;
+}
+
+.list-table td{
+  background-color: rgba(210, 242, 255, 0.692);
+  padding: 5px;
+}
+
+.list-table td input{
+  width: 100%;
+}
+
+.list-table td textarea{
+  width: 100%;
+}
+
+textarea{
+  text-align: left;
+}
+
+.header{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px
+}
+
+.select-div{
+  display: flex;
+  align-items: center;
+}
+
+.title{
+  color: #fff;
+  background-color: skyblue;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 8px;
+}
+
+.title > td{
+  border: 1px solid #fff;
+}
+
+.btn-div{
+  margin-top: 20px;
+}
+
+.btn-div > input{
+  padding: 5px;
+  background-color: rgb(135, 206, 235);
+  border: 1px solid rgba(125, 196, 225, .8);
+  color: aliceblue;
+  border-radius: 7px;
+}
+
+.btn-div > input:hover{
+  font-weight: 700;
+  background-color: rgb(125, 196, 225);
+  cursor: pointer;
+}
+
+.join_btn{
+  padding: 5px;
+  background-color: rgb(135, 206, 235);
+  border: 1px solid rgba(125, 196, 225, .8);
+  color: aliceblue;
+  border-radius: 7px;
+}
+
+.search{
+  margin: 0 5px;
+}

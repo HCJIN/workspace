@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+  <form action="/update" method="post">
+    <div class="container">
+      <div class="table-div">
+        <table class="list-table">
+          <input type="hidden" name="boardNum" th:value="${boardDB.boardNum}">
+          <input type="hidden" name="readCnt" th:value="${boardDB.readCnt}">
+          <input type="hidden" name="date" th:value="${boardDB.date}">
+          <input type="hidden" name="writer" th:value="${boardDB.writer}">
+          <tr>
+            <td>글번호</td>
+            <td>[[${boardDB.boardNum}]]</td>
+            <td>조회수</td>
+            <td>[[${boardDB.readCnt}]]</td>
+          </tr>
+          <tr>
+            <td>작성일</td>
+            <td>[[${boardDB.date}]]</td>
+            <td>작성자</td>
+            <td>[[${boardDB.writer}]]</td>
+          </tr>
+          <tr>
+            <td>제목</td>
+            <td colspan="3">
+              <input type="text" name="title" th:value="${boardDB.title}">
+            </td>
+          </tr>
+          <tr>
+            <td>내용</td>
+            <td colspan="3">
+              <textarea name="content"rows="5" cols="60">[[${boardDB.content}]]</textarea>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="btn-div">
+        <input type="button" value="뒤로가기" th:onclick="goBack([[${boardDB.boardNum}]])">
+        <input type="submit" value="수정">
+      </div>
+    </div>
+  </form>
+  <script>
+    function goBack(boardNum){
+      location.href = `/boardDetail?boardNum=${boardNum}`;
+    }
+  </script>
+</body>
+</html>
