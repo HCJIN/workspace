@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배열다루기</title>
+</head>
+<body>
+
+  <h2>배열 다루기</h2>
+
+
+
+  <script>
+    //배열(리스트) 생성
+    const arr = [];
+
+    //배열을 데이터 저장 1번 방식
+    arr[0] = 5;
+    arr[1] = 3;
+    arr[2] = '이것도됨';
+    arr[3] = '이건됨';
+    arr[4] = 2+1;
+    // console.log(arr);
+
+    //배열에 데이터 저장 2번 방식 + 자료형이 달라도 저장 가능
+    arr.push(1,2,3,4,5,'나도됨', 3.2);
+    // console.log(arr);
+
+    // 일반 반복문
+    // for(let i = 0; i < arr.length; i++){
+    //   console.log(arr[i]);
+    // }
+
+    //for-each 첫번째
+    // for(const e of arr){
+    //   console.log(e);
+    // }
+
+    //for-each 두번째 (추천)
+    //첫번째 매개변수 : 반복될 데이터에서 하나씩 뺀 데이터
+    //두번째 매개변수 : 반복되고 있는 index (횟수)
+    arr.forEach(function(element, index){
+      console.log(`element=${element} / index=${index}`);
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

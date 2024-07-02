@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>객체와 배열 다루기</h2>
+  <script>
+    const movie_info = [
+    {
+      movie_title : '영화1',
+      theater : ['울산점', '부산점', '서울점'],
+      grade : [4.0, 5.0, 3.2]
+    }, 
+    {
+      movie_title : '영화2',
+      theater : ['대구점', '부산점', '서울점'],
+      grade : [3.3, 4.0, 4.2]
+    }, 
+    {
+      movie_title : '영화3',
+      theater : ['울산점', '대전점', '제주점'],
+      grade : [2.5, 4.5, 4.3]
+    }
+  ];
+
+  //영화 중에서 평균 평점이 가장 높은 영화의 평균 평점 출력
+  // let max_grade = 0;
+  // movie_info.forEach(function(movie, i){
+  //   //각 영화의 평점 배열의 요소의 합을 구함
+  //   let sum = 0
+  //   for(const grade of movie.grade){
+  //     sum = sum + grade;
+  //   }
+  //   const avg = sum / movie.grade.length;
+
+  //   if (max_grade < avg){
+  //     max_grade = avg;
+  //   }
+  // });
+  // console.log(max_grade);
+
+  //영화 제목이 영화2인 영화를 제외한 나머지 영화의 모든 상영관명을 배열에 저장
+  const arr = [];
+  movie_info.forEach(function(movie){
+    if(movie.movie_title != '영화2'){
+      for(const each of movie.theater){
+        arr.push(each);
+      }
+    }
+  })
+  console.log(arr);
+
+
+
+
+
+  </script>
+</body>
+</html>

@@ -13,6 +13,7 @@
     </resultMap>
 
     <select id="select" resultMap="board">
+        <!-- 빈 값을 채우기 위해 가져온 VO 객체에서 getter 를 호출하여 빈 값 채움 -->
         SELECT BOARD_NUM
             , TITLE
             , WRITER
@@ -52,6 +53,7 @@
         WHERE BOARD_NUM = #{boardNum};
     </select>
 
+    <!-- 게시글 수정 -->
     <update id="update">
         UPDATE basic_board
         SET
@@ -60,11 +62,13 @@
         WHERE BOARD_NUM = #{boardNum}
     </update>
 
+    <!-- 게시글 삭제 -->
     <delete id="delete">
         DELETE FROM basic_board
         WHERE BOARD_NUM = #{boardNum}
     </delete>
 
+    <!-- 조회수 증가 -->
     <update id="update2">
         UPDATE basic_board
         SET

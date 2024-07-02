@@ -1,3 +1,12 @@
+a{
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover{
+  color: orange;
+}
+
 .container{
   width: 100%;
   margin: 0 auto;
@@ -203,3 +212,5 @@
 .footerTxt > span{
   color: orange;
 }
+
+/* footer_end */

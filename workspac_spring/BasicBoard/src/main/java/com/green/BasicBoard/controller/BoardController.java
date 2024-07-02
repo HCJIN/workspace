@@ -50,9 +50,9 @@ public class BoardController {
     // 게시글 제목 입력시 상세페이지 이동
     @GetMapping("/boardDetail")
     public String boardDetail(BoardVO boardVO, Model model){
+        boardService.update2(boardVO.getBoardNum());
         BoardVO board = boardService.detail(boardVO.getBoardNum());
         model.addAttribute("boardDB",board);
-        boardService.update2(boardVO.getBoardNum());
         return "board_detail";
     }
 
