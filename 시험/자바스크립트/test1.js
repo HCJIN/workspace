@@ -28,6 +28,11 @@ const item_list = [
 ];
 
 //1. '자바마켓'에서 팔고 있는 상품들의 상품명과 가격을 각각 출력하여라.
+item_list.forEach(function(element){
+  console.log(element.item_name);
+  console.log(element.price);
+  console.log('---------------')
+});
 
 
 //2. 시험 당일 공개

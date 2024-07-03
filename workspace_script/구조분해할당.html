@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>구조분해할당(리액트에서 사용 / 배열과 객체에 사용하는 문법)</h2>
+  <script>
+    //-------- 배열에서의 구조분해할당 ----------
+
+    //배열에 저장된 값을 받아오는 일반적인 방법
+    const arr1 = [1, 2, 3];
+    const a = arr1[0];
+    const b = arr1[1];
+    console.log(`${typeof(arr1)}`);
+    console.log(`${arr1}`);
+    console.log(arr1);
+
+    //배열에 저장된 값을 구조분해할당 문법으로 받아오기
+    const arr2 = [1, 2, 3];
+    const [a1, b1, c1] = arr2; //a1 = 1, b1 = 2, c1 = 3
+    console.log(` a1 = ${a1} \n b1 = ${b1} \n c1 = ${c1}`)
+
+    //생성하는 변수의 개수가 다른 경우
+    const arr3 = [1, 2, 3];
+    const [a2, b2] = arr3;
+    console.log(` a2 = ${a2} \n b2 = ${b2}`)
+    const [a3, b3, c3, d4] = arr3;
+    console.log(`d4 = ${d4}`);
+
+    //-------- 객체에서의 구조분해할당 ----------
+
+    const board = {
+    // key : value
+      boardNum : 1,
+      title : '게시글1',
+      readCnt : 5
+    };
+
+    //객체 정보 출력
+    console.log(board);
+    console.log(board.title);
+    console.log(board['title']);
+
+    //객체 안의 데이터 변경
+    board.title = '안녕';
+    board['readCnt'] = 3;
+    console.log(board.title);
+    console.log(board.readCnt);
+
+    const member = {
+      name : 'kim',
+      age : 20,
+      tel : '010-1111-2222'
+    };
+
+    //객체의 데이터를 변수에 저장하는 일반적인 방법
+    const n1 = member.name;
+    console.log(n1);
+    const t1 = member.tel;
+    console.log(typeof(t1));
+      
+    //객체의 구조분해할당
+    //객체의 구조분해할당을 위해 만드는 변수는 객체의 key값과 일치
+    const {name, age, tel} = member;
+    console.log(name, age, tel);
+
+    const {nn, aa, tt} = member; //key 불일치! 데이터 안받아옴
+    console.log(nn, aa, tt); 
+
+    const student = {
+      stuNum : 1,
+      'korScore' : 90,
+      engScore : 80
+    };
+
+    // const korScore = 50; 이렇게하면 아래 값이랑 중복으로 인하여 오류!!!
+    const {stuNum, korScore, mathScore} = student;
+    console.log(mathScore);
+
+    //객체의 구조분해할당 문법에서 변수명을 변경하는 문법
+    const {stuNum : num, korScore : kor, engScore : eng} = student;
+    console.log(num, kor, eng);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

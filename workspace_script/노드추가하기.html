@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button type="button" onclick="addBtn()">클릭하면 버튼을 추가해요~</button>
+
+  <div class="btn-div">
+    <button type="button">원래있던 버튼!!</button>
+  </div>
+  <script>
+    function addBtn(){
+      //1. 추가할 태그를 문자열로 생성
+      const str = '<button type="button">버튼!!!</button>'
+
+      //2. 1번에서 만든 태그를 추가할 태그를 선택
+      const btnDiv = document.querySelector('.btn-div');
+
+      //3. 태그 추가
+      //첫번째 매개변수 : 추가할 위치
+      //두번째 매개변수 : 추가할 태그 
+      btnDiv.insertAdjacentHTML("beforeend",str);
+
+    }
+
+
+    // --- 태그 추가하기 --- 
+    
+
+
+  </script>
+</body>
+</html>

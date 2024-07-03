@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .d{
+      border: 1px solid #000;
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      margin: 8px;
+      text-align: center;
+      line-height: 80px;
+      background-color: beige;
+      color: skyblue;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>노드추가하기 연습 2</h2>
+
+  <input type="text" id="java">
+  <input type="button" value="확인" onclick="goDiv()">
+
+  <div id="result"></div>
+
+  <script>
+    function goDiv(){
+      //추가할 태그가 들어갈 태그 선택
+      const divTag = document.querySelector('#result');
+      //input 태그에 입력한숫자
+      const cntNum = document.querySelector('#java');
+      //추가하기전 태그를 초기화
+      divTag.innerHTML = '';
+      //태그안에 적용될 카운트
+      let cnt = 0;
+      //들어갈 내용의 태그
+      let sum = '';
+      //1부터 input에 입력한 값까지 반복
+      for(let i = 1; i <= Number(cntNum.value); i++){
+        sum += `<div class="d">${cnt + i}열</div>`;
+      }
+      //선택한 태그에 들어갈 내용의 태그 삽입
+      divTag.insertAdjacentHTML('beforeend',sum);
+    }
+
+
+  </script>
+</body>
+</html>

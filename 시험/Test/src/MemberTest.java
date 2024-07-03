@@ -8,6 +8,12 @@ public class MemberTest {
 
         System.out.println(mem.isLogin("java","abcd1234"));
 
-
     }
+
+
+
+
+
 }
+
+

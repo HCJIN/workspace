@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>선택한 태그에서 정보가져오기</h2>
+  <div>
+    <input type="text" name="이름" class="input1" placeholder="이름입력">
+  </div>
+
+  <div id="d1">두번째 div</div>
+
+  <table border="1">
+    <tr>
+      <td>국어점수</td>
+      <td>영어점수</td>
+    </tr>
+    <tr class="aaa">
+      <td>70</td>
+      <td>80</td>
+    </tr>
+  </table>
+
+  <span></span>
+
+  <script>
+    //선택한 태그의 속성값 받아오기
+    //input 태그 선택
+    const inputTag = document.querySelector('input')
+    console.log(inputTag.type);
+    console.log(inputTag.name);
+    console.log(inputTag.placeholder);
+    console.log(inputTag.className);
+
+    //선택한 태그 속성값 변경
+    inputTag.name = '이름아님'
+    console.log(inputTag.name);
+    inputTag.placeholder = '이름을 입력하시오.'
+    console.log(inputTag.placeholder);
+
+    const d1 = document.querySelector('#d1');
+    console.log(d1.textContent);
+    
+    // aaa 클래스 안에 있는 td들의 점수들의 합 구하기 1번
+    const score = document.querySelectorAll('.aaa');
+    let sum = 0;
+    score.forEach(element => {
+      const num1 = element.firstElementChild.textContent;
+      const num2 = element.lastElementChild.textContent;
+      sum = Number(num1) + Number(num2);
+    });
+    console.log(sum)
+
+    // aaa 클래스 안에 있는 td들의 점수들의 합 구하기 2번
+    const num3 = document.querySelector('.aaa > td:first-child').textContent;
+    const num4 = document.querySelector('.aaa > td:last-child').textContent;
+
+    const result = Number(num3) + Number(num4);
+    console.log(result);
+
+    const span = document.querySelector('span');
+    span.textContent = result
+    console.log(span)
+
+
+  </script>
+</body>
+</html>

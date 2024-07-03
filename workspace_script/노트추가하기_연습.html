@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    tr, td{
+      height: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <input type="button" value="행추가" onclick="goRow()">
+  <input type="button" value="내용가져오기" onclick="goInsert()">
+  <input type="button" value="제목줄을 제외한 모든행 삭제" onclick="goDelete()" >
+
+  <table border="1" style="width: 500px; text-align: center;">
+    <thead>
+      <tr>
+        <td>이름</td>
+        <td>나이</td>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <div>
+    <p>내용들</p>
+    <span></span>
+  </div>
+  <script>
+    function goRow(){
+      //1. 추가할 태그를 문자열로 생성
+      const row = `
+        <tr class="trC">
+          <td>  
+            <input type="text">
+          </td>
+          <td>  
+            <input type="text">
+            <input type="button" value="삭제" onclick="del(this)">
+          </td>
+        </tr>`
+
+      //2. 1번에서 만든 태그를 추가할 태그를 선택
+      const tr = document.querySelector('tbody');
+
+      //3. 태그 추가
+      //첫번째 매개변수 : 추가할 위치
+      //두번째 매개변수 : 추가할 태그 
+      tr.insertAdjacentHTML("afterbegin",row);
+    }
+
+    function goInsert(){
+      const span = document.querySelector('span');
+      const content = document.querySelectorAll('.trC input');
+      content.forEach(element => {
+        span.textContent = element.value;
+        console.log(element.value)
+      });
+    }
+
+    function goDelete(){
+      const tbodyTag = document.querySelector('table > tbody');
+      tbodyTag.innerHTML = ''; //선택한 태그 안에 내용을 공백으로 변경
+      // tbodyTag.remove('tr'); 
+      //선택한 태그를 삭제 
+      //삭제후 새로 추가가 안됨... 선택된 태그 자체를 삭제
+    }
+
+    function del(selectedTag){
+      //매개변수로 전달되는 this : 현재 이벤트가 발생한 태그
+
+      //내가 클릭한 삭제 버튼을 감싸고 있는 가장 가까운 tr 태그 찾기
+      selectedTag.closest('tr').remove();
+    }
+
+
+
+
+  </script>
+</body>
+</html>
