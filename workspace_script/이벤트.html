@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 400px;
+      height: 400px;
+      background-color: red;
+      color: #fff;
+      transition: all 1s;
+      margin: 20px;
+      
+    }
+
+    .in{
+      background-color: bisque;
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+  </div>
+
+  <div class="box" id="d1">
+    div태그
+  </div>
+  <input type="text">
+
+
+  <script>
+    //이벤트를 사용할 태그를 선택
+    const divTag = document.querySelector('#d1');
+    
+    //선택한 태그에 이벤트 추가
+    divTag.addEventListener('click', function(){
+      alert(1);
+    });
+
+    divTag.addEventListener('mousemove', function(){
+      console.log(1);
+    });
+
+    const input = document.querySelector('input');
+
+    //event : event의 모든 정보가 담긴 데이터
+    input.addEventListener('keyup',function(event){
+      //target : 선택된 이벤트가 발생하는 태그
+      console.log(event.target.value);
+    });
+
+    const box = document.querySelector('.box');
+
+      box.addEventListener('click', function(){
+        box.classList.toggle('in')
+      })
+
+
+
+  </script>
+
+  
+</body>
+</html>

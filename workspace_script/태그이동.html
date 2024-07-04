@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>태그이동</title>
+</head>
+<body>
+  <h2>부모태그 선택, 자식태그 선택, 형제태그 선택</h2>
+
+  <table border="1" style="text-align: center; width: 300px;">
+    <thead>
+      <tr>
+        <td id="stuNum">학번</td>
+        <td>이름</td>
+        <td>나이</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="firstRow">
+        <td>1</td>
+        <td>홍길동1</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td id="name">홍길동2</td>
+        <td>20</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <script>
+    const stuNumTd = document.querySelector('#stuNum');
+    //선택한 태그의 부모태그를 선택
+    const trTag = stuNumTd.parentElement;
+    console.log(trTag);
+
+    const firstRow = document.querySelector('#firstRow');
+    // 선택한 태그에서 자식 태그 찾아가기
+    const tds = [...firstRow.children];
+    tds.forEach(element => {
+      console.log(element);
+    });
+
+    for(let i = 0; i < tds.length; i++){
+      console.log(tds[i]);
+    }
+
+    const nameTd = document.querySelector('#name');
+    //다음 형제 태그 찾기
+    const next = nameTd.nextElementSibling;
+    //이전 형제 태그 찾기
+    const previous = nameTd.previousElementSibling;
+    console.log('다음 형제 태그 : ' , next);
+    console.log('이전 형제 태그 : ' , previous);
+
+    
+
+
+
+
+  </script>
+</body>
+</html>

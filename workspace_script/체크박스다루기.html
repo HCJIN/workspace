@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <table border="1">
+    <thead>
+      <tr>
+        <td><input type="checkbox" onclick="checkAll()" id="chkAll"></td>
+        <td style="text-align: center; font-weight: bold;">주문</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="checkbox" class="chk"></td>
+        <td>샤프</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="chk"></td>
+        <td>지우개</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="chk" class="chk"></td>
+        <td>화이트</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button type="button" onclick="check()">체크하기</button>
+  <button type="button" id="btn">체크해제하기</button>
+
+  <script>
+    const input = document.querySelectorAll('input');
+    const chkAll = document.querySelector('#chkAll');
+    const classChk = document.querySelectorAll('.chk');
+    const chk = document.querySelector('#chk');
+    const btn = document.querySelector('#btn');
+    
+    function check(){
+      chk.checked = true;
+    }
+
+    btn.addEventListener('click',function(event){
+      chk.checked = false;
+    });
+
+    //제목줄의 체크박스가 체크되면 전체 체크박스 체크
+    //제목줄의 체크박스가 체크해제되면 전체 체크박스 체크해제
+    function checkAll(){
+      //제목줄의 체크박스의 체크 여부에 따른 조건문
+      //체크가 되었을 때
+      if(chkAll.checked){
+        input.forEach(function(element){
+          element.checked = true;
+        });
+
+        // 또 다른 for 문
+        // for(const chk of classChk){
+        //   che.checked = true;
+        // }
+      }
+      //체크가 되지 않았을 때
+      else{
+        input.forEach(function(element){
+          element.checked = false;
+        });
+
+        // 또 다른 for 문
+        // for(const chk of classChk){
+        //   che.checked = false;
+        // }
+      }
+    }
+
+
+  </script>
+</body>
+</html>

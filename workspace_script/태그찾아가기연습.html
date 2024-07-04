@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  <div id="first" class="java">
+    <div>
+      <div>떡볶이</div>
+    </div>
+    <div>
+      <div>김밥</div>
+      <div>순대</div>
+    </div>
+    <div>
+      <div id="second">튀김</div>
+    </div>
+  </div>  
+
+  <script>
+    const menu = document.querySelector('#first>div:nth-child(2)');
+    console.log(menu.textContent)
+    
+    //--------------------------------------------------------
+
+    const menu2 = document.querySelector('#first');
+    const div = menu2.children[1].children;
+    for(let i = 0; i < div.length; i ++){
+      console.log(div[i].textContent);
+    }
+
+    //--------------------------------------------------------
+
+    const menu3 = document.querySelector('#first');
+    const div2 = menu3.children[1];
+    console.log(div2.textContent);
+
+    //--------------------------------------------------------
+
+    // 시작에서부터 id가 first인 태그의 class 속성값을 출력
+    const second = document.querySelector('#second');
+    const parent = second.parentElement.parentElement.className;
+    console.log(parent);
+
+    //선택한 태그를 감싸는 가장 가까운 태그를 찾아감
+    console.log(second.closest('#first'));
+
+  </script>
+</body>
+</html>
