@@ -55,22 +55,13 @@ function App() {
       <button type='button' onClick={ti}>제목변경</button>
 
       {/* 블로그 글 목록 */}
-      {
-        titles.map((title, i) => {
-          return(
-            <Board title={title} cnt={likeCnt[i]} onClick={()=>{
-              const cnt = [...likeCnt];
-              cnt[i] = cnt[i] + 1;
-              setLikeCnt(cnt);
-            }} key={i}/>
-          );
-        })
-      }
+      <Board title={titles} setTitles={setTitles} cnt={likeCnt} setLikeCnt={setLikeCnt} ></Board>
 
       {/* 상세보기 */}
       {
         isShow ? <Detail/> : null
       }
+      <Add title={titles} setTitles={setTitles} cnt={likeCnt} setLikeCnt={setLikeCnt}></Add>
 
     </div>
   );
@@ -91,18 +82,57 @@ function Detail(){
 
 //블로그 글 하나에 대한 컴포넌트
 function Board(props){
-  console.log(props)
+  
+  let cnt = [...props.cnt];
+
   return(
     <div className='list'>
-      <h4>
-        {props.title}
-        <span onClick={props.onClick}> 👍 </span>
-        {props.cnt}
-      </h4>
-      <p>2024-07-04</p>
+        {
+          props.title.map((item, i)=>{
+            return(
+              <div key={i}>
+                <span>{item}</span>
+                <span onClick={()=>{
+                  cnt[i] = cnt[i] + 1;
+                  props.setLikeCnt(cnt);
+                }}>👍</span>
+                {props.cnt[i]}
+                <button type='button' className='btn' onClick={()=>{
+                  props.title.splice(i,1);
+                  props.cnt.splice(i,1);
+                  props.setTitles([...props.title])
+                  props.setLikeCnt([...props.cnt])
+                }}>삭제</button>
+                <p>2024-07-04</p>
+              </div>
+            );
+          })
+        }
     </div>
   );
 };
+
+function Add(props){
+
+  let [text, setText] = useState('');
+
+  return(
+    <div className='add'>
+      <input type='text' className="input" onChange={(e) => {
+        text = e.target.value;
+        setText(text);
+      }}></input>
+      <button type='button' onClick={() => {
+        props.title.push(text);
+        props.setTitles([...props.title]);
+        props.cnt.push(0);
+        props.setLikeCnt([...props.cnt]);
+      }}>추가</button>
+    </div>
+
+
+  );
+}
 
 //블로그 글 하나에 대한 컴포넌트
 //함수명의 첫글자가 대문자면 컴포넌트를 의미함

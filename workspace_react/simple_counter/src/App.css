@@ -37,32 +37,32 @@
   }
 }
 
-.blog-nav{
-  display: flex;
-  background-color: #000;
-  color: #fff;
-  padding-left: 20px;
-}
-
-.list{
+.viewer{
+  width: 700px;
+  background-color: #eeeeee;
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 5px 0px 10px 30px;
   text-align: left;
-  padding-left: 20px;
-  border-bottom: 1px solid gray;
+  font-size: 18px;
 }
 
-.list span{
+.controller{
+  width: 700px;
+  background-color: #eeeeee;
+  border-radius: 10px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 18px;
+  padding: 10px 0px 10px 30px;
+}
+
+.controller button{
+  margin-right: 5px;
+  width: 80px;
+  background-color: skyblue;
+  padding: 6px;
+  border: none;
   cursor: pointer;
 }
-
-.detail{
-  background-color: #eeeeee;
-  text-align: left;
-  padding: 20px;
-  margin-top: 10px;
-}
-
-.btn{
-  margin-left: 10px;
-}
-
-

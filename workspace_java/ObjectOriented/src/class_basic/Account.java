@@ -40,7 +40,7 @@ public class Account {
     //모든 변수의 값을 초기화하는 메소드
     public void setAccount(String accNumber, String owner, int money){
         //이 클래스에서 선언한 accNumber (this 설명)
-        //this가 안붙으면 제일 가까운데 붙은걸 인식
+        //this 가 안붙으면 제일 가까운데 붙은걸 인식
         this.accNumber = accNumber;
         this.owner = owner;
         this.money = money;
