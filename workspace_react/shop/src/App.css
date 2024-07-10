@@ -1,0 +1,47 @@
+.header{
+  background-color: #000;
+  width: 100%;
+  color: #fff;
+  padding: 10px;
+}
+
+.banner{
+  width: 100%;
+  height: 300px;
+}
+
+.banner img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.img_box{
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.content{
+  width: 150px;
+  text-align: center;
+}
+
+.content img{
+  width: 100%;
+}
+
+.content h3{
+  margin: 0;
+}
+
+.content p{
+  margin: 6px;
+}
+

@@ -23,7 +23,7 @@ public class 연산자_1 {
         int x = 11;
         boolean r1 = x > 5 && x <= 10;
         boolean r2 = x > 5 || x <= 10;
-        System.out.println(5 < x  &&  x<= 10);
+        System.out.println(5 < x  &&  x <= 10);
         System.out.println(r2);
 
 

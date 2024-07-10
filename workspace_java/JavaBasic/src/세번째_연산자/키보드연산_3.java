@@ -7,9 +7,9 @@ public class 키보드연산_3 {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("당신의 이름과 나이를 입력해주세요~");
-        System.out.println("이름 : ");
+        System.out.print("이름 : ");
         String name = sc.next();
-        System.out.println("나이 : ");
+        System.out.print("나이 : ");
         int age = sc.nextInt();
         System.out.println("당신의 이름은 " + name);
         System.out.println("당신의 나이는 " + age + "로 확인되었습니다.");

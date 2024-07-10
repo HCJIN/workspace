@@ -1,0 +1,6 @@
+부트스트랩 아이콘
+<i class="bi bi-search"></i>
+<i class="fa fa-pencil"></i>
+<i class="fa fa-bullhorn"></i>
+<i class="fa fa-bell"></i>
+<i class="fa fa-heart"></i>
