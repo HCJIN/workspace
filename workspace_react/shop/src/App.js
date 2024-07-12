@@ -4,51 +4,31 @@ import { useState } from 'react';
 import data from './data';
 import ItemList from './ItemList';
 import axios from 'axios';
+import { Link, Route, Routes } from 'react-router-dom';
+import Detail from './Detail';
 
 function App() {
 
-  // const item_list = data;
-  let item_list = [];
-
-  // axios.get('/test1')
-  //     .then((response)=>{
-  //       console.log(response.data)
-  //     });
-
-  // axios.get('/test2')
-  //     .then((response)=>{
-  //       console.log(response.data)
-  //     })
-
-  // let arr = [];
-  // axios.get('/test3')
-  //     .then((response)=>{
-  //       // console.log(response.data)
-  //       arr = response.data
-  //       console.log(arr);
-  //     })
-
-  axios.get('/test4')
-      .then((response)=>{
-        console.log(response.data)
-        item_list = response.data;
-      })
-
-  // axios.get('/test5')
-  //     .then((response)=>{
-  //       console.log(response.data)
-  //     })
-
+  const item_list = data;
 
   return (
     <div className="App">
       <div className='header'>
-        Book Shop
+        <Link to="/">Book Shop</Link>
+        <Link to="/list">상품목록</Link>
+        <Link to="/detail">상품상세</Link>
       </div>
       <div className='banner'>
         <img src={process.env.PUBLIC_URL + '/header.jpg'}/>
       </div>
-      <ItemList item_list={item_list}/>
+
+      {/* 이동할 수 있는 페이지의 url들 */}
+      <Routes>
+        <Route path='/' element={<div>메인페이지</div>}/>
+        <Route path='/list' element={<ItemList item_list={item_list}/>}/>
+        <Route path='/detail/:id' element={<Detail item={item_list}/>}/>
+        <Route path='*' element={<div>잘못된 페이지입니다.</div>}/>
+      </Routes>
 
       <Test name={'홍길동'} age={20} />
 
@@ -64,7 +44,7 @@ const Test = ({name, age}) => {
   // 매개변수로 {name, age}로 받았을때랑 동일
 
   return(
-    <div>sbs</div>
+    <div></div>
   )
 }
 

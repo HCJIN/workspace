@@ -1,0 +1,12 @@
+.content > td:last-child{
+  text-align: left;
+}
+
+.content:last-child{
+  height: 100px;
+  vertical-align: top;
+}
+
+.btn_box > button:first-child{
+  margin-right: 10px;
+}

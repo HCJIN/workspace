@@ -1,3 +1,4 @@
+import Detail from "./Detail";
 import Item from "./Item";
 
 
@@ -7,7 +8,9 @@ const ItemList = ({item_list}) => {
       {
         item_list.map((item, i)=>{
           return(
-            <Item item={item} key={i}></Item>
+            <div key={i}>
+              <Item item={item}></Item>
+            </div>
           )
         })
       }

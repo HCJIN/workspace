@@ -1,0 +1,41 @@
+.container{
+  width: 800px;
+  text-align: center;
+  margin: 30px auto;
+}
+
+.container > table{
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgb(145, 202, 225);
+}
+
+tr,td{
+  padding: 15px;
+}
+
+.container tr{
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+input{
+  width: 100%;
+  height: 30px;
+}
+
+tr, td{
+  padding: 10px;
+  border: 1px solid #000;
+}
+
+button{
+  padding: 5px 15px 5px 15px;
+  background-color: rgb(145, 202, 225);
+  border: 1px solid rgba(145, 202, 225, .6);
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+  margin: 30px auto;
+}

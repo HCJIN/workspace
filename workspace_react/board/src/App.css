@@ -1,0 +1,38 @@
+.board_list{
+  width: 800px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.board_list > table{
+  width: 100%;
+  border: 1px solid #000;
+  border-collapse: collapse;
+  background-color: rgb(175, 232, 255);
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+table > thead{
+  background-color: rgb(145, 202, 225);
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-bottom: 3px solid #000;
+  border-bottom-style: double;
+}
+
+tr, td{
+  padding: 10px;
+  border: 1px solid #000;
+}
+
+button{
+  padding: 5px 15px 5px 15px;
+  background-color: rgb(145, 202, 225);
+  border: 1px solid rgba(145, 202, 225, .6);
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+  margin-right: 0 auto;
+}

@@ -2,7 +2,7 @@
 const data = [
   {
     itemNum : 1,
-    itemName : "",
+    itemName : "처음 만나는 자바",
     price : 20000,
     intro : '자바 초보자를 위한 책',
     imgName : 'book_1.jpg'
