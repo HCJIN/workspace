@@ -4,7 +4,7 @@ let data = [
     title : '첫 게시글',
     content : '첫번째 게시글 입니다.',
     writer : '홍길동',
-    createDate : '2024-07-11'
+    createDate : '2024-07-11',
   },
   {
     boardNum : 2,

@@ -1,6 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const Main = () => {
+const Main = ({list,setList}) => {
+  console.log(list)
+
+  const navigate = useNavigate();
+
   return (
     <div className='table-div'>
       <table className='list-table'>
@@ -14,7 +19,24 @@ const Main = () => {
             <td>평균</td>
           </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+          {
+            list.map((e, i) => {
+              return(
+                <tr key={i}>
+                  <td>{e.stuNum}</td>
+                  <td onClick={()=>{
+                    navigate(`/detail/${e.stuNum}`)
+                  }}>{e.stuName}</td>
+                  <td>{e.koScore}</td>
+                  <td>{e.enScore}</td>
+                  <td>{e.mathScore}</td>
+                  <td>{e.avg}</td>
+                </tr>
+              )
+            })
+          }
+        </tbody>
       </table>
     </div>
   )

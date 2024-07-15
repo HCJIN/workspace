@@ -54,7 +54,17 @@ const Detail = ({board_list,setBoard_list})=>{
         <button type="button" onClick={()=>{
           navigate('/')
         }}>뒤로가기</button>
-        <button type="button" onClick={() => goDel(board.boardNum)}>삭제</button>
+        <button type="button" onClick={() => {goDel(board.boardNum)}}>삭제</button>
+        {/* 강사님 풀이 
+        <button type="button" onClick={(e) => {
+          board_list.forEach((board, i)=>{
+            if(board.boardNum == boardNum){
+              board_list.splice( i , 1);
+            }
+          });        
+          navigate('/');
+          } }>삭제</button> 
+        */}
       </div>
     </div>
   )
