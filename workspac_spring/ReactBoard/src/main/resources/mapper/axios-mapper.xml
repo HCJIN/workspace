@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- 해당 파일에 모든 쿼리문을 작성 -->
-<mapper namespace="boardMapper">
+<mapper namespace="axiosMapper">
     <!-- 데이터베이스 테이블에서 조회한 데이터를 자바로 가져올 때 -->
     <!-- 어떤 자료형에 담아올지 결정 -->
 
@@ -15,35 +15,16 @@
         <result column="CREATE_DATE" property="createDate"/>
     </resultMap>
 
-    <select id="getBoardList" resultMap="board">
+    <select id="getList" resultMap="board">
         SELECT BOARD_NUM
-        , BOARD_TITLE
-        , BOARD_WRITER
-        , CREATE_DATE
-        FROM react_board;
+            ,BOARD_TITLE
+        FROM REACT_BOARD;
     </select>
 
-    <select id="getBoard" resultMap="board">
-        SELECT BOARD_NUM
-        , BOARD_TITLE
-        , BOARD_WRITER
-        , CREATE_DATE
-        , BOARD_CONTENT
-        FROM react_board
-        WHERE BOARD_NUM = #{boardNum};
-    </select>
 
-    <insert id="inBoard">
-        INSERT INTO react_board(
-            BOARD_TITLE,
-            BOARD_WRITER,
-            BOARD_CONTENT
-        ) VALUES (
-            #{boardTitle},
-            #{boardWriter},
-            #{boardContent}
-        )
-    </insert>
+
+
+
 </mapper>
 
 

@@ -3,8 +3,7 @@ package com.green.ReactBoard.controller;
 import com.green.ReactBoard.service.BoardService;
 import com.green.ReactBoard.vo.BoardVO;
 import jakarta.annotation.Resource;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,11 +19,22 @@ public class BoardController {
     @Resource(name = "boardService")
     private BoardService boardService;
 
-
     //게시글 목록 조회
     @GetMapping("/boardList")
     public List<BoardVO> getBoardList(){
         return boardService.getBoardList();
+    }
+
+    //상세보기
+    @GetMapping("/detail/{boardNum}")
+    public BoardVO detail(@PathVariable("boardNum")int boardNum){
+        return boardService.getBoard(boardNum);
+    }
+
+    @PostMapping("/writeForm")
+    public void writeForm(@RequestBody BoardVO boardVO){
+        boardService.inBoard(boardVO);
+        System.out.println(boardVO);
     }
 
 
