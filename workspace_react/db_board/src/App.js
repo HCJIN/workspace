@@ -5,6 +5,7 @@ import BoardList from './BoardList';
 import AxiosTest from './AxiosTest';
 import Detail from './Detail';
 import WriteForm from './WriteForm';
+import Join from './Join';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
 
         {/* 글쓰기 페이지 */}
         <Route path='/writeForm' element={<WriteForm />}/>
+
+        {/* 글수정 페이지 */}
+        <Route path='/join/:boardNum' element={<Join />}/>
 
       </Routes>
     </div>

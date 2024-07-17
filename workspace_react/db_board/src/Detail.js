@@ -13,7 +13,6 @@ const Detail = () => {
     axios
     .get(`/detail/${boardNum}`)
     .then((res)=>{
-      console.log(res.data)
       setBoardList(res.data);
     })
     .catch((error)=>{
@@ -22,6 +21,17 @@ const Detail = () => {
     });
   },[])
 
+  function goDelete(boardNum){
+    if(window.confirm('삭제하시겠습니까?')){
+      axios
+      .delete(`/delete/${boardNum}`)
+      .then((res)=>{
+        alert('삭제완료')
+        navigate('/');
+      })
+      .catch((error)=>{});
+    }
+  }
 
 
   return (
@@ -48,7 +58,8 @@ const Detail = () => {
       </table>
       <div className='btn-div'>
         <button type='button' onClick={()=>{navigate('/')}}>뒤로가기</button>
-        <button type='button'>삭제</button>
+        <button type='button' onClick={()=>{goDelete(boardList.boardNum)}}>삭제</button>
+        <button type='button' onClick={()=>{navigate(`/join/${boardList.boardNum}`)}}>수정</button>
       </div>
     </div>
   )

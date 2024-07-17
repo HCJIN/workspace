@@ -31,12 +31,25 @@ public class BoardController {
         return boardService.getBoard(boardNum);
     }
 
+    //글 등록
     @PostMapping("/writeForm")
     public void writeForm(@RequestBody BoardVO boardVO){
         boardService.inBoard(boardVO);
         System.out.println(boardVO);
     }
 
+    //글 삭제
+    @DeleteMapping("/delete/{boardNum}")
+    public void delete(@PathVariable("boardNum")int boardNum){
+        System.out.println(boardNum);
+        boardService.delete(boardNum);
+    }
+
+    @PostMapping("/join")
+    public void join(@RequestBody BoardVO boardVO){
+        boardService.update(boardVO);
+        System.out.println(boardVO);
+    }
 
 
 }

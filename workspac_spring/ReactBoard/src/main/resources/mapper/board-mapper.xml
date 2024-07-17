@@ -44,6 +44,21 @@
             #{boardContent}
         )
     </insert>
+
+    <delete id="delete">
+        DELETE
+        FROM react_board
+        WHERE BOARD_NUM = #{boardNum}
+    </delete>
+
+    <update id="update">
+        UPDATE react_board
+        SET
+            BOARD_TITLE = #{boardTitle}
+            , BOARD_WRITER = #{boardWriter}
+            , BOARD_CONTENT = #{boardContent}
+        WHERE BOARD_NUM = #{boardNum}
+    </update>
 </mapper>
 
 

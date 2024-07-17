@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom'
 
 const WriteForm = () => {
 
-  const [boardList, setBoardList] = useState([]);
   const navigate = useNavigate();
 
   const [board, setBoard] = useState({
@@ -20,8 +19,22 @@ const WriteForm = () => {
     });
   }
 
+  //글 등록 버튼 클릭시 실행하는 함수
   function goJoin(){
-    console.log(board)
+
+    //제목이 비었으면? 
+    const title_input = document.querySelector('input[name="boardTitle"]');
+    if(title_input.value == ''){
+      alert('제목은 필수입력입니다.');
+      title_input.focus();
+      return;
+    }
+
+    if(document.querySelector('input[name="boardWriter"]').value == ''){
+      alert('작성자는 필수입력입니다.')
+      document.querySelector('input[name="boardWriter"]').focus();
+      return;
+    }
 
     axios
     .post('/writeForm',board)
@@ -30,15 +43,23 @@ const WriteForm = () => {
     navigate('/');
   }
 
+  //강사님 풀이
+  // function goJoin(){
+  //   axios
+  //   .post('/writeForm',board)
+  //   .then((res)=>{
+  //     alert('게시글이 등록되었습니다.')
+  //     navigate('/');
+  //   })
+  //   .catch((error)=>{
+  //     alert('글 등록 오류!!')
+  //     console.log(error);
+  //   });
+  // }
+
   return (
     <div>
       <table>
-        <tr>
-          <td>글번호</td>
-          <td>
-            <input type='text' name='boardNum' id='boardNum'></input>
-          </td>
-        </tr>
         <tr>
           <td>제목</td>
           <td>
@@ -58,12 +79,6 @@ const WriteForm = () => {
           </td>
         </tr>
         <tr>
-          <td>작성일</td>
-          <td>
-            <input type='text'  name='createDate' id='createDate'></input>
-          </td>
-        </tr>
-        <tr>
           <td>내용</td>
           <td>
             <input type='text' name='boardContent' id='boardContent' onChange={(e)=>{
@@ -72,7 +87,7 @@ const WriteForm = () => {
           </td>
         </tr>
       </table>
-      <button type='button' onClick={()=>{ goJoin() }}>글등록</button>
+      <button type='button' onClick={(e)=>{ goJoin() }}>글등록</button>
     </div>
   )
 }

@@ -15,4 +15,10 @@ public interface BoardService {
     //글등록
     void inBoard( BoardVO boardVO);
 
+    //글삭제
+    void delete(int boardNum);
+
+    //글수정
+    void update(BoardVO boardVO);
+
 }

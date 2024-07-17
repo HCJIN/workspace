@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 해당 파일에 모든 쿼리문을 작성 -->
+<mapper namespace="studentMapper">
+
+    <resultMap id="student" type="com.green.ReactStudent.vo.StudentVO">
+        <result  column="STU_NUM" property="stuNum"/>
+        <result  column="STU_NAME" property="stuName"/>
+        <result  column="KOR_SCORE" property="korScore"/>
+        <result  column="ENG_SCORE" property="engScore"/>
+        <result  column="MATH_SCORE" property="mathScore"/>
+        <result  column="STU_AGE" property="stuAge"/>
+        <result  column="STU_TEL" property="stuTel"/>
+        <result  column="STU_ADDR" property="stuAddr"/>
+    </resultMap>
+
+
+    <select id="getStudent" resultMap="student">
+        SELECT STU_NUM,
+        STU_NAME,
+        KOR_SCORE,
+        ENG_SCORE,
+        MATH_SCORE
+        FROM REACT_STUDENT;
+    </select>
+
+    <insert id="inStudent">
+        INSERT INTO REACT_STUDENT (
+            STU_NAME,
+            STU_AGE,
+            STU_TEL,
+            STU_ADDR
+        )VALUE(
+            #{stuName},
+            #{stuAge},
+            #{stuTel},
+            #{stuAddr}
+        )
+    </insert>
+
+    <select id="detailScore" resultMap="student">
+        SELECT
+        STU_NAME,
+        KOR_SCORE,
+        ENG_SCORE,
+        MATH_SCORE
+        FROM REACT_STUDENT
+        WHERE STU_NUM = #{stuNum};
+    </select>
+
+    <update id="update">
+        UPDATE react_student
+        SET
+            KOR_SCORE = #{korScore}
+            , ENG_SCORE = #{engScore}
+            , MATH_SCORE = #{mathScore}
+        WHERE STU_NUM = #{stuNum}
+    </update>
+
+    <delete id="delete">
+        DELETE
+        FROM react_student
+        WHERE STU_NUM = #{stuNum}
+    </delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

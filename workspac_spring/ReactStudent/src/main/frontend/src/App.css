@@ -1,0 +1,78 @@
+.App{
+  width: 100vw;
+  height: 100vh;
+}
+
+.btn_box{
+  width: 800px;
+  margin: 15px auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 0px solid lightblue;
+  background-color: lightblue;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.btn_box button{
+  padding: 8px;
+  border: none;
+  background-color: lightblue;
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+
+.color{
+  color: red;
+}
+
+.table-div{
+  width: 800px;
+  margin: 30px auto;
+}
+
+.list-table{
+  width: 100%;
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
+
+.list-table tr, .list-table td{
+  border: 1px solid #000;
+  text-align: center;
+  padding: 6px;
+  background-color: rgb(155, 226, 255);
+}
+
+.list-table  thead td{
+  background-color: rgb(105, 196, 225);
+  font-weight: bold;
+}
+
+.list-table tbody tr:nth-child(even) td{
+  background-color: rgb(105, 176, 205);
+}
+
+.inStudent-div{
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.inStudent-div > table{
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.inStudent-div button {
+  margin: 30px;
+}
+
+td > button{
+  border: 1px solid rgba(0, .0, 108, .2);
+  background-color: rgba(0, .0, 108, .5);
+  border-radius: 4px;
+  color: #fff;
+}
