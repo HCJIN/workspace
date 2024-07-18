@@ -19,6 +19,11 @@ public class ReactStudentImpl implements ReactStudentService{
     }
 
     @Override
+    public StudentVO detail(int stuNum) {
+        return sqlSession.selectOne("studentMapper.detail",stuNum);
+    }
+
+    @Override
     public void inStudent(StudentVO studentVO) {
         sqlSession.insert("studentMapper.inStudent",studentVO);
     }

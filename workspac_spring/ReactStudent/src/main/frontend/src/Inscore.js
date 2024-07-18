@@ -38,6 +38,7 @@ const Inscore = () => {
     axios
     .post(`/update`,student)
     .then((res)=>{
+      alert('성적이 등록되었습니다.')
       navigate('/')
       console.log(student)
     })
@@ -53,35 +54,39 @@ const Inscore = () => {
   return (
     <div className='table-div'>
       <table className='list-table'>
-        <tr>
-          <td colSpan={2}>
-            <p>{studentList.stuName} 학생의 성적을 입력합니다.</p>
-          </td>
-        </tr>
-        <tr>
-          <td>국어</td>
-          <td>
-            <input type='text' name='korScore' onChange={(e)=>{
-              change(e)
-            }}></input>
-          </td>
-        </tr>
-        <tr>
-          <td>영어</td>
-          <td>
-            <input type='text' name='engScore' onChange={(e)=>{
-              change(e)
-            }}></input>
-          </td>
-        </tr>
-        <tr>
-          <td>수학</td>
-          <td>
-            <input type='text' name='mathScore' onChange={(e)=>{
-              change(e)
-            }}></input>
-          </td>
-        </tr>
+        <thead>
+          <tr>
+            <td colSpan={2}>
+              <p>{studentList.stuName} 학생의 성적을 입력합니다.</p>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>국어</td>
+            <td>
+              <input type='text' name='korScore' onChange={(e)=>{
+                change(e)
+              }}></input>
+            </td>
+          </tr>
+          <tr>
+            <td>영어</td>
+            <td>
+              <input type='text' name='engScore' onChange={(e)=>{
+                change(e)
+              }}></input>
+            </td>
+          </tr>
+          <tr>
+            <td>수학</td>
+            <td>
+              <input type='text' name='mathScore' onChange={(e)=>{
+                change(e)
+              }}></input>
+            </td>
+          </tr>
+        </tbody>
       </table>
       <button type='button' onClick={(e)=>{
         goScore();

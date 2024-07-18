@@ -1,0 +1,41 @@
+.insert_div{
+  width: 70%;
+  display: block;
+  margin: 0 auto;
+}
+
+.insert_table{
+  width: 100%;
+}
+
+tr,td{
+  vertical-align: middle;
+  padding: 10px;
+  text-align: center;
+}
+
+input{
+  width: 100%;
+}
+
+textarea{
+  width: 100%;
+}
+
+tr > td:first-child{
+  border-right: 1px solid rgba(250, 128, 114, .6);
+}
+
+.insert_table > tbody > tr:hover td{
+  background-color: lightpink;
+}
+
+.insert_table > tbody > tr > td:nth-child(2){
+  cursor: auto;
+}
+
+.insert_table > tbody > tr {
+  border-bottom: 1px solid rgba(250, 128, 114, .6);
+  background-color: lightpink;
+  color: #fff;
+}

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 해당 파일에 모든 쿼리문을 작성 -->
+<mapper namespace="itemMapper">
+
+    <resultMap id="itemList" type="com.green.ReactItem.vo.ItemVO">
+        <result column="ITEM_NUM" property="itemNum"/>
+        <result column="ITEM_NAME" property="itemName"/>
+        <result column="ITEM_PRICE" property="itemPrice"/>
+        <result column="SELLER" property="seller"/>
+        <result column="ITEM_INTRO" property="itemIntro"/>
+        <result column="REG_DATE" property="regDate"/>
+    </resultMap>
+
+    <select id="getItemList" resultMap="itemList" >
+        SELECT
+            ITEM_NUM,
+            ITEM_NAME,
+            ITEM_PRICE,
+            SELLER
+        FROM ITEM_INFO;
+    </select>
+
+    <select id="detail" resultMap="itemList" >
+        SELECT
+            ITEM_NUM,
+            ITEM_NAME,
+            ITEM_PRICE,
+            SELLER,
+            REG_DATE,
+            ITEM_INTRO
+        FROM ITEM_INFO
+        WHERE ITEM_NUM = #{itemNum};
+    </select>
+
+    <update id="update">
+        UPDATE ITEM_INFO
+        SET
+            ITEM_NAME = #{itemName},
+            ITEM_PRICE = #{itemPrice},
+            ITEM_INTRO = #{itemIntro}
+        WHERE ITEM_NUM = #{itemNum}
+
+    </update>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,88 @@
+.table_div{
+  width:  80%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.left_div{
+  width: 50%;
+  padding: 10px;
+  /* border: 1px solid #000; */
+  text-align: center;
+}
+
+p{
+  margin-bottom: 10px;
+  opacity: .7;
+}
+
+tr,td{
+  padding: 10px;
+  vertical-align: middle;
+}
+
+.list_table{
+  width: 100%;
+  border-top: 1px solid rgba(250, 128, 114, .6);;
+  border-bottom: 1px solid rgba(250, 128, 114, .6);
+}
+
+.list_table > thead > tr{
+  background-color: rgb(235, 162, 173);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border-bottom: 4px double rgba(250, 128, 114, .6);
+}
+
+.list_table > tbody > tr {
+  border-bottom: 1px solid rgba(250, 128, 114, .6);
+  background-color: lightpink;
+  color: #fff;
+}
+
+.left_div > .list_table > tbody > tr > td:nth-child(2){
+  cursor: pointer;
+}
+
+.left_div > .list_table > tbody > tr:hover td{
+  background-color: rgb(220, 108, 108);
+}
+
+.right_div{
+  width: 50%;
+}
+
+.btn_div{
+  text-align: center;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.btn_div > button{
+  padding: 3px 25px 3px 25px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 8px;
+  background-color: lightpink;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn_div > button:hover{
+  font-weight: bold;
+  color: rgb(220, 108, 108);
+}
+
+input{
+  border-radius: 5px;
+  border: 1px solid #fff;
+  padding: 0 0 0 3px;
+}
+
+textarea{
+  border: 1px solid #fff;
+}
+
+.read{
+  background-color: rgb(208, 208, 208);
+}

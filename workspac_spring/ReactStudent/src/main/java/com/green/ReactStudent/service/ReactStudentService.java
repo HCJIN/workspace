@@ -8,6 +8,8 @@ public interface ReactStudentService {
 
     List<StudentVO> getStudent();
 
+    StudentVO detail(int stuNum);
+
     void inStudent(StudentVO studentVO);
 
     StudentVO detailScore(int stuNum);

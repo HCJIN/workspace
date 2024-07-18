@@ -48,6 +48,11 @@ public class StudentController {
         reactStudent.delete(stuNum);
     }
 
+    //상세 보기
+    @GetMapping("/detail/{stuNum}")
+    public StudentVO detail(@PathVariable("stuNum")int stuNum){
+        return reactStudent.detail(stuNum);
+    }
 
 
 

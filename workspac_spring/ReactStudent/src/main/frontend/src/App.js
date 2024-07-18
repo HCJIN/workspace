@@ -8,6 +8,7 @@ import InStudent from './InStudent';
 import Score from './Score';
 import Inscore from './Inscore';
 import StuDelete from './StuDelete';
+import Detail from './Detail';
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
         <Route path='/detail' element={<Score />}/>
         {/* 성적입력 페이지 */}
         <Route path='/inScore/:stuNum' element={<Inscore />}/>
+        {/* 상세 페이지 */}
+        <Route path='/detail/:stuNum' element={<Detail />}/>
       </Routes>
     </div>
   );

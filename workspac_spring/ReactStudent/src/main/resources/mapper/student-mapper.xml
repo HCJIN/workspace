@@ -25,17 +25,36 @@
         FROM REACT_STUDENT;
     </select>
 
+    <select id="detail" resultMap="student">
+        SELECT
+            STU_NAME,
+            STU_AGE,
+            STU_TEL,
+            STU_ADDR,
+            KOR_SCORE,
+            ENG_SCORE,
+            MATH_SCORE
+        FROM REACT_STUDENT
+        WHERE STU_NUM = #{stuNum}
+    </select>
+
     <insert id="inStudent">
         INSERT INTO REACT_STUDENT (
             STU_NAME,
             STU_AGE,
             STU_TEL,
-            STU_ADDR
-        )VALUE(
+            STU_ADDR,
+            KOR_SCORE,
+            ENG_SCORE,
+            MATH_SCORE
+        )VALUES(
             #{stuName},
             #{stuAge},
             #{stuTel},
-            #{stuAddr}
+            #{stuAddr},
+            0,
+            0,
+            0
         )
     </insert>
 
@@ -55,7 +74,7 @@
             KOR_SCORE = #{korScore}
             , ENG_SCORE = #{engScore}
             , MATH_SCORE = #{mathScore}
-        WHERE STU_NUM = #{stuNum}
+        WHERE STU_NUM = #{stuNum};
     </update>
 
     <delete id="delete">

@@ -1,0 +1,30 @@
+.header_div{
+  width: 80%;
+  margin:0px auto 15px;
+}
+
+.menu_list{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid lightpink;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: lightpink;
+}
+
+.menu_list li{
+  margin: 0 15px;
+  font-size: 20px;
+  color: #eeeeee;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.menu_list li:hover{
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgb(220, 108, 108);
+}
+

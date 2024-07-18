@@ -3,6 +3,8 @@
   height: 100vh;
 }
 
+
+
 .btn_box{
   width: 800px;
   margin: 15px auto;
@@ -34,24 +36,41 @@
 
 .list-table{
   width: 100%;
-  border: 1px solid #000;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
   border-collapse: collapse;
 }
 
 .list-table tr, .list-table td{
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   text-align: center;
   padding: 6px;
   background-color: rgb(155, 226, 255);
 }
 
-.list-table  thead td{
+.list-table > thead > tr{
+  border-bottom: 3px double #000;
+}
+
+.list-table > thead > tr > td{
   background-color: rgb(105, 196, 225);
   font-weight: bold;
 }
 
 .list-table tbody tr:nth-child(even) td{
   background-color: rgb(105, 176, 205);
+}
+
+.list-table tbody td{
+  border-bottom: 1px solid #000 ;
+}
+
+.list-table > tbody > tr:hover td{
+  background-color: rgba(85, 156, 185, 1);
+}
+
+#name{
+  cursor: pointer;
 }
 
 .inStudent-div{

@@ -1,0 +1,26 @@
+vsCode, node,js 설치
+
+pc에 리액트 프로젝트를 처음 설치하기 위해 딱 한번만 실행
+npm install -g create-react-app
+
+프로젝트 생성
+1. 폴더 생성(소문자로 생성)
+2. vsCode로 생성한 폴더 열기
+3. npx create-react-app .
+
+ 페이지 이동 관련(Route, Routes, Link, navigate)
+npm install react-router-dom
+
+서버와 데이터 통신(Axios)
+npm install axios
+
+React + Spring 연동
+react 프로젝트 안의 package.json에 
+ "proxy": "http://localhost:8080" 추가
+
+
+
+
+
+
+

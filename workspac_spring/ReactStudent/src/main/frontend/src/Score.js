@@ -40,7 +40,7 @@ const Score = () => {
             studentList.map((student, i)=>{
               return(
                 <tr key={i}>
-                  <td>{student.stuNum}</td>
+                  <td>{i + 1 }</td>
                   <td>{student.stuName}</td>
                   <td>
                     <button type='button' onClick={(e)=>{

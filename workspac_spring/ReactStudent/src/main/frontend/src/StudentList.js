@@ -1,8 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import Score from './Score';
+import { useNavigate } from 'react-router-dom';
 
 const StudentList = () => {
+
+  const navigate = useNavigate();
 
   const [studentList, setStudentList] = useState([]);
 
@@ -34,20 +37,25 @@ const StudentList = () => {
         </thead>
         <tbody>
           {
+            studentList.length == 0 ?
+            <tr>
+              <td colSpan={6}>조회된 데이터가 없습니다</td>
+            </tr> :
             studentList.map((student, i)=>{
               return(
                 <tr key={i}>
-                  <td>{student.stuNum}</td>
-                  <td>{student.stuName}</td>
+                  <td>{i+1}</td>
+                  <td id='name' onClick={(e)=>{
+                    navigate(`/detail/${student.stuNum}`);
+                  }}>{student.stuName}</td>
                   <td>{student.korScore}</td>
                   <td>{student.engScore}</td>
                   <td>{student.mathScore}</td>
-                  <td>{((student.korScore + student.engScore + student.mathScore) / 3).toFixed()}</td>
+                  <td>{((student.korScore + student.engScore + student.mathScore) / 3).toFixed(2)}</td>
                 </tr>
-
               )
             })
-          }
+          } 
         </tbody>
       </table>
     </div>

@@ -22,7 +22,7 @@ const StuDelete = () => {
     axios
     .delete(`/delete/${stuNum}`)
     .then((res)=>{
-      navigate('/')
+      window.location.reload();
     })
     .catch((error)=>{
 
@@ -49,7 +49,7 @@ const StuDelete = () => {
             studentList.map((student, i)=>{
               return(
                 <tr key={i}>
-                  <td>{student.stuNum}</td>
+                  <td>{i +1 }</td>
                   <td>{student.stuName}</td>
                   <td>
                     <button type='button' onClick={(e)=>{
