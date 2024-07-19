@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import {getStuList} from './apis'
 
 const StuDelete = () => {
 
@@ -8,8 +9,7 @@ const StuDelete = () => {
   const [studentList, setStudentList] = useState([]);
 
   useEffect(()=>{
-    axios
-    .get('/getMain')
+    getStuList()
     .then((res)=>{
       setStudentList(res.data);
     })
@@ -22,7 +22,22 @@ const StuDelete = () => {
     axios
     .delete(`/delete/${stuNum}`)
     .then((res)=>{
-      window.location.reload();
+      //studentList라는 state 변수의 값을 변경한다 -> 재랜더링 되면서 알아서 그림 새롭게 그린다.
+      studentList.forEach((stu,i)=>{
+        if(stu.stuNum == stuNum){
+          studentList.splice(i,1);
+        }
+      });
+
+      // const result = studentList.filter((student)=>{student.stuNum != stuNum});
+
+      const arr = [1,2,3,4,5,6,7,8];
+      const result1 = arr.filter( (num) => {return num > 5});
+      const result2 = arr.filter( (num) =>  num > 5);
+
+
+
+      setStudentList([...studentList])
     })
     .catch((error)=>{
 

@@ -27,6 +27,7 @@
 
     <select id="detail" resultMap="student">
         SELECT
+            STU_NUM,
             STU_NAME,
             STU_AGE,
             STU_TEL,
@@ -60,10 +61,11 @@
 
     <select id="detailScore" resultMap="student">
         SELECT
-        STU_NAME,
-        KOR_SCORE,
-        ENG_SCORE,
-        MATH_SCORE
+            STU_NUM,
+            STU_NAME,
+            KOR_SCORE,
+            ENG_SCORE,
+            MATH_SCORE
         FROM REACT_STUDENT
         WHERE STU_NUM = #{stuNum};
     </select>

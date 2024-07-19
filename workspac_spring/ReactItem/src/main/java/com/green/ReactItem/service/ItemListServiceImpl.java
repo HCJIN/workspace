@@ -28,4 +28,9 @@ public class ItemListServiceImpl implements ItemListService{
     public void update(ItemVO itemVO) {
         sqlSession.update("itemMapper.update",itemVO);
     }
+
+    @Override
+    public void insert(ItemVO itemVO) {
+        sqlSession.insert("itemMapper.insert",itemVO);
+    }
 }

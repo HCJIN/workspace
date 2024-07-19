@@ -34,9 +34,10 @@ public class ItemListController {
     }
 
     //상품 등록
-    @GetMapping("/insert")
-    public void insert(){
-        
+    @PostMapping("/insert")
+    public void insert(@RequestBody ItemVO itemVO){
+        System.out.println(itemVO);
+        itemList.insert(itemVO);
     }
 
 

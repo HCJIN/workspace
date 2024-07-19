@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 해당 파일에 모든 쿼리문을 작성 -->
+<mapper namespace="buyMapper">
+
+    <resultMap id="buyList" type="com.green.ReactItem.vo.ItemVO">
+        <result column="ITEM_NUM" property="itemNum" />
+        <result column="ITEM_NAME" property="itemName" />
+        <result column="ITEM_PRICE" property="itemPrice" />
+<!--        <result column="BUYER" property="buyer" />-->
+<!--        <result column="BUY_CNT" property="buyCnt" />-->
+<!--        <result column="BUY_ITEM_NAME" property="buyPrice" />-->
+<!--        <result column="BUY_DATE" property="buyDate" />-->
+    </resultMap>
+
+    <resultMap id="buy" type="com.green.ReactItem.vo.BuyVO">
+        <result column="BUYER" property="buyer" />
+        <result column="BUY_CNT" property="buyCnt" />
+        <result column="BUY_ITEM_NAME" property="buyPrice" />
+        <result column="BUY_DATE" property="buyDate" />
+    </resultMap>
+
+    <select id="order" resultMap="buyList">
+        SELECT ITEM_NUM,
+                ITEM_NAME,
+                ITEM_PRICE
+        FROM ITEM_INFO;
+    </select>
+
+    <insert id="insert">
+
+    </insert>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

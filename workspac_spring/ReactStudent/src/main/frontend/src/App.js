@@ -9,6 +9,7 @@ import Score from './Score';
 import Inscore from './Inscore';
 import StuDelete from './StuDelete';
 import Detail from './Detail';
+import * as api from './apis';
 
 function App() {
   return (

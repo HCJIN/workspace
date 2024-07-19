@@ -6,15 +6,21 @@ import { useNavigate, useParams } from 'react-router-dom';
 const Detail = () => {
 
   const [itemList, setItemList] = useState([]);
-  const [item, setItem] = useState({});
-  const navigate = useNavigate();
   const {itemNum} = useParams();
+  const navigate = useNavigate();
+  const [item, setItem] = useState({
+    itemNum : itemNum,
+    itemName: '',
+    itemPrice: '',
+    seller: '',
+    regDate: '',
+    itemIntro: ''
+  });
 
   useEffect(()=>{
     axios
     .get('/getMain')
     .then((res)=>{
-      console.log(res.data)
       setItemList(res.data);
     })
     .catch((error)=>{
@@ -22,17 +28,18 @@ const Detail = () => {
     });
   },[]);
 
-  useEffect(()=>{
-    axios
-    .get(`/detail/${itemNum}`)
-    .then((res)=>{
-      console.log(res.data)
-      setItem(res.data);
-    })
-    .catch((error)=>{
-      console.log(error)
-    });
-  },[]);
+  useEffect(() => {
+      axios
+        .get(`/detail/${itemNum}`)
+        .then((res) => {
+          console.log(res.data);
+          setItem(res.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    
+  }, [itemNum]);
 
   function goChange(e){
     setItem({
@@ -43,7 +50,6 @@ const Detail = () => {
 
   function goJoin(){
     axios
-    //.post(`/update/${itemNum}`,upItem)
     .post(`/update/${itemNum}`,item)
     .then((res)=>{
       alert('수정이 완료되었습니다.')
@@ -68,15 +74,13 @@ const Detail = () => {
           </thead>
           <tbody>
             {
-              itemList.length == 0 ? 
-              <tr>
-                <td colSpan={4}>등록된 상품이 없습니다.</td>
-              </tr> :
               itemList.map((item,i)=>{
                 return(
                   <tr key={i}>
                     <td>{i + 1}</td>
-                    <td >{item.itemName}</td>
+                    <td onClick={()=>{
+                      navigate(`/detail/${item.itemNum}`)
+                    }}>{item.itemName}</td>
                     <td>{item.itemPrice}</td>
                     <td>{item.seller}</td>
                   </tr>
@@ -128,7 +132,6 @@ const Detail = () => {
                 </textarea>
               </td>
             </tr>
-
           </tbody>
         </table>
         <div className='btn_div'>

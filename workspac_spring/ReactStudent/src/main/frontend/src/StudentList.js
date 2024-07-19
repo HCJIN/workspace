@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import Score from './Score';
 import { useNavigate } from 'react-router-dom';
+import * as api from './apis'
 
 const StudentList = () => {
 

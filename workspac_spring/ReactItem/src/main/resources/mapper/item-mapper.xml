@@ -41,8 +41,21 @@
             ITEM_PRICE = #{itemPrice},
             ITEM_INTRO = #{itemIntro}
         WHERE ITEM_NUM = #{itemNum}
-
     </update>
+
+    <insert id="insert">
+        INSERT INTO ITEM_INFO (
+            ITEM_NAME,
+            ITEM_PRICE,
+            SELLER,
+            ITEM_INTRO
+        )VALUES(
+            #{itemName},
+            #{itemPrice},
+            #{seller},
+            #{itemIntro}
+        )
+    </insert>
 
 </mapper>
 

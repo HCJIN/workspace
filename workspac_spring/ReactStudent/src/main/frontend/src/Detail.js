@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { getDetail } from './apis';
 
 const Detail = () => {
 
@@ -8,8 +9,7 @@ const Detail = () => {
   const {stuNum} = useParams();
   
   useEffect(()=>{
-    axios
-    .get(`/detail/${stuNum}`)
+    getDetail(stuNum)
     .then((res)=>{
       console.log(res.data)
       setStudentList(res.data);

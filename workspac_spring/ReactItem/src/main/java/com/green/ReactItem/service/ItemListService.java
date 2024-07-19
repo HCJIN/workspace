@@ -12,5 +12,7 @@ public interface ItemListService {
 
     void update(ItemVO itemVO);
 
+    void insert(ItemVO itemVO);
+
 
 }

@@ -1,0 +1,19 @@
+.order_div{
+  width:  80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.order_div table{
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.order_div > table > tbody > tr {
+  border-bottom: 1px solid rgba(250, 128, 114, .6);
+  background-color: lightpink;
+  color: #fff;
+}

@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
 import './insert.css'
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Insert = () => {
+
+  const navigate = useNavigate();
 
   const [item, setItem] = useState({
     itemName : '',
@@ -14,6 +18,19 @@ const Insert = () => {
     setItem({
       ...item,
       [e.target.name] : e.target.value
+    })
+  }
+
+  function goIn(){
+    axios
+    .post('/insert', item)
+    .then((res)=>{
+      console.log(res.data);
+      alert('상품등록이 완료되었습니다.')
+      navigate('/')
+    })
+    .catch((error)=>{
+      console.log(error)
     })
   }
 
@@ -61,7 +78,7 @@ const Insert = () => {
         </tbody>
       </table>
       <div className='btn_div'>
-        <button type='button'>등록</button>
+        <button type='button' onClick={()=>{goIn()}}>등록</button>
       </div>
     </div>
   )

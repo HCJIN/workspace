@@ -44,7 +44,7 @@ const ItemList = () => {
               </tr> :
               itemList.map((item,i)=>{
                 return(
-                  <tr>
+                  <tr key={i}>
                     <td>{i + 1}</td>
                     <td onClick={()=>{
                       navigate(`/detail/${item.itemNum}`)
