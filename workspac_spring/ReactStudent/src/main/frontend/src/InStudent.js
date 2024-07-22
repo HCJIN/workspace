@@ -23,6 +23,7 @@ const InStudent = () => {
   function goInsert(){
     //이름 입력했는지 확인
     const stuName_input = document.querySelector('input[name="stuName"]')
+    
     if(stuName_input.value == ''){
       alert('이름을 입력하시오');
       stuName_input.focus();
