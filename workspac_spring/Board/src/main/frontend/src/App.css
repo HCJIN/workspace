@@ -7,8 +7,24 @@
   background-size: cover;
 }
 
+.btn{
+  -webkit-text-stroke: none;
+}
+
 button{
   cursor: pointer;
+  -webkit-text-stroke: none;
+}
+
+/* 버튼이 disabled 속성이 있다면 */
+.btn:disabled{
+  background-color: #eeeeee;
+  color: #eeee;
+}
+
+input{
+  border-radius: 8px;
+  border: none;
 }
 
 .btn{
@@ -17,19 +33,21 @@ button{
   border-radius: 6px;
   padding: 2px 10px 2px;
   color: #fff;
+  -webkit-text-stroke: none;
 }
 
 .boardList-div{
   width: 80%;
   margin: 0 auto;
   text-align: center;
-  margin-top: 20px;
 }
 
 .login-div{
   display: flex;
   justify-content: end;
   align-items: center;
+  color: #fff;
+  -webkit-text-stroke: 1px #000;
 }
 
 .login-div span{
@@ -43,6 +61,8 @@ button{
 .boardList-div > p{
   font-size: 30px;
   font-weight: bold;
+  color: #fff;
+  -webkit-text-stroke: 1px #000;
 }
 
 .btn-div{
@@ -63,6 +83,7 @@ button{
   border-radius: 6px;
   padding: 2px 10px 2px;
   color: #fff;
+  -webkit-text-stroke: none;
 }
 
 .boardList-table{
@@ -93,6 +114,7 @@ button{
   border-radius: 6px;
   padding: 5px 15px 5px 15px;
   color: #fff;
+  -webkit-text-stroke: none;
 }
 
 /* boardList-end */
@@ -103,15 +125,25 @@ button{
   text-align: center;
 }
 
+
 .join-div p{
+  font-size: 20px;
+  font-weight: bold;
+  color:#fff;
+  -webkit-text-stroke: .4px #000;
+}
+
+.title{
   font-size: 30px;
   font-weight: bold;
+  color:#fff;
+  -webkit-text-stroke: .7px #000;
 }
 
 .join-table tr, .join-table td{
   padding: 7px;
-  background-color: rgba(135, 206, 250, .5);
-  color: #fff;
+  color:#fff;
+  /* -webkit-text-stroke: 1px #000; */
 }
 
 .join-div table{
@@ -119,7 +151,6 @@ button{
   margin: 0 auto;
   text-align: left;
   margin-top: 15px;
-  border: 4px solid rgba(255, 182, 193, 1);
   /* border-collapse: collapse; */
 }
 
@@ -127,12 +158,22 @@ button{
   width: 70%;
 }
 
+.gen p{
+  font-size: 20px;
+  display: inline;
+  color:#fff;
+  -webkit-text-stroke: 0.4px #000;
+}
+
 .gen input{
   width: 20%;
   margin-left: 30px;
 }
 
-
+input[type="radio"] > span{
+  cursor: pointer;
+  -webkit-text-stroke: 0.4px #000;
+}
 
 td button{
   background-color: lightblue;
@@ -142,10 +183,23 @@ td button{
   color: #fff;
   margin-left: 10px;
   vertical-align: middle;
+  -webkit-text-stroke: none;
 }
 
 .login-div{
   padding-top: 20px;
+}
+
+.join-btn button{
+  background-color: lightblue;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  padding: 2px 10px 2px;
+  color: #fff;
+  margin-left: 10px;
+  vertical-align: middle;
+  -webkit-text-stroke: none;
 }
 
 /* join_end */
@@ -159,6 +213,8 @@ td button{
 .loginPage-div > p{
   font-size: 30px;
   font-weight: bold;
+  color: #fff;
+  -webkit-text-stroke: .7px #000;
 }
 
 
@@ -169,9 +225,14 @@ td button{
   margin-bottom: 10px;
 }
 
-.loginPage-div table > tr, .loginPage-div table > tr > td{
+.loginPage-div table > tbody > tr, .loginPage-div table > tbody > tr > td{
   text-align: left;
   padding: 3px 8px 3px 8px;
+}
+
+.loginPage-div table > tbody > tr >td {
+  color: #fff;
+  -webkit-text-stroke: .7px #000;
 }
 
 .login-btn > button:first-child{
@@ -179,5 +240,36 @@ td button{
 }
 
 .login-table input{
+  width: 100%;
+}
+
+/* login_end */
+
+.inBoard-div{
   width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.inBoard-table{
+  width: 50%;
+  margin: 0 auto;
+  background-color: lightskyblue;
+  border: none;
+  border-radius: 10px;
+}
+
+.inBoard-table tr, .inBoard-table td{
+  padding: 10px;
+  color: #fff;
+  -webkit-text-stroke: .7px #000;
+}
+
+.inBoard-table > tbody > tr > td > input{
+  width: 100%;
+}
+
+#content{
+  height: 100px;
 }

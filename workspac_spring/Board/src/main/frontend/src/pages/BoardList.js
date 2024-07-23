@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import {getBoardList} from '../apis/boardApi'
 
 const BoardList = () => {
 
@@ -10,6 +11,7 @@ const BoardList = () => {
 
   useEffect(()=>{
     axios('/board/boardList')
+    // getBoardList()
     .then((res)=>{
       setBoardList(res.data);
       console.log(res.data)
@@ -67,7 +69,9 @@ const BoardList = () => {
         </tbody>
       </table>
       <div className='footer-div'>
-        <button type='button'>글쓰기</button>
+        <button type='button' onClick={(e)=>{
+          navigate('/inBoard')
+        }}>글쓰기</button>
       </div>
     </div>
   )
