@@ -163,12 +163,12 @@ const Join = () => {
 
   return (
     <div className='join-div'>
-      <div className='login-div'>
+      {/* <div className='login-div'>
         <span onClick={()=>{
           navigate('/login')
         }}>Login</span>
         <span>Join</span>
-      </div>
+      </div> */}
       <span className='title'>자유게시판</span>
       <table className='join-table'>
         <tbody>

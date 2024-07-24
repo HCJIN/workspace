@@ -28,8 +28,11 @@ public class MemberController {
 
     //아이디 비밀번호 중복 확인
     @PostMapping("/checkIdPw")
-    public void login(@RequestBody MemberVO memberVO){
-        memberService.chkIdPw(memberVO);
+    public MemberVO login(@RequestBody MemberVO memberVO){
+        //조회된 데이터가 없으면 member 는 null 이 된다!
+        MemberVO member = memberService.chkIdPw(memberVO);
+        System.out.println(member);
+        return member;
     }
 
     //회원가입 데이터 입력

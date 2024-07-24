@@ -3,10 +3,7 @@ package com.green.Board.controller;
 import com.green.Board.service.BoardService;
 import com.green.Board.vo.BoardVO;
 import jakarta.annotation.Resource;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,6 +24,19 @@ public class BoardController {
     @GetMapping("/boardList")
     public List<BoardVO> boardList(){
         return boardService.getBoardList();
+    }
+
+    //게시글 등록
+    @PostMapping("/inBoard")
+    public void inBoard(@RequestBody BoardVO boardVO){
+        System.out.println(boardVO);
+        boardService.inBoard(boardVO);
+    }
+
+    //디테일 조회
+    @GetMapping("/detail/{boardNum}")
+    public BoardVO detail(@PathVariable("boardNum")int boardNum){
+        return boardService.getBoard(boardNum);
     }
 
 

@@ -18,9 +18,30 @@
             , MEM_ID
             , CREATE_DATE
         FROM board
-        ORDER BY CREATE_DATE DESC
+        ORDER BY BOARD_NUM DESC
     </select>
 
+    <select id="getBoard" resultMap="board">
+        SELECT BOARD_NUM
+            , TITLE
+            , MEM_ID
+            , CREATE_DATE
+            , CONTENT
+        FROM board
+        WHERE BOARD_NUM = #{boardNum}
+    </select>
+
+    <insert id="inBoard">
+        INSERT INTO board (
+            TITLE,
+            CONTENT,
+            MEM_ID
+        ) VALUES (
+            #{title},
+            #{content},
+            #{memId}
+        )
+    </insert>
 
 </mapper>
 

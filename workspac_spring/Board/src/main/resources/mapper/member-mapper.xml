@@ -23,6 +23,7 @@
     <select id="chkIdPw" resultMap="member">
         SELECT MEM_ID
             , MEM_NAME
+            , MEM_ROLE
         FROM board_member
         WHERE MEM_ID = #{memId} AND MEM_PW = #{memPw}
     </select>
