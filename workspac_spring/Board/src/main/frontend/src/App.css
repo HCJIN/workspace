@@ -300,3 +300,68 @@ td button{
 .detail-div button{
   margin: 10px 10px;
 }
+
+/* detail_end */
+
+.update-div{
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.update-table{
+  width: 80%;
+  margin: 0 auto;
+  background-color: lightskyblue;
+  border: none;
+  border-radius: 10px;
+}
+
+.update-table tr, .update-table td{
+  padding: 10px;
+  color: #000;
+  font-size: 1.2rem;
+}
+
+.update-div button{
+  margin: 10px 10px;
+}
+
+.update-table #title, .update-table #content{
+  width: 95%;
+}
+
+/* updqte_end */
+
+.reply-table{
+  width: 50%;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.reply-table div{
+  margin-bottom: 10px;
+  border: 1px solid rgba(0, 0, 0, .5);
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.reply-table span{
+  cursor: pointer;
+}
+
+.reply-table span:hover{
+  color: salmon;
+}
+
+.reply-in{
+  width: 100%;
+  margin: 0 auto;
+}
+
+.replyBoard{ 
+  width: 60%;
+  margin: 20px auto;
+}

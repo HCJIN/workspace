@@ -13,4 +13,7 @@ public interface BoardService {
 
     void inBoard(BoardVO boardVO);
 
+    void update(BoardVO boardVO);
+
+    void delete(int boardNum);
 }

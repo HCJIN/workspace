@@ -1,6 +1,7 @@
 package com.green.Board.controller;
 
 import com.green.Board.service.BoardService;
+import com.green.Board.service.BoardServiceImpl;
 import com.green.Board.vo.BoardVO;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
@@ -37,6 +38,18 @@ public class BoardController {
     @GetMapping("/detail/{boardNum}")
     public BoardVO detail(@PathVariable("boardNum")int boardNum){
         return boardService.getBoard(boardNum);
+    }
+
+    //게시글 수정
+    @PostMapping("/update/{boardNum}")
+    public void update(@RequestBody BoardVO boardVO){
+        boardService.update(boardVO);
+    }
+
+    //게시글 삭제
+    @DeleteMapping("/delete/{boardNum}")
+    public void delete(@PathVariable("boardNum")int boardNum){
+        boardService.delete(boardNum);
     }
 
 

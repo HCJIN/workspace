@@ -10,6 +10,36 @@
         <result column="MEM_ID" property="memId"/>
         <result column="BOARD_NUM" property="boardNum"/>
     </resultMap>
+
+
+
+    <select id="getReplyList" resultMap="reply">
+        SELECT REPLY_NUM
+        , REPLY_CONTENT
+        , MEM_ID
+        , REPLY_DATE
+        , BOARD_NUM
+        FROM BOARD_REPLY
+        WHERE BOARD_NUM = #{boardNum}
+        ORDER BY REPLY_NUM DESC
+    </select>
+
+    <insert id="insert">
+        INSERT INTO BOARD_REPLY (
+            MEM_ID
+            , REPLY_CONTENT
+            , BOARD_NUM
+        ) VALUES (
+            #{memId}
+            , #{replyContent}
+            , #{boardNum}
+        )
+    </insert>
+
+    <delete id="delete">
+        DELETE FROM BOARD_REPLY
+        WHERE REPLY_NUM = #{replyNum}
+    </delete>
 </mapper>
 
 

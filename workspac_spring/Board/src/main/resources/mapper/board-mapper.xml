@@ -43,6 +43,20 @@
         )
     </insert>
 
+    <update id="update">
+        UPDATE board
+        SET
+            TITLE = #{title}
+            , CONTENT = #{content}
+        WHERE BOARD_NUM = #{boardNum}
+    </update>
+
+    <delete id="delete">
+        DELETE
+        FROM board
+        WHERE BOARD_NUM = #{boardNum}
+    </delete>
+
 </mapper>
 
 

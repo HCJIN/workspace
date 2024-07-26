@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 해당 파일에 모든 쿼리문을 작성 -->
+<mapper namespace="joinMapper">
+
+    <resultMap id="member" type="com.green.Board.vo.MemberVO">
+        <id column="MEM_ID" property="memId"/>
+        <result column="MEM_PW" property="memPw"/>
+        <result column="MEM_NAME" property="memName"/>
+        <result column="GENDER" property="gender"/>
+        <result column="MEM_ROLE" property="memRole"/>
+    </resultMap>
+
+    <resultMap id="board" type="com.green.Board.vo.BoardVO">
+        <id column="BOARD_NUM" property="boardNum"/>
+        <result column="TITLE" property="title"/>
+        <result column="CONTENT" property="content"/>
+        <result column="MEM_ID" property="memId"/>
+        <result column="CREATE_DATE" property="createDate"/>
+        <!-- 1대 1관계 -->
+        <association property="memberVO" resultMap="member"/>
+        <!-- 1대 N 관계 -->
+        <collection property="replyList" resultMap="replyMapper.reply"/>
+    </resultMap>
+
+    <select id="bbb" resultMap="board">
+        SELECT TITLE, BOARD.MEM_ID, MEM_NAME, MEM_ROLE, BOARD_NUM, CONTENT
+        FROM BOARD_MEMBER, BOARD
+        WHERE BOARD.MEM_ID = BOARD_MEMBER.MEM_ID
+    </select>
+
+    <select id="ccc" resultMap="board">
+        SELECT TITLE, b.MEM_ID, REPLY_CONTENT, b.BOARD_NUM
+        FROM board b, board_reply r
+        WHERE b.BOARD_NUM = 1
+        AND b.BOARD_NUM = r.BOARD_NUM
+    </select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

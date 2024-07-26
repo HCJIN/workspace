@@ -27,4 +27,14 @@ public class BoardServiceImpl implements BoardService{
     public void inBoard(BoardVO boardVO) {
         sqlSession.insert("boardMapper.inBoard",boardVO);
     }
+
+    @Override
+    public void update(BoardVO boardVO) {
+        sqlSession.update("boardMapper.update",boardVO);
+    }
+
+    @Override
+    public void delete(int boardNum) {
+        sqlSession.delete("boardMapper.delete",boardNum);
+    }
 }

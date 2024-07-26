@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import InBoard from './pages/InBoard';
 import { useEffect, useState } from 'react';
 import Detail from './pages/Detail';
+import Update from './pages/Update';
 
 function App() {
 
@@ -52,6 +53,7 @@ function App() {
         <Route path='/login' element={<Login loginInfo={loginInfo} setLoginInfo={setLoginInfo}/>}/>
         <Route path='/inBoard' element={<InBoard />}/>
         <Route path='/detail/:boardNum' element={<Detail />}/>
+        <Route path='/update/:boardNum' element={<Update />} />
       </Routes>
 
     </div>

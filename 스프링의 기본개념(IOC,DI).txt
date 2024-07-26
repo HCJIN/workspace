@@ -24,6 +24,7 @@ DI(Dependency Injectino) : 의존성 주입
 
    @Component
    @Controller @Service @Reqository
+   @RestController
 
  그럼,스프링이 자동으로 생성해준 객체를 우리가 어떻게 써야할까?
  - 어노테이션을 사용하여 스프링이 자동생성해준 객체를 우리가 사용할 수 있다.
@@ -87,7 +88,18 @@ class BoardController{
 
 }
 
+DI 의존성 주입을 하기 위한 어노테이션 (스프링이 만들어준 객체를 우리가 사용할 때 쓰는 어노테이션)
+@Autowried -> 만들어진 객체 중에서 자료형을 판단해야 의존성 주입 시켜 줌
+@Resource
 
+@Service("memberService")
+class MemberServieImpl{}
+=> MemberServiceImpl memberService = new MemberServiceImpl();
+
+class Test{
+  @Autowried  
+  private MemberServiceImpl aa;
+}
 
 
 
