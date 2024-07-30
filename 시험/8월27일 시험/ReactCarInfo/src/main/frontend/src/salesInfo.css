@@ -1,0 +1,43 @@
+.salesInfo{
+  width: 80%;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.sales-table{
+  width: 100%;
+}
+
+#buyer{
+  width: 72%;
+}
+
+.sales-table > tbody > tr, .sales-table > tbody td{
+  padding: 5px;
+}
+
+.sales-table > tbody > tr > td:nth-child(2){
+  text-align: left;
+}
+
+.sales-table > tbody > tr > td:nth-child(4){
+  text-align: left;
+}
+
+.btn{
+  margin-top: 60px;
+  text-align: center;
+}
+
+.btn > button{
+  padding: 3px 20px 3px 20px;
+  font-size: 18px;
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+}
+
+.btn > button:hover{
+  border: 1px solid #000;
+  cursor: pointer;
+}
+

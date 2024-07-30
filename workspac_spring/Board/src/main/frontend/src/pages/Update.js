@@ -6,10 +6,7 @@ const Update = () => {
 
   const navigate = useNavigate();
   const {boardNum} = useParams();
-  const [board, setBoard] = useState({
-    title : '',
-    content : ''
-  })
+  const [board, setBoard] = useState({})
 
   useEffect(()=>{
     axios.get(`/board/detail/${boardNum}`)

@@ -14,4 +14,6 @@ public interface ReplyService {
 
     //댓글 삭제
     void delete(int replyNum);
+
+    void delete2(int boardNum);
 }

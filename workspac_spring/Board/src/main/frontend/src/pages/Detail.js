@@ -55,15 +55,13 @@ const Detail = () => {
       toggle = true;
     }
 
+  //댓글과 게시글 같이 삭제
   const goDelete = (boardNum) => {
-    axios
-    .delete(`/board/delete/${boardNum}`)
+    axios.all
+    ([axios.delete(`/board/delete/${boardNum}`),
+      axios.delete(`/reply/delete2/${boardNum}`)
+    ])
     .then((res)=>{
-      // boardList.forEach((b,i)=>{
-      //   if(b.boardNum == boardNum){
-      //     boardList.splice(i,1)
-      //   }
-      // })
       navigate('/')
     })
     .catch((error)=>{
@@ -71,10 +69,12 @@ const Detail = () => {
     })
   }
 
+  //댓글입력창 출력
   function goReply(){
     setShow(true)
   }
 
+  //입력한 댓글 내용 객체에 저장
   function onRep(e){
     setRp({
       ...rp,
@@ -84,6 +84,7 @@ const Detail = () => {
     })
   }
   
+  //댓글 객체 자바 전달
   function onReply(){
     axios
     .post(`/reply/insert`, rp)

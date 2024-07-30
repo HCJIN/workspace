@@ -1,0 +1,21 @@
+.salesList-div{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.salesList-div > table{
+  width: 100%;
+  margin: 50px auto;
+  text-align: center;
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
+
+.salesList-div > table tr > td:first-child{
+  vertical-align: middle;
+}
+
+.salesList-div > table tr, .salesList-div > table td{
+  padding: 6px;
+  border: 1px solid #000;
+}

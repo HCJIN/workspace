@@ -3,13 +3,16 @@ package com.green.Board.controller;
 import com.green.Board.service.BoardService;
 import com.green.Board.service.BoardServiceImpl;
 import com.green.Board.vo.BoardVO;
+import com.green.Board.vo.SearchVO;
 import jakarta.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/board")
+@Slf4j
 public class BoardController {
 
     @Resource(name = "boardService")
@@ -22,9 +25,10 @@ public class BoardController {
     }
 
     //게시글 목록 조회
-    @GetMapping("/boardList")
-    public List<BoardVO> boardList(){
-        return boardService.getBoardList();
+    @PostMapping("/boardList")
+    public List<BoardVO> boardList(@RequestBody SearchVO searchVO){
+        log.info(searchVO.toString());
+        return boardService.getBoardList(searchVO);
     }
 
     //게시글 등록

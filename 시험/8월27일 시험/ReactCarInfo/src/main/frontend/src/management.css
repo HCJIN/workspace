@@ -1,0 +1,78 @@
+.management-div{
+  width: 80%;
+  margin: 15px auto;
+}
+
+.top-table{
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.top-table > thead > tr > td > p{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-left: 10px
+}
+
+.top-table > tbody{
+  width: 100%;
+  text-align: center;
+  background-color: #eeeeee;
+}
+
+.top-table > tbody > tr > td{
+  padding: 4px;
+}
+
+.btn{
+  text-align: right;
+  margin-bottom: 60px;
+}
+
+.btn > button{
+  padding: 3px 20px 3px 20px;
+  font-size: 18px;
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+}
+
+.btn > button:hover{
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+/* top-table_end */
+
+.bottom-table{
+  width: 100%;
+}
+
+.bottom-table > thead > tr > td > p{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-left: 10px
+}
+
+.bottom-table > tbody{
+  width: 100%;
+  text-align: left;
+
+  text-align: center;
+}
+
+.bottom-table > tbody > tr:first-child{
+  background-color: lightgrey;
+}
+
+.bottom-table > tbody > tr > td{
+  padding: 4px;
+}
+
+.bottom-table > tbody > tr:first-child{
+  border-top: 3px solid #000;
+  border-bottom: 3px solid #000;
+}
+
+.bottom-table > tbody > tr:nth-child(2n + 1){
+  background-color: #eeeeee;
+}

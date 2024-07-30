@@ -40,6 +40,11 @@
         DELETE FROM BOARD_REPLY
         WHERE REPLY_NUM = #{replyNum}
     </delete>
+
+    <delete id="delete2">
+        DELETE FROM BOARD_REPLY
+        WHERE BOARD_NUM = #{boardNum}
+    </delete>
 </mapper>
 
 
