@@ -3,26 +3,27 @@
 
 <!-- 해당 파일에 모든 쿼리문을 작성 -->
 <mapper namespace="boardMapper">
-    <select id="getBoardList" resultMap="board">
-        SELECT BOARD_NUM
-        , TITLE
-        , MEM_ID
-        , CREATE_DATE
-        FROM board
-        <if test=' searchValue != null and !searchValue.equals("") '>
-            WHERE ${searchType} LIKE CONCAT('%',#{searchValue},'%')
-        </if>
-        ORDER BY BOARD_NUM DESC;
-    </select>
 
-
-	<resultMap id="board" type="com.green.Board.vo.BoardVO">
+    <resultMap id="board" type="com.green.Board.vo.BoardVO">
         <id column="BOARD_NUM" property="boardNum"/>
         <result column="TITLE" property="title"/>
         <result column="CONTENT" property="content"/>
         <result column="MEM_ID" property="memId"/>
         <result column="CREATE_DATE" property="createDate"/>
     </resultMap>
+
+    <select id="getBoardList" resultMap="board">
+        SELECT BOARD_NUM
+        , TITLE
+        , MEM_ID
+        , CREATE_DATE
+        FROM board
+        ORDER BY BOARD_NUM DESC
+        LIMIT #{displayDataCnt} OFFSET #{offset}
+        <!--        <if test=' searchValue != null and !searchValue.equals("") '>-->
+        <!--            WHERE ${searchType} LIKE CONCAT('%',#{searchValue},'%')-->
+        <!--        </if>-->
+    </select>
 
     <select id="getBoard" resultMap="board">
         SELECT BOARD_NUM
@@ -59,6 +60,12 @@
         FROM board
         WHERE BOARD_NUM = #{boardNum}
     </delete>
+
+    <!-- 전체 게시글 수 조회 -->
+    <select id="getBoardCnt" resultType="int">
+        SELECT COUNT(BOARD_NUM)
+        FROM BOARD
+    </select>
 
 </mapper>
 

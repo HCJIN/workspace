@@ -11,6 +11,9 @@ const BoardList = () => {
   const [boardList, setBoardList] = useState([]);
   const [loginInfo, setLoginInfo] = useState({});
 
+  //자바에서 가져온 페이지 정보를 담을 변수
+  const [pageInfo, setPageInfo] = useState({});
+
   //검색 조건을 저장할 변수
   const [searchData, setSearchData] = useState({
     searchType : 'TITLE',
@@ -23,13 +26,13 @@ const BoardList = () => {
       [e.target.name] : e.target.value
     })
   }
-  console.log(searchData)
 
   useEffect(()=>{
-    boardApi.getBoardList(searchData)
+    boardApi.getBoardList(1)
     // getBoardList()
     .then((res)=>{
-      setBoardList(res.data);
+      setBoardList(res.data.boardList);
+      setPageInfo(res.data.pageInfo)
       console.log(res.data)
     })
     .catch((error)=>{
@@ -49,7 +52,7 @@ const BoardList = () => {
   },[])
 
   function search(){
-    boardApi.getBoardList(searchData)
+    boardApi.getBoardList()
     .then((res)=>{
       setBoardList(res.data)
     })
@@ -57,6 +60,43 @@ const BoardList = () => {
       console.log(error)
     })
   }
+
+  //페이징 그리기
+  function drawPagination(){
+    const arr = [];
+
+    if(pageInfo.prev){
+      arr.push(<span className='page-span' onClick={()=>{getList(pageInfo.beginPage - 1)}}>이전</span>)
+    }
+
+    for(let i = pageInfo.beginPage; i <= pageInfo.endPage; i++){
+      arr.push(<span className='page-span' key={i} onClick={()=>{
+        getList(i)
+      }}>{i}</span>);
+    }
+
+    if(pageInfo.next){
+      arr.push(<span className='page-span' onClick={()=>{getList(pageInfo.endPage + 1)}}>다음</span>)
+    }
+
+    return arr;
+  }  
+
+
+  console.log(pageInfo)
+
+  //페이징 처리한 곳에서 숫자(페이지번호)를 클릭하면 다시 게시글을 조회
+  function getList(pageNo){
+    boardApi.getBoardList(pageNo)
+    .then((res)=>{
+      setBoardList(res.data.boardList);
+      setPageInfo(res.data.pageInfo);
+    })
+    .catch((error)=>{
+
+    });
+  }
+
 
   return (
     <div className='boardList-div'>
@@ -91,6 +131,7 @@ const BoardList = () => {
         <thead>
           <tr>
             <td>No</td>
+            <td>글번호</td>
             <td>제목</td>
             <td>작성자</td>
             <td>작성일</td>
@@ -100,12 +141,13 @@ const BoardList = () => {
           {
             boardList.length == 0 ? 
             <tr>
-              <td colSpan={4}>등록된 게시글이 없습니다</td>
+              <td colSpan={5}>등록된 게시글이 없습니다</td>
             </tr> :
             boardList.map((board, i)=>{
               return(
                 <tr key={i}>
                   <td>{boardList.length - i}</td>
+                  <td>{board.boardNum}</td>
                   <td onClick={()=>{
                     navigate(`/detail/${board.boardNum}`)
                   }}>{board.title}</td>
@@ -124,6 +166,12 @@ const BoardList = () => {
             <button type='button' onClick={(e)=>{
               navigate('/inBoard')
             }}>글쓰기</button>
+        }
+      </div>
+      {/* 페이징 정보가 나오는 div */}
+      <div>
+        {
+          drawPagination()
         }
       </div>
     </div>

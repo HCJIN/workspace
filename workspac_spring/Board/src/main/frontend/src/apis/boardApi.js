@@ -3,7 +3,7 @@
 import axios from "axios"
 
 //게시글 목록 조회
-export const getBoardList = (data) => {
-  const response = axios.post('/board/boardList', data);
+export const getBoardList = (pageNo) => {
+  const response = axios.post('/board/boardList',{'pageNo' : pageNo});
   return response;
 }
