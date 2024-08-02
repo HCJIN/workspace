@@ -1,0 +1,85 @@
+td > span{
+  margin-left: 3px;
+  color: red;
+}
+
+.join-div{
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 50px;
+  background-color: rgba(230, 230, 230, .1);
+  border-radius: 10px;
+  box-shadow: 3px 3px 6px #dddddd;
+  padding: 10px;
+}
+
+.join-div > .title{
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+
+.join-table{
+  width: 100%;
+  margin: 0 auto;
+  font-size: 15px;
+  text-align: left;
+}
+
+.join-table > tbody > tr, .join-table > tbody td{
+  padding: 3px;
+}
+
+.join-table > tbody td > input{
+  height: 23px;
+  width: 100%;
+  color: #000;
+}
+
+.inline-input{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inline-input input{
+  width: 65%;
+  margin-right: 5px;
+}
+
+input::placeholder{
+  text-align: center;
+}
+
+.join-table button{
+  padding: 3px 10px 3px 10px;
+  color: #fff;
+  background-color: #000;
+  border: 1px solid #000;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-div{
+  margin: 20px 0;
+  text-align: center;
+}
+
+.btn-div button{
+  padding: 3px 10px 3px 10px;
+  color: #fff;
+  background-color: #000;
+  border: 1px solid #000;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.join-table select{
+  margin-left: -27px;
+}
+
+input[type='password'] {
+  color: #000; /* 텍스트 색상 우선 적용 */
+  font-size: 16px; /* 폰트 사이즈 설정 */
+  font-family: Arial, sans-serif; /* 폰트 패밀리 설정 */
+}

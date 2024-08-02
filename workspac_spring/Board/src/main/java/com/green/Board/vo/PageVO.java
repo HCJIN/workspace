@@ -26,7 +26,7 @@ public class PageVO {
     private boolean prev;
     //다음 버튼 유무
     private boolean next;
-    //수식용
+    //조회커리 수식용
     private int offset;
 
     //생성자 생성
@@ -60,6 +60,7 @@ public class PageVO {
         //다음 버튼 유무
         next = endPage != totalPageCnt;
 
+        //수식 계산
         offset = displayDataCnt * (nowPage - 1);
     }
 

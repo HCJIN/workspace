@@ -14,12 +14,12 @@ npm install react-router-dom
 서버와 데이터 통신(Axios)
 npm install axios
 
+daum 주소 검색 api
+npm install react-daum-postcode
+
 React + Spring 연동
 react 프로젝트 안의 package.json에 
  "proxy": "http://localhost:8080" 추가
-
-
-
 
 
 
