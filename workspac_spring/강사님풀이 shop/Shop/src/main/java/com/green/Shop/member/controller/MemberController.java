@@ -36,5 +36,12 @@ public class MemberController {
         memberService.insert(memberVO);
     }
 
+    //아이디 비밀번호 중복확인
+    @PostMapping("/checkIdPw")
+    public MemberVO checkIdPw(@RequestBody MemberVO memberVO){
+        System.out.println(memberVO);
+        return memberService.checkIdPw(memberVO);
+    }
+
 
 }

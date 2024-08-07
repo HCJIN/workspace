@@ -29,6 +29,74 @@
   margin: 0 auto;
 }
 
+/* validation 디자인 */
+.feedback{
+  font-size: 0.7rem;
+  margin-top: 4px;
+  visibility: hidden;
+}
+
+.feedback.error{
+  color: red;
+  visibility: visible;
+}
+
+.feedback.good{
+  color: lightgreen;
+  visibility: visible;
+}
+
+.logout{
+  margin-left: 20px;
+}
+
+
+
+/* admin */
+
+.admin-menu{
+  width: 50%;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.admin-menu > li{
+  margin-bottom: 20px;
+  padding: 8px 15px 8px 15px;
+}
+
+.admin-menu > li:hover{
+  cursor: pointer;
+}
+
+.admin-side{
+  width: 10%;
+  background-color: rgba(230, 230, 230, .1);
+  border-radius: 10px;
+  box-shadow: 3px 3px 6px #dddddd;
+  text-align: center;
+  height: 150px;
+}
+
+.admin-side > ul > li{
+  margin-bottom: 20px;
+  padding: 8px;
+  padding-top: 10px;
+}
+
+.admin-side > ul > li:hover{
+  background-color: rgba(230, 230, 230, 1);
+  cursor: pointer;
+  color: #000;
+}
+
+.admin-section{
+  position: relative;
+  display: flex;
+}
+
 
 /* ------------------------------------ */
 /* ------------ 공통 디자인 ------------ */
@@ -61,26 +129,48 @@
   border-radius: 10px;
   margin-top: 4rem;
   padding: 16px;
-  animation: slidein 0.3s ease-out forwards;
+  animation: slidout2 0.3s ease-out forwards;
 }
 
 .modal-container.show > .modal{
-  animation-name: slideDown;
+  animation-name: slidIn2;
 }
 
 /* 모달 애니메이션 정의 */
 @keyframes slidein {
   from{
-    margin-top: 0;
+    padding-top: 0;
     opacity: 0;
   }
   to{
-    margin-top: 4rem;
+    padding-top: 4rem;
     opacity: 1;
   }
 }
 
 @keyframes slideout {
+  from{
+    opacity: 1;
+    padding-top: 4rem;
+  }
+  to{
+    opacity: 0;
+    padding-top: 0;
+  }
+}
+
+@keyframes slidIn2 {
+  from{
+    opacity: 0;
+    margin-top: 0;
+  }
+  to{
+    opacity: 1;
+    margin-top: 4rem;
+  }
+}
+
+@keyframes slidout2 {
   from{
     opacity: 1;
     margin-top: 4rem;

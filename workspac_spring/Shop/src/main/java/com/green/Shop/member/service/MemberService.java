@@ -8,8 +8,12 @@ public interface MemberService {
 
     List<MemberVO> getMemberList();
 
-    boolean chkId(String memId);
+    //아이디 중복확인
+    boolean isEnableId(String memId);
 
     //회원 가입
     void join(MemberVO memberVO);
+
+    //로그인
+    MemberVO login(MemberVO memberVO);
 }

@@ -57,6 +57,17 @@
             ,   #{memEmail}
         );
     </insert>
+
+    <!-- 아이디 비밀번호 중복확인 -->
+    <select id="checkIdPw" resultMap="member">
+        SELECT MEM_ID
+            ,   MEM_NAME
+            ,   MEM_ROLE
+        FROM SHOP_MEMBER
+        WHERE MEM_ID = #{memId} AND MEM_PW = #{memPw}
+    </select>
+
+
 </mapper>
 
 

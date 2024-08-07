@@ -29,4 +29,10 @@ public class MemberServiceImpl implements MemberService{
     public void insert(MemberVO memberVO) {
         sqlSession.insert("memberMapper.insert",memberVO);
     }
+
+    //아이디 비밀번호 중복체크
+    @Override
+    public MemberVO checkIdPw(MemberVO memberVO) {
+        return sqlSession.selectOne("memberMapper.checkIdPw",memberVO);
+    }
 }

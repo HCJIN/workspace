@@ -1,6 +1,6 @@
 import JSConfetti from "js-confetti";
 
-function Firecracker({clickName}) {
+function Firecracker() {
   //HTML Canvas 요소를 생성하여 페이지에 추가
   const jsConfetti = new JSConfetti(); 
 
@@ -20,7 +20,7 @@ function Firecracker({clickName}) {
     });
   };
 
-  return <button onClick={handleClick2} className="btn btn-primary">{clickName}</button>;
+  return handleClick2;
 }
 
 export default Firecracker;

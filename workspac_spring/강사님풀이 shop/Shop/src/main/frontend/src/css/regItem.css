@@ -1,0 +1,39 @@
+.regItem-div{
+  width: 20%;
+  margin: 0 auto;
+  margin-top: 50px;
+  background-color: rgba(230, 230, 230, .1);
+  border-radius: 10px;
+  box-shadow: 3px 3px 6px #dddddd;
+  padding: 10px;
+}
+
+.regItem-table{
+  width: 100%;
+  margin: 0 auto;
+  font-size: 15px;
+  text-align: left;
+}
+
+.regItem-table > tbody > tr, .regItem-table > tbody td{
+  padding: 3px;
+}
+
+.regItem-table > tbody td > input{
+  height: 23px;
+  width: 100%;
+  color: #000;
+}
+
+.regItem-table > tbody td > select{
+  height: 23px;
+  width: 100%;
+  color: #000;
+}
+
+.regItem-table > tbody td > textarea{
+  height: 70px;
+  width: 100%;
+  color: #000;
+  resize: none;
+}
