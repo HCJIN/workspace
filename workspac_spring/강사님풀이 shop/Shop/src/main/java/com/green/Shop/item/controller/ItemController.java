@@ -16,5 +16,15 @@ public class ItemController {
     @Resource(name = "itemService")
     private ItemService itemService;
 
+    //아이템 리스트 조회
+    @GetMapping("/getItemList")
+    public List<ItemVO> getitemList(){
+        return itemService.getItemList();
+    }
+
+    @GetMapping("/aaa")
+    public List<ItemVO> aaa(){
+        return itemService.aaa();
+    }
 
 }

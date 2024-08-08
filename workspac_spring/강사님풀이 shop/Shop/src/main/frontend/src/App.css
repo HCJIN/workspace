@@ -97,6 +97,28 @@
   display: flex;
 }
 
+/* user */
+.user-menu{
+  width: 50%;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.user-menu > li{
+  margin-bottom: 20px;
+  padding: 8px 15px 8px 15px;
+}
+
+.user-menu > li:hover{
+  cursor: pointer;
+}
+
+.file-div{
+  padding: 5px;
+}
+
 
 /* ------------------------------------ */
 /* ------------ 공통 디자인 ------------ */
@@ -234,7 +256,7 @@
 /* input 태그 */
 .form-control{
   width: 100%;
-  padding: 6px;
+  padding: 3px;
   border-radius: 6px;
   border: 1px solid #dbd7d0;
 }

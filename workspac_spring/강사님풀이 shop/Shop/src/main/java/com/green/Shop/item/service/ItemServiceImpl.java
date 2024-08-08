@@ -13,4 +13,15 @@ public class ItemServiceImpl implements ItemService{
     @Autowired
     private SqlSessionTemplate sqlSession;
 
+    //아이템 리스트 조회
+    @Override
+    public List<ItemVO> getItemList() {
+        return sqlSession.selectList("itemMapper.getItemList");
+    }
+
+    @Override
+    public List<ItemVO> aaa() {
+        return sqlSession.selectList("itemMapper.aaa");
+    }
+
 }

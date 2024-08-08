@@ -7,7 +7,7 @@
   background-color: rgba(0, 0, 0, 0.822);
   color: #fff;
   height: 200px;
-  margin-bottom: 200px;
+  margin-bottom: 180px;
 }
 
 .login{
@@ -88,6 +88,69 @@
   visibility: visible;
 }
 
+/* admin */
+
+.admin-menu{
+  width: 50%;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.admin-menu > li{
+  margin-bottom: 20px;
+  padding: 8px 15px 8px 15px;
+}
+
+.admin-menu > li:hover{
+  cursor: pointer;
+}
+
+.admin-side{
+  width: 10%;
+  background-color: rgba(230, 230, 230, .1);
+  border-radius: 10px;
+  box-shadow: 3px 3px 6px #dddddd;
+  text-align: center;
+  height: 160px;
+}
+
+.admin-side > ul > li{
+  margin-bottom: 20px;
+  padding: 8px;
+  padding-top: 10px;
+}
+
+.admin-side > ul > li:hover{
+  background-color: rgba(230, 230, 230, 1);
+  border-radius: 10px;
+  cursor: pointer;
+  color: #000;
+}
+
+.admin-section{
+  position: relative;
+  display: flex;
+}
+
+/* user */
+.user-menu{
+  width: 50%;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.user-menu > li{
+  margin-bottom: 20px;
+  padding: 8px 15px 8px 15px;
+}
+
+.user-menu > li:hover{
+  cursor: pointer;
+}
 
 /* ------------------------------------ */
 /* ------------ 공통 디자인 ------------ */

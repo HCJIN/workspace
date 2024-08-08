@@ -18,6 +18,10 @@ spring.datasource.password=mariadb
 #쿼리가 들어있는 mapper 파일 위치 지정
 mybatis.mapper-locations=classpath:mapper/*.xml
 
+#스프링 파일 업로드 용량(미 설정 시 기본으로 1MB)
+spring.servlet.multipart.max-file-size=10MB
+spring.servlet.multipart.max-request-size=10MB
+
 
 #이건 여기말고 VM에서!
 -Dfile.encoding=UTF-8

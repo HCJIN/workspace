@@ -8,7 +8,7 @@ const ItemList = () => {
 
   useEffect(()=>{
     axios
-    .get('/admin/getItemList')
+    .get('/item/getItemList')
     .then((res)=>{
       setItemList(res.data)
     })
@@ -22,7 +22,7 @@ const ItemList = () => {
       {
         itemList.map((item, i)=>{
           return(
-            <div className='item-box'>
+            <div className='item-box' key={i}>
               <img className='item-img' src='http://localhost:8080/images/panda.PNG'></img>
               <p>- {item.itemName} -</p>
               <p>{item.itemPrice}원</p>

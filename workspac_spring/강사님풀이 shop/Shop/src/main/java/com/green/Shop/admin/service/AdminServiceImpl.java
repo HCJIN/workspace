@@ -27,9 +27,16 @@ public class AdminServiceImpl implements AdminService {
         sqlSession.insert("adminMapper.setItem",itemVO);
     }
 
-    //아이템 리스트 조회
+    //상품 이미지 등록
     @Override
-    public List<ItemVO> getItemList() {
-        return sqlSession.selectList("adminMapper.getItemList");
+    public void insertImgs(ItemVO itemVO) {
+        sqlSession.insert("adminMapper.insertImgs",itemVO);
     }
+
+    //다음에 들어갈 item_code 조회
+    @Override
+    public int getNextItemCode() {
+        return sqlSession.selectOne("adminMapper.getNextItemCode");
+    }
+
 }
