@@ -1,0 +1,51 @@
+.detail-div{
+  width: 40%;
+  margin: 0 auto;
+}
+
+.top-div{
+  display: flex;
+}
+
+.top-left-div{
+  width: 30%;
+}
+
+.top-right-div{
+  width: 70%;
+  padding: 10px;
+  position: relative;
+}
+
+.top-right-div > div{
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+}
+
+.top-right-div > div p{
+  margin: 5px 0;
+}
+
+.top-right-div > div h4{
+  font-size: 30px;
+}
+
+.top-right-div .btn-div{
+  text-align: left;
+}
+
+.top-right-div .btn-div > .btn:first-child{
+  margin-right: 5px;
+}
+
+.cnt{
+  display: flex;
+  align-items: center;
+}
+
+.cnt > input{
+  margin-left: 10px;
+  width: 20%;
+}

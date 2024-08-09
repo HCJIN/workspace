@@ -142,14 +142,14 @@ const RegItem = () => {
         </tbody>
       </table>
       <div className='file-div'>
-        <input type='file' className='form-control' onChange={(e)=>{
+        <input type='file'  onChange={(e)=>{
           //선택한 파일 정보(배열 형태로 가져 옴)
           console.log(e.target.files[0]);
           setMainImg(e.target.files[0]);
         }}/>
       </div>
       <div className='file-div'>
-        <input type='file' className='form-control' onChange={(e)=>{
+        <input type='file'  onChange={(e)=>{
           setSubImg(e.target.files[0]);
         }}></input>
       </div>

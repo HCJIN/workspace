@@ -1,0 +1,75 @@
+.detail-div{
+  width: 40%;
+  margin: 0 auto;
+  background-color: rgba(230, 230, 230, .1);
+  border-radius: 10px;
+  box-shadow: 3px 3px 6px #dddddd;
+  padding: 10px;
+}
+
+.top-div{
+  display: flex;
+  margin-left: 30%;
+  transform: translateX(-30%);
+}
+
+.top-left-div{
+  width: 100%;
+}
+
+.top-left-div > div > img{
+  width: 100%;
+  height: 400px;
+}
+
+.top-right-div{
+  width: 100%;
+  padding: 10px;
+  position: relative;
+  margin-left: 50px;
+}
+
+.top-right-div > div{
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+}
+
+.top-right-div > div p{
+  margin: 5px 0;
+}
+
+.top-right-div > div h4{
+  font-size: 30px;
+}
+
+.top-right-div .btn-div{
+  text-align: left;
+}
+
+.top-right-div .btn-div > .btn:first-child{
+  margin-right: 5px;
+}
+
+.cnt{
+  display: flex;
+  align-items: center;
+}
+
+.cnt > input{
+  margin-left: 10px;
+  width: 30%;
+}
+
+/* top-div-end */
+
+
+.itemIntro-div{
+  text-align: center;
+  margin: 30px 0;
+}
+
+.bottom-div img{
+  width: 100%;
+}

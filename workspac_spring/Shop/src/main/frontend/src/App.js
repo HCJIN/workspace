@@ -7,6 +7,8 @@ import Join from './pages/user/Join';
 import Login from './pages/user/Login';
 import { useEffect, useState } from 'react';
 import RegItem from './pages/admin/RegItem';
+import ItemList from './pages/user/ItemList';
+import Detail from './pages/user/Detail';
 
 
 //새로고침과 재랜더링은 다르다!!!
@@ -77,12 +79,14 @@ function App() {
           {/* {일반 유저용} */}
           <Route path='/' element={<UserLayout/>}>
             {/* 상품 목록 화면 */}
-            <Route path='' element={<div>상품목록화면</div>}/>
+            <Route path='' element={<ItemList />}/>
             {/* 회원가입 페이지 */}
             <Route path='join' element={<Join />} />
             {/* 로그인 페이지 */}
             <Route path='loginForm' 
             element={<Login setLoginInfo={setLoginInfo} loginInfo={loginInfo}/>}/>
+            {/* 상품 상세정보 페이지 */}
+            <Route path='detail/:itemCode' element={<Detail />} />
           </Route>
 
           {/* {관리자용} */}

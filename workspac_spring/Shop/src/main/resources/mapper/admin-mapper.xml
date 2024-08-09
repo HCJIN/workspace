@@ -48,7 +48,7 @@
 
     <!-- 다음에 들어갈 item_code 조회 -->
     <select id="getNextItemCode" resultType="int">
-        SELECT MAX(ITEM_CODE) + 1
+        SELECT IFNULL(MAX(ITEM_CODE),0) + 1
         FROM SHOP_ITEM
     </select>
 </mapper>

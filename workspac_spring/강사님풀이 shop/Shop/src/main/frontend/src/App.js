@@ -67,17 +67,18 @@ function App() {
           {/* {일반 유저용} */}
           <Route path='/' element={<UserLayout/>}>
             {/* 상품 목록 화면 */}
-            <Route path='' element={<div>상품목록화면</div>}/>
+            <Route path='' element={<ItemList />}/>
             {/* 회원 가입 페이지 */}
             <Route path='join' element={<Join />}/>
             {/* 로그인 페이지 */}
             <Route path='loginForm' element={<Login setLoginInfo={setLoginInfo} loginInfo={loginInfo}/>}/>
+            {/* 상품 상세정보 페이지 */}
+            <Route path='/detail/:itemCode' element={<div>상세정보</div>} />
           </Route>
 
           {/* {관리자용} */}
           <Route path='/admin' element={<AdminLayout />}>
             <Route path='regItem' element={<RegItem />}/>
-            <Route path='itemList' element={<ItemList />}/>
           </Route>
         </Routes>
       </div>

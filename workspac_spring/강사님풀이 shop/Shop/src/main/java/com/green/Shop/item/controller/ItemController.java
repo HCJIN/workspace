@@ -22,9 +22,4 @@ public class ItemController {
         return itemService.getItemList();
     }
 
-    @GetMapping("/aaa")
-    public List<ItemVO> aaa(){
-        return itemService.aaa();
-    }
-
 }
