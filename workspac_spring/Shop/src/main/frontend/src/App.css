@@ -1,13 +1,14 @@
 .container{
   width: 100%;
+  position: relative;
 }
 
 .login-div{
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.822);
+  background-color: #000;
   color: #fff;
   height: 200px;
-  margin-bottom: 180px;
+  margin-bottom: 160px;
 }
 
 .login{
@@ -41,9 +42,9 @@
 .banner > .title-div{
   position: absolute;
   top: 50%;
-  left: 0px;
+  left: 55px;
   transform: translate(30px, -50%);
-  font-size: 4rem;
+  font-size: 6rem;
   font-weight: bold;
   font-style: italic;
   letter-spacing: 10px;
@@ -100,53 +101,101 @@
 }
 
 .admin-menu > li{
-  margin-bottom: 20px;
-  padding: 8px 15px 8px 15px;
+  font-size: 1.2rem;
 }
 
-.admin-menu > li:hover{
+.admin-menu span{
   cursor: pointer;
 }
 
 .admin-side{
-  width: 10%;
   background-color: rgba(230, 230, 230, .1);
   border-radius: 10px;
   box-shadow: 3px 3px 6px #dddddd;
   text-align: center;
-  height: 160px;
+  padding: 0 10px 0 10px;
+  position: absolute;
 }
 
-.admin-side > ul > li{
-  margin-bottom: 20px;
-  padding: 8px;
-  padding-top: 10px;
+.admin-side ul{
+  padding: 10px 0;
+  width: 200px;
+}
+
+.admin-side li{
+  padding: 10px;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.admin-side li::after{
+  padding-bottom: 5px;
+  content: '';
+  display: block;
+  /* border-bottom: solid 3px #212221; */
+  border-bottom: solid 3px #fff;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.admin-side li:hover::after{
+  transform: scaleX(1);
 }
 
 .admin-side > ul > li:hover{
-  background-color: rgba(230, 230, 230, 1);
   border-radius: 10px;
   cursor: pointer;
-  color: #000;
+  color: #fff;
+  background-color: #000;
 }
 
 .admin-section{
+  display: flex;
+  align-items: start;
   position: relative;
+}
+
+/* 사이드바 디자인 */
+/* .admin-section{
   display: flex;
 }
 
-/* user */
-.user-menu{
-  width: 50%;
-  margin: 30px auto;
+.admin-side{
+  box-shadow: 3px 3px 6px #dddddd;
+  width: 250px;
+}
+
+.admin-side li{
+  width: 100%;
+  padding: 20px 16px;
+  border-bottom: 2px solid #003675;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+.bi-chevron-right{
+  color: #003675;
+  font-size: .8rem;
+} */
+
+
+/* user */
+.menu-div{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.user-menu{
+  display: flex;
+  justify-content: center;
   align-items: center;
+  gap: 50px;
 }
 
 .user-menu > li{
-  margin-bottom: 20px;
-  padding: 8px 15px 8px 15px;
+  font-size: 1.2rem;
 }
 
 .user-menu > li:hover{

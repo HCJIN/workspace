@@ -9,6 +9,11 @@ import { useEffect, useState } from 'react';
 import RegItem from './pages/admin/RegItem';
 import ItemList from './pages/user/ItemList';
 import Detail from './pages/user/Detail';
+import ItemManage from './pages/admin/ItemManage';
+import CategoryManage from './pages/admin/CategoryManage';
+import SaleHistoryOfMonth from './pages/admin/SaleHistoryOfMonth';
+import SearchUser from './pages/admin/SearchUser';
+import RecordOfMonth from './pages/admin/RecordOfMonth';
 
 
 //새로고침과 재랜더링은 다르다!!!
@@ -69,7 +74,7 @@ function App() {
         }
         <div className='banner'>
           <div>
-            <img className='banner-img' src='http://localhost:8080/images/book_banner_1.PNG'/>
+            <img className='banner-img' src='http://localhost:8080/images/book-banner-3.png'/>
           </div>
           <div className='title-div' onClick={()=>{navigate('/')}}>BOOK SHOP</div>
         </div>
@@ -92,8 +97,18 @@ function App() {
           {/* {관리자용} */}
           <Route path='/admin' element={<AdminLayout />}>
             <Route path='test1' element={<div>상품등록페이지</div>}/>
+            {/* 상품 관리 화면 */}
+            <Route path='itemManage' element={<ItemManage />} />
             {/* 상품 등록 화면 */}
             <Route path='regItem' element={<RegItem />}/>
+            {/* 카테고리관리 화면 */}
+            <Route path='categoryManage' element={<CategoryManage />} />
+            {/* 구매관리 화면 */}
+            <Route path='saleHistoryOfMonth' element={<SaleHistoryOfMonth />} />
+            {/* 유저관리 화면 */}
+            <Route path='searchUser' element={<SearchUser />} />
+            {/* 매출관리 화면 */}
+            <Route path='recordOfMonth' element={<RecordOfMonth />} />
           </Route>
         </Routes>
       </div>

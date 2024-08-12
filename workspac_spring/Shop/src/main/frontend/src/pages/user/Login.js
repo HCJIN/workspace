@@ -111,7 +111,7 @@ const Login = ({loginInfo, setLoginInfo}) => {
     if(isLoginSuccess){//로그인 성공 시 확인 버튼 내용
       //로그인 성공 시 상품 목록 페이지로 이동
       if(loginInfo.memRole == 'ADMIN'){
-        navigate('/admin/regItem')
+        navigate('/admin/itemManage')
       }else if(loginInfo.memRole == 'USER'){
         navigate('/')
       }

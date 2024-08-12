@@ -55,60 +55,84 @@
 /* admin */
 
 .admin-menu{
-  width: 50%;
-  margin: 30px auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  gap: 50px;
 }
 
 .admin-menu > li{
-  margin-bottom: 20px;
-  padding: 8px 15px 8px 15px;
+  font-size: 1.2rem;
 }
 
-.admin-menu > li:hover{
+.admin-menu span{
   cursor: pointer;
 }
 
 .admin-side{
-  width: 10%;
   background-color: rgba(230, 230, 230, .1);
   border-radius: 10px;
   box-shadow: 3px 3px 6px #dddddd;
   text-align: center;
-  height: 150px;
+  padding: 0 10px 0 10px;
+  position: absolute;
 }
 
-.admin-side > ul > li{
-  margin-bottom: 20px;
-  padding: 8px;
-  padding-top: 10px;
+.admin-side ul{
+  padding: 10px 0;
+  width: 200px;
+}
+
+.admin-side li{
+  padding: 10px;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.admin-side li::after{
+  padding-bottom: 5px;
+  content: '';
+  display: block;
+  border-bottom: solid 3px #212221;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.admin-side li:hover::after{
+  transform: scaleX(1);
 }
 
 .admin-side > ul > li:hover{
-  background-color: rgba(230, 230, 230, 1);
+  border-radius: 10px;
   cursor: pointer;
   color: #000;
 }
 
 .admin-section{
-  position: relative;
   display: flex;
+  align-items: start;
+  position: relative;
 }
 
+
+
 /* user */
+.menu-div{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
 .user-menu{
-  width: 50%;
-  margin: 30px auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  gap: 50px;
 }
 
 .user-menu > li{
-  margin-bottom: 20px;
-  padding: 8px 15px 8px 15px;
+  font-size: 1.2rem;
 }
 
 .user-menu > li:hover{

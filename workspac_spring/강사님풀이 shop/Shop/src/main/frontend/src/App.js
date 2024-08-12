@@ -78,6 +78,9 @@ function App() {
 
           {/* {관리자용} */}
           <Route path='/admin' element={<AdminLayout />}>
+            {/* 상품 관리 화면 */}
+            <Route path='itemManage' element={<ItemManage />} />
+            {/* 상품 등록 화면 */}
             <Route path='regItem' element={<RegItem />}/>
           </Route>
         </Routes>
