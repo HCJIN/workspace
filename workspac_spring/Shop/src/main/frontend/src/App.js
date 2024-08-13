@@ -14,6 +14,7 @@ import CategoryManage from './pages/admin/CategoryManage';
 import SaleHistoryOfMonth from './pages/admin/SaleHistoryOfMonth';
 import SearchUser from './pages/admin/SearchUser';
 import RecordOfMonth from './pages/admin/RecordOfMonth';
+import CartList from './pages/user/CartList';
 
 
 //새로고침과 재랜더링은 다르다!!!
@@ -92,21 +93,25 @@ function App() {
             element={<Login setLoginInfo={setLoginInfo} loginInfo={loginInfo}/>}/>
             {/* 상품 상세정보 페이지 */}
             <Route path='detail/:itemCode' element={<Detail />} />
+            {/* 장바구니 페이지 */}
+            <Route path='cart' element={<CartList />} />
           </Route>
 
           {/* {관리자용} */}
           <Route path='/admin' element={<AdminLayout />}>
-            <Route path='test1' element={<div>상품등록페이지</div>}/>
             {/* 상품 관리 화면 */}
             <Route path='itemManage' element={<ItemManage />} />
             {/* 상품 등록 화면 */}
             <Route path='regItem' element={<RegItem />}/>
             {/* 카테고리관리 화면 */}
             <Route path='categoryManage' element={<CategoryManage />} />
+
             {/* 구매관리 화면 */}
             <Route path='saleHistoryOfMonth' element={<SaleHistoryOfMonth />} />
+
             {/* 유저관리 화면 */}
             <Route path='searchUser' element={<SearchUser />} />
+
             {/* 매출관리 화면 */}
             <Route path='recordOfMonth' element={<RecordOfMonth />} />
           </Route>

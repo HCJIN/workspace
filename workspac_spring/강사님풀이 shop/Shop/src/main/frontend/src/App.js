@@ -82,6 +82,14 @@ function App() {
             <Route path='itemManage' element={<ItemManage />} />
             {/* 상품 등록 화면 */}
             <Route path='regItem' element={<RegItem />}/>
+            {/* 카테고리관리 화면 */}
+            <Route path='categoryManage' element={<CategoryManage />} />
+            {/* 구매관리 화면 */}
+            <Route path='saleHistoryOfMonth' element={<SaleHistoryOfMonth />} />
+            {/* 유저관리 화면 */}
+            <Route path='searchUser' element={<SearchUser />} />
+            {/* 매출관리 화면 */}
+            <Route path='recordOfMonth' element={<RecordOfMonth />} />
           </Route>
         </Routes>
       </div>

@@ -27,6 +27,15 @@
         <collection property="imgList" ofType="com.green.Shop.item.vo.ImgVO" resultMap="img" />
     </resultMap>
 
+    <resultMap id="cart" type="com.green.Shop.item.vo.CartVO">
+        <result column="CART_CODE" property="cartCode"/>
+        <result column="ITEM_CODE" property="itemCode"/>
+        <result column="CART_CNT" property="cartCnt"/>
+        <result column="CART_DATE" property="cartDate"/>
+        <association property="item" javaType="com.green.Shop.item.vo.ItemVO" resultMap="item"/>
+        <collection property="imgList" ofType="com.green.Shop.item.vo.ImgVO" resultMap="img"/>
+    </resultMap>
+
 
     <!-- 상품 목록 조회 -->
     <!-- 조회 시 조인, 서브쿼리가 사용되면 조회한 데이터를 자바로 가져오기 위해 -->
@@ -62,6 +71,38 @@
         WHERE item.ITEM_CODE = #{itemCode}
         AND item.ITEM_CODE = img.ITEM_CODE;
     </select>
+
+    <!-- 카트 등록 -->
+    <insert id="insertCart" >
+        INSERT INTO SHOP_CART (
+            CART_CODE
+            ,   ITEM_CODE
+            ,   CART_CNT
+            ,   MEM_ID
+        ) VALUES (
+            #{cartCode}
+            ,   #{itemCode}
+            ,   #{cartCnt}
+            ,   #{memId}
+        );
+    </insert>
+
+    <!-- 장바구니 리스트 조회 -->
+    <select id="getCartList" resultMap="cart">
+        SELECT
+            s.CART_CODE,
+            s.ITEM_CODE,
+            s.CART_CNT,
+            s.CART_DATE,
+            item.ITEM_NAME,
+            item.ITEM_PRICE,
+            img.ATTACHED_FILE_NAME
+        FROM SHOP_CART s
+        JOIN SHOP_ITEM item ON s.ITEM_CODE = item.ITEM_CODE
+        LEFT JOIN ITEM_IMG img ON item.ITEM_CODE = img.ITEM_CODE AND img.IS_MAIN = 'Y'
+        WHERE s.MEM_ID = #{memId}
+    </select>
+
 </mapper>
 
 

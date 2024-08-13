@@ -1,0 +1,36 @@
+.cartList-div{
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 100px;
+}
+
+.cartImg{
+  width: 100px;
+  height: 150px;
+}
+
+.cartList-table{
+  width: 100%;
+  border: 1px solid #000;
+}
+
+.head > tr, .head td{
+  border: 1px solid #000;
+  text-align: center;
+  height: 50px;
+  vertical-align: middle;
+}
+
+.cartList-table > tbody > tr, .cartList-table > tbody > tr > td{
+  padding: 10px;
+  border: 1px solid #000;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.cartList-table div{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+} 

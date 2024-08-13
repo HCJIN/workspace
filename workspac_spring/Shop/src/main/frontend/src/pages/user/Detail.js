@@ -1,24 +1,35 @@
 import axios from 'axios';
 import '../../css/detail.css';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const Detail = () => {
+
+  
+  const navigate = useNavigate();
+  
   const [item, setItem] = useState({
     itemName: '',
     itemPrice: 0,
-    cnt: 1,
+    cartCnt: 1,
     imgList: [],
-    itemIntro: ''
+    itemIntro: '',
+    memId : 1
   });
-
+  
   const { itemCode } = useParams();
+  
+  const [cart, setCart] = useState({
+    itemCode : itemCode,
+    cartCnt : item.cartCnt,
+    memId : JSON.parse(window.sessionStorage.getItem("loginInfo")).memId
+  })
+  console.log(cart)
 
   useEffect(() => {
     axios
       .get(`/item/getItem/${itemCode}`)
       .then((res) => {
-        console.log(res.data);
         const result = res.data;
         setItem({
           ...item,
@@ -31,15 +42,17 @@ const Detail = () => {
   }, []); 
 
   function onChange(e) {
+    setCart({
+      ...cart,
+      cartCnt : Number(item.cartCnt) + 1
+    });
     setItem({
       ...item,
       [e.target.name]: e.target.value
     });
   }
 
-  console.log(item.itemPrice)
-  console.log(item.cnt)
-  const total = item.itemPrice * item.cnt;
+  const total = item.itemPrice * item.cartCnt;
   const price = total.toLocaleString('ko-KR', {
     style: 'currency',
     currency: 'KRW', // 한국 원화
@@ -52,6 +65,20 @@ const Detail = () => {
       item.imgList[index] ? `http://localhost:8080/upload/${item.imgList[index].attachedFileName}` : ''
     )
   };
+
+  function insertCart(){
+    axios
+    .post(`/item/insertCart`, cart)
+    .then((res)=>{
+      alert('장바구니에 담겼습니다')
+      navigate('/cart')
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
+  }
+
+
 
   return (
     <div className='detail-div'>
@@ -70,8 +97,8 @@ const Detail = () => {
               <input
                 type='number'
                 min={1}
-                name='cnt'
-                value={item.cnt}
+                name='cartCnt'
+                value={item.cartCnt}
                 className='form-control'
                 onChange={(e) => {onChange(e)}}
               />
@@ -79,7 +106,7 @@ const Detail = () => {
             <p>총 가격 : <span>{price}</span></p>
             <div className='btn-div'>
               <button type='button' className='btn btn-primary'>구매하기</button>
-              <button type='button' className='btn btn-primary'>장바구니에 담기</button>
+              <button type='button' className='btn btn-primary' onClick={()=>{insertCart()}}>장바구니에 담기</button>
             </div>
           </div>
         </div>
