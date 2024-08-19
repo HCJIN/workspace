@@ -1,32 +1,80 @@
 .container{
-  width: 100vw;
+  width: 100%;
+  position: relative;
 }
 
 .login-div{
   width: 100%;
   background-color: #000;
   color: #fff;
-  height: 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
+  height: 200px;
+  margin-bottom: 160px;
 }
 
-.login-div .logo{
-  font-size: 36px;
+.login{
+  width: 100%;
+  padding: 10px 100px 10px 0;
+  text-align: right;
+}
+
+.login span{
+  margin: 0 10px;
   cursor: pointer;
-  margin-left: 20px;
 }
 
-.login-div > div > span{
-  margin-right: 30px;
+.bi-cart4{
   cursor: pointer;
 }
 
 .layout-div{
   width: 86%;
   margin: 0 auto;
+}
+
+.banner{
+  position: relative;
+}
+
+.banner-img{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.banner > .title-div{
+  position: absolute;
+  top: 50%;
+  left: 55px;
+  transform: translate(30px, -50%);
+  font-size: 6rem;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 10px;
+  color: #fff;
+  -webkit-text-stroke: 1px #fff;
+  text-shadow: 1px 1px #fff, -1px -1px #fff;
+  text-shadow: 1px 0px #fff, 0px 1px #fff, -1px 0px #fff, 0px -1px #fff;
+  font-family: 'ONE-Mobile-POP';
+  /* word-spacing: 10px; */
+  cursor: pointer;
+}
+
+.header-menu{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding: 10px 100px 10px 0;
+}
+
+.header-menu span{
+  cursor: pointer;
+}
+
+.header-menu > li {
+  width: 100px;
+  text-align: center;
 }
 
 /* validation 디자인 */
@@ -46,19 +94,14 @@
   visibility: visible;
 }
 
-.logout{
-  margin-left: 20px;
-}
-
-
-
 /* admin */
 
 .admin-menu{
+  width: 50%;
+  margin: 30px auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  gap: 50px;
 }
 
 .admin-menu > li{
@@ -93,7 +136,8 @@
   padding-bottom: 5px;
   content: '';
   display: block;
-  border-bottom: solid 3px #212221;
+  /* border-bottom: solid 3px #212221; */
+  border-bottom: solid 3px #fff;
   transform: scaleX(0);
   transition: all 0.3s ease-in-out;
   width: 70%;
@@ -107,7 +151,8 @@
 .admin-side > ul > li:hover{
   border-radius: 10px;
   cursor: pointer;
-  color: #000;
+  color: #fff;
+  background-color: #000;
 }
 
 .admin-section{
@@ -116,6 +161,28 @@
   position: relative;
 }
 
+/* 사이드바 디자인 */
+/* .admin-section{
+  display: flex;
+}
+
+.admin-side{
+  box-shadow: 3px 3px 6px #dddddd;
+  width: 250px;
+}
+
+.admin-side li{
+  width: 100%;
+  padding: 20px 16px;
+  border-bottom: 2px solid #003675;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bi-chevron-right{
+  color: #003675;
+  font-size: .8rem;
+} */
 
 
 /* user */
@@ -139,15 +206,57 @@
   cursor: pointer;
 }
 
-.file-div{
-  padding: 5px;
-}
-
-
 /* ------------------------------------ */
 /* ------------ 공통 디자인 ------------ */
 /* ------------------------------------ */
 
+/* input 태그 */
+.form-control{
+  width: 100%;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #dbd7d0;
+}
+
+.form-control:focus{
+  outline: 1px solid #dbd7d0;
+}
+
+/* button 태그 */
+
+.btn-div{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn{
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  border-radius: 8px;
+  color: #fff;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+}
+
+.btn-primary{
+  background-color: rgba(0, 0, 0, 0.822);
+  border: 1px solid rgb(209, 205, 198);
+}
+
+.btn-primary:active{
+  background-color: rgba(0, 0, 0, 0.622);
+  border: 1px solid rgb(179, 175, 188);
+}
+
+.btn-second{
+  background-color: rgba(0, 0, 0, 0.622);
+  border: 1px solid #dddddd;
+}
+
+.btn-second:active{
+  background-color: rgba(0, 0, 0, 0.622);
+  border: 1px solid #cccccc;
+}
 
 /* 모달창 디자인 */
 .modal-container{
@@ -245,46 +354,4 @@
 .modal-footer{
   margin-top: 10px;
   text-align: right;
-}
-
-/* button 태그 */
-
-.btn-div{
-  text-align: center;
-  margin-top: 20px;
-}
-
-.btn{
-  padding: 3px 10px 3px 10px;
-  color: #fff;
-  background-color: #000;
-  border: 1px solid #000;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.btn-primary{
-  padding: 3px 10px 3px 10px;
-  color: #fff;
-  background-color: rgb(0, 0, 0);
-  border: 1px solid #000;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.btn-primary:active{
-  background-color: rgb(0, 0, 0);
-  border: 1px solid rgb(10, 10, 10);
-}
-
-/* input 태그 */
-.form-control{
-  width: 100%;
-  padding: 3px;
-  border-radius: 6px;
-  border: 1px solid #dbd7d0;
-}
-
-.form-control:focus{
-  outline: 1px solid #dbd7d0;
 }

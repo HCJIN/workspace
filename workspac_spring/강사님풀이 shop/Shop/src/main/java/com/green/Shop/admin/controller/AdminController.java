@@ -16,24 +16,28 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/admin")
+@RequestMapping("/api_admin")
 public class AdminController {
 
     @Resource(name = "adminService")
     private AdminService adminService;
 
-    @GetMapping("/itemList")
-    public List<CategoryVO> getItemCategory(){
-        return adminService.getItemCategory();
+    //카테고리 목록 조회
+    @GetMapping("/getCateList")
+    public List<CategoryVO> getCateList(){
+        return adminService.getCateList();
     }
 
-    //아이템 등록
+    //상품 등록
     //첨부파일이 포함된 데이터가 전달되면 자바에서 데이터를 받는 문법도 달라진다.
     //첨부파일이 함께 전달되면 @RequestBody 어노테이션을 작성하지 않는다.
-    @PostMapping("/setItem")
-    public void setItem(ItemVO itemVO
-            ,@RequestParam("mainImg") MultipartFile mainImg
-            ,@RequestParam("subImg") MultipartFile subImg){
+    //첨부파일 정보는 MultipartFile 객체를 사용하여 전달받을 수 있다.
+    //MultipartFile 사용방법
+    //@RequestParam("전달되는 첨부팡리 데이터명") MultipartFile 변수명
+    @PostMapping("/insertItem")
+    public void insertItem(ItemVO itemVO
+            , @RequestParam("mainImg") MultipartFile mainImg
+            , @RequestParam("subImg") MultipartFile subImg ){
 
         //---- 파일 업로드 ----
         //메인이 되는 이미지 첨부 후 첨부된 원본 파일명, 첨부된 파일명을 리턴 받음
@@ -44,14 +48,14 @@ public class AdminController {
         ImgVO subImgVO = FileUploadUtil.fileUpload(subImg);
         subImgVO.setIsMain("N");
 
-        //등록한 상품의 item_code 조회
+        //등록할 상품의 item_code 조회
         int nextItemCode = adminService.getNextItemCode();
 
         //itemVO에 조회한 item_code 저장
         itemVO.setItemCode(nextItemCode);
 
         //상품 정보 등록
-        adminService.setItem(itemVO);
+        adminService.insertItem(itemVO);
 
         //itemVO 객체에 이미지 정보를 다 저장
         //1. imgVO를 여러개 저장할 수 있는 List 생성
@@ -67,5 +71,7 @@ public class AdminController {
         //상품 이미지 정보 등록
         adminService.insertImgs(itemVO);
     }
+
+
 
 }

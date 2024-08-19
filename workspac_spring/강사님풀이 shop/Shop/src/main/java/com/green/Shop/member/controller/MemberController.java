@@ -3,45 +3,32 @@ package com.green.Shop.member.controller;
 import com.green.Shop.member.service.MemberService;
 import com.green.Shop.member.vo.MemberVO;
 import jakarta.annotation.Resource;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
-@RequestMapping("/member")
-@Slf4j
+@RequestMapping("/api_member")
 public class MemberController {
 
     @Resource(name = "memberService")
     private MemberService memberService;
 
-    //멤버리스트 조회
-    @GetMapping("/memberList")
-    public List<MemberVO> getMemberList(){
-        return memberService.getMemberList();
+    //회원가입
+    @PostMapping("/join")
+    public void join(@RequestBody MemberVO memberVO){
+        memberService.join(memberVO);
     }
 
-    //아이디 중복 조회
-    @GetMapping("/checkId/{memId}")
-    public boolean checkId(@PathVariable("memId")String memId){
-        log.info(memId);
-        return memberService.chkId(memId);
+    //아이디중복 조회
+    @GetMapping("/isEnableId/{memId}")
+    public boolean isEnableId(@PathVariable("memId") String memId){
+        //사용가능 id -> result : true
+        return memberService.isEnableId(memId);
     }
 
-    //멤버 등록
-    @PostMapping("/insert")
-    public void insert(@RequestBody MemberVO memberVO){
-        System.out.println(memberVO);
-        memberService.insert(memberVO);
+    //로그인
+    @PostMapping("/login")
+    public MemberVO login(@RequestBody MemberVO memberVO){
+        System.out.println(memberService.login(memberVO));
+        return memberService.login(memberVO);
     }
-
-    //아이디 비밀번호 중복확인
-    @PostMapping("/checkIdPw")
-    public MemberVO checkIdPw(@RequestBody MemberVO memberVO){
-        System.out.println(memberVO);
-        return memberService.checkIdPw(memberVO);
-    }
-
-
 }

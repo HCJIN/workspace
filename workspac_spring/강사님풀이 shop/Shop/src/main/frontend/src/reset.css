@@ -16,6 +16,13 @@
 	font-style: normal;
 }
 
+@font-face {
+	font-family: 'Freesentation-9Black';
+	src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
+	font-weight: 900;
+	font-style: normal;
+}
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -63,5 +70,5 @@ table {
 *{
   box-sizing: border-box;
 	/* font-family: "Noto Sans", sans-serif; */
-	font-family: 'ONE-Mobile-POP', sans-serif; 
+	font-family: 'Freesentation-9Black', sans-serif; 
 }

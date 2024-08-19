@@ -12,7 +12,11 @@ const Modal = ({content, setShow, clickClosebtn}) => {
     <div className='modal-container show' ref={modalContainer}>
       <div className='modal'>
         <div className='modal-header'>
-          <span onClick={()=>{modalContainer.current.className = 'modal-container'; setTimeout(()=>{setShow(false)},300)}}><i className="bi bi-x"></i></span> 
+          <span onClick={()=>{modalContainer.current.className = 'modal-container'; 
+            setTimeout(()=>{
+              setShow(false);
+              clickClosebtn();
+            },300)}}><i className="bi bi-x"></i></span> 
         </div>
         <div className='modal-content'>
           {content()}
@@ -21,7 +25,9 @@ const Modal = ({content, setShow, clickClosebtn}) => {
           <button type='button' className='btn btn-primary' onClick={()=>{
             modalContainer.current.className = 'modal-container';
             setTimeout(()=>{
+              //모달창 닫기
               setShow(false);
+              //어떤 페이지에서 모달창을 실행했냐에 따라 실행 코드가 달라져야함
               clickClosebtn();
             },300); 
             }}>확인

@@ -1,11 +1,13 @@
 .detail-div{
-  width: 40%;
+  width: 50%;
   margin: 0 auto;
   background-color: rgba(230, 230, 230, .1);
   border-radius: 10px;
   box-shadow: 3px 3px 6px #dddddd;
   padding: 10px;
   margin-bottom: 50px;
+  border-top: 6px solid #000;
+  border-bottom: 6px solid #000;
 }
 
 .top-div{
@@ -35,22 +37,28 @@
   top: 50%;
   left: 10%;
   transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: baseline;
+  gap: 10px;
+  border-bottom: 3px solid #000;
+  border-top: 3px solid #000;
+  width: 80%;
+  padding: 15px 0;
 }
 
-.top-right-div > div p{
+/* .top-right-div > div p{
   margin: 5px 0;
-}
+} */
 
 .top-right-div > div h4{
   font-size: 30px;
 }
 
 .top-right-div .btn-div{
-  text-align: left;
-}
-
-.top-right-div .btn-div > .btn:first-child{
-  margin-right: 5px;
+  display: flex;
+  gap: 5px;
 }
 
 .cnt{
@@ -69,6 +77,9 @@
 .itemIntro-div{
   text-align: center;
   margin: 30px 0;
+  border-top: 6px solid #000;
+  border-bottom: 6px solid #000;
+  padding: 30px 0;
 }
 
 .bottom-div img{

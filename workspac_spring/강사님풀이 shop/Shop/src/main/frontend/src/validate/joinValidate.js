@@ -9,6 +9,8 @@ let resultArr = [
 let result_pw1 = false;
 let result_pw2 = false;
 
+//valid_tag[0] : memId
+//valid_tag[1] : memName
 export const joinValidate = (newData, valid_tag, tagName) => {
 
   //id값을 변경했으면 id 피드백만 띄움
@@ -32,6 +34,7 @@ export const joinValidate = (newData, valid_tag, tagName) => {
       //test() : 매개변수로 들어온 데이터가 조건에 부합하면 리턴 true
       //validation 처리
       if(regex_memId.test(newData.memId)){
+
         //div에 error 클래스 추가
         //div 태그 안에 글자변경 : 사용가능한 아이디입니다.
         sendFeedbackMsg(valid_tag[0], '사용가능한 아이디입니다.', 'good')
@@ -43,29 +46,29 @@ export const joinValidate = (newData, valid_tag, tagName) => {
         resultArr[0] = false;
       }
       break;
-      case 'memPw' : 
-      case 'memPwChk' :
-        if(regex_memPw.test(newData.memPw)){
-          sendFeedbackMsg(valid_tag[1], '사용가능한 비밀번호 입니다.', 'good');
-          result_pw1 = true;
-        }else{
-          sendFeedbackMsg(valid_tag[1], '비밀번호는 영문 + 숫자 조합 4~12글자 입니다.', 'error')
-          result_pw1 = false;
-        }
-        //입력한 두 비밀번호가 다르면
-        if(newData.memPw != newData.memPwChk){
-          sendFeedbackMsg(valid_tag[2], '비밀번호가 일치하지 않습니다.', 'error');
-          result_pw2 = false;
-        }else{
-          sendFeedbackMsg(valid_tag[2],'비밀번호가 일치합니다.', 'good')
-          result_pw2 = true;
-        }
+    case 'memPw' : 
+    case 'confirmPw' :
+      if(regex_memPw.test(newData.memPw)){
+        sendFeedbackMsg(valid_tag[1], '사용가능한 비밀번호 입니다.', 'good');
+        result_pw1 = true;
+      }else{
+        sendFeedbackMsg(valid_tag[1], '비밀번호는 영문 + 숫자 조합 4~12글자 입니다.', 'error')
+        result_pw1 = false;
+      }
+      //입력한 두 비밀번호가 다르면
+      if(newData.memPw != newData.confirmPw){
+        sendFeedbackMsg(valid_tag[2], '비밀번호가 일치하지 않습니다.', 'error');
+        result_pw2 = false;
+      }else{
+        sendFeedbackMsg(valid_tag[2],'비밀번호가 일치합니다.', 'good');
+        result_pw2 = true;
+      }
 
-        resultArr[1] = result_pw1 && result_pw2 ? true : false;
+      resultArr[1] = result_pw1 && result_pw2 ? true : false;
 
-        break;
+      break;
     case 'memName' :
-      // 이름 값 유효성 검사 정규식 충족하면
+       // 이름 값 유효성 검사 정규식 충족하면
       if(regex_memName.test(newData.memName)){
         sendFeedbackMsg(valid_tag[3], '이름 맞습니다.', 'good')
         resultArr[2] = true;
@@ -79,16 +82,24 @@ export const joinValidate = (newData, valid_tag, tagName) => {
         sendFeedbackMsg(valid_tag[4], '연락처가 맞습니다', 'good')
         resultArr[3] = true;
       }else{
-        sendFeedbackMsg(valid_tag[4], '연락처는 형식이 맞지 않습니다', 'error')
+        sendFeedbackMsg(valid_tag[4], '연락처는 010-0000-0000', 'error')
         resultArr[3] = false;
       }
       break;
   }
 
   //resultArr의 모든 데이터가 true일떄만 리턴 true
+
   //배열에 매개변수로 전달된 데이터가 존재하면 리턴 true
   return !resultArr.includes(false);
 
+  for(const e of resultArr){
+    if(!e){
+      return false;
+    }
+  }
+
+  return true;
 }
 
 //유효성 결과 메세지를 띄우는 함수

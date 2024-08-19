@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 해당 파일에 모든 쿼리문을 작성 -->
+<mapper namespace="cartMapper">
+
+    <resultMap id="cart" type="com.green.Shop.cart.vo.CartVO">
+        <id column="CART_CODE" property="cartCode"/>
+        <result column="ITEM_CODE" property="itemCode"/>
+        <result column="CART_CNT" property="cartCnt"/>
+        <result column="CART_DATE" property="cartDate"/>
+        <association property="item" javaType="com.green.Shop.item.vo.ItemVO" resultMap="itemMapper.item"/>
+        <collection property="imgList" ofType="com.green.Shop.item.vo.ImgVO" resultMap="itemMapper.img"/>
+    </resultMap>
+
+    <!-- 카트 등록 -->
+    <insert id="insertCart" >
+        INSERT INTO SHOP_CART (
+            CART_CODE
+            ,   ITEM_CODE
+            ,   CART_CNT
+            ,   MEM_ID
+        ) VALUES (
+            #{cartCode}
+            ,   #{itemCode}
+            ,   #{cartCnt}
+            ,   #{memId}
+        );
+    </insert>
+
+    <!-- 장바구니 리스트 조회 -->
+    <select id="getCartList" resultMap="cart">
+        SELECT
+            s.CART_CODE,
+            s.ITEM_CODE,
+            s.CART_CNT,
+            item.ITEM_NAME,
+            item.ITEM_PRICE,
+            img.ATTACHED_FILE_NAME,
+            DATE_FORMAT(CART_DATE, '%Y-%m-%d %H:%i') AS CART_DATE
+        FROM SHOP_CART s
+        JOIN SHOP_ITEM item ON s.ITEM_CODE = item.ITEM_CODE
+        LEFT JOIN ITEM_IMG img ON item.ITEM_CODE = img.ITEM_CODE AND img.IS_MAIN = 'Y'
+        WHERE s.MEM_ID = #{memId}
+        ORDER BY CART_CODE DESC
+    </select>
+
+    <!-- 강사님 쿼리 -->
+<!--    <select id="getCartList" resultMap="cart">-->
+<!--        SELECT CART_CODE-->
+<!--        ,	ITEM_NAME-->
+<!--        ,	ITEM_PRICE-->
+<!--        ,	CART_CNT-->
+<!--        ,	CART_DATE-->
+<!--        ,	ATTACHED_FILE_NAME-->
+<!--        FROM shop_cart cart, shop_item item, item_img img-->
+<!--        WHERE cart.ITEM_CODE = item.ITEM_CODE-->
+<!--        AND cart.ITEM_CODE = img.ITEM_CODE-->
+<!--        AND img.IS_MAIN = 'Y'-->
+<!--        AND MEM_ID = #{memId};-->
+<!--    </select>-->
+
+    <!-- 장바구니 가격 수정 -->
+    <update id="updateCart">
+        UPDATE SHOP_CART
+        SET CART_CNT = #{cartCnt}
+        WHERE CART_CODE = #{cartCode}
+    </update>
+
+    <!-- 장바구니 목록 삭제 -->
+    <delete id="cartDelete">
+        DELETE FROM SHOP_CART
+        WHERE CART_CODE = #{cartCode}
+    </delete>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

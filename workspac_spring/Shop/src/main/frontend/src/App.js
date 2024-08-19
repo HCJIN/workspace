@@ -71,6 +71,9 @@ function App() {
               //상품 목록 페이지로 이동
               navigate('/')
             }}>Logout</span>
+            <i className="bi bi-cart4" onClick={()=>{
+              navigate('/cart')
+            }}></i>
           </div>
         }
         <div className='banner'>

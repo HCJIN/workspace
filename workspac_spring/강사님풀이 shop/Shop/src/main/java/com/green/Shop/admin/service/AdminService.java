@@ -7,11 +7,11 @@ import java.util.List;
 
 public interface AdminService {
 
-    //카테고리 리스트 조회
-    List<CategoryVO> getItemCategory();
+    //카테고리 목록 조회
+    List<CategoryVO> getCateList();
 
     //상품등록
-    void setItem(ItemVO itemVO);
+    void insertItem(ItemVO itemVO);
 
     //상품이미지등록
     void insertImgs(ItemVO itemVO);

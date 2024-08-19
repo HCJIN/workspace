@@ -28,7 +28,9 @@
 .regItem-table > tbody td > select{
   height: 23px;
   width: 100%;
-  color: #000;
+  color: #000;  
+  border: 1px solid #dbd7d0;
+  border-radius: 6px;
 }
 
 .regItem-table > tbody td > textarea{
@@ -36,4 +38,8 @@
   width: 100%;
   color: #000;
   resize: none;
+}
+
+.file-div{
+  padding: 5px;
 }

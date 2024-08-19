@@ -1,6 +1,7 @@
-package com.green.Shop.item.vo;
+package com.green.Shop.cart.vo;
 
-import com.green.Shop.member.vo.MemberVO;
+import com.green.Shop.item.vo.ImgVO;
+import com.green.Shop.item.vo.ItemVO;
 import lombok.Data;
 
 import java.util.List;

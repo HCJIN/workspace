@@ -20,6 +20,8 @@ const ItemList = () => {
     })
   },[])
 
+  console.log(itemList)
+
   return (
     <div className='itemList-div'>
         {
@@ -29,7 +31,6 @@ const ItemList = () => {
                 style: 'currency',
                 currency: 'KRW', // 한국 원화
               });
-              console.log(item.imgList[0])
             return(
               <div className='item-div' key={i} onClick={()=>{
                 navigate(`/detail/${item.itemCode}`)

@@ -17,14 +17,14 @@ public class AdminServiceImpl implements AdminService {
 
     //카테고리 조회
     @Override
-    public List<CategoryVO> getItemCategory() {
-        return sqlSession.selectList("adminMapper.getItemCategory");
+    public List<CategoryVO> getCateList() {
+        return sqlSession.selectList("adminMapper.getCategoryList");
     }
 
     //아이템 등록
     @Override
-    public void setItem(ItemVO itemVO) {
-        sqlSession.insert("adminMapper.setItem",itemVO);
+    public void insertItem(ItemVO itemVO) {
+        sqlSession.insert("adminMapper.insertItem",itemVO);
     }
 
     //상품 이미지 등록
@@ -38,5 +38,6 @@ public class AdminServiceImpl implements AdminService {
     public int getNextItemCode() {
         return sqlSession.selectOne("adminMapper.getNextItemCode");
     }
+
 
 }

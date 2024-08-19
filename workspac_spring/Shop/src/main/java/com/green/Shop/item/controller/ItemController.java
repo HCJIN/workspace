@@ -1,7 +1,7 @@
 package com.green.Shop.item.controller;
 
 import com.green.Shop.item.service.ItemService;
-import com.green.Shop.item.vo.CartVO;
+import com.green.Shop.cart.vo.CartVO;
 import com.green.Shop.item.vo.ItemVO;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
@@ -27,17 +27,6 @@ public class ItemController {
         return itemService.getItem(itemCode);
     }
 
-    //카트등록
-    @PostMapping("/insertCart")
-    public void insertCart(@RequestBody CartVO cartVO){
-        System.out.println(cartVO);
-        itemService.insertCart(cartVO);
-    }
 
-    //장바구니리스트 조회
-    @GetMapping("/getCartList/{memId}")
-    public List<CartVO> getCartList(@PathVariable("memId")String memId){
-        return itemService.getCartList(memId);
-    }
 
 }
