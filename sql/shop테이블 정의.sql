@@ -1,1 +1,138 @@
+
 -- 쇼핑몰 프로젝트 테이블 정의 
+-- 테이블 종류 -- 
+-- 1. 회원 정보 테이블
+-- 2. 상품 카테고리 테이블
+-- 3. 상품 정보 테이블
+-- 4. 상품 이미지 정보 테이블
+-- 5. 장바구니 정보 테이블
+-- 6. 구매 정보 테이블
+
+-- 1. 회원 정보 테이블
+-- 권한 : USER, ADMIN
+CREATE TABLE SHOP_MEMBER (
+	MEM_ID VARCHAR(50) PRIMARY KEY
+	,	MEM_PW VARCHAR(100) NOT NULL
+	,	MEM_NAME VARCHAR(50) NOT NULL
+	,	MEM_TEL VARCHAR(30) UNIQUE
+	,	POST VARCHAR(10)
+	,	MEM_ADDR VARCHAR(50)
+	,	ADDR_DETAIL VARCHAR(100)
+	,	MEM_EMAIL VARCHAR(100)
+	,	MEM_ROLE VARCHAR(30) DEFAULT 'USER'
+);
+
+SELECT * FROM shop_member;
+DELETE FROM shop_member WHERE MEM_ID = 'fdaaxcs';
+
+INSERT INTO shop_member (MEM_ID, MEM_PW, MEM_NAME, MEM_TEL, POST, MEM_ADDR, ADDR_DETAIL, MEM_EMAIL, MEM_ROLE) 
+VALUES ('fdskekk', 'skek123', '황황황','010-6676-7910', '44605', '울산 동구 방어동', '101동 1205호'
+, 'fdskek@naver.com', 'ADMIN');
+
+-- 2. 상품 카테고리(소설, 에세이, 인터넷/IT)
+CREATE TABLE ITEM_CATEGORY(
+	CATE_CODE INT AUTO_INCREMENT PRIMARY KEY
+	, CATE_NAME VARCHAR(50) NOT NULL UNIQUE
+);
+
+-- 카테고리 데이터
+INSERT INTO item_category VALUES(1, '인터넷/IT');
+INSERT INTO item_category VALUES(2, '소설/에세이');
+INSERT INTO item_category VALUES(3, '자기계발');
+
+SELECT * FROM ITEM_CATEGORY;
+
+-- 3. 상품 정보 테이블
+-- ITEM_STATUS(상품 상태) : FOR_SALE(판매중), SOLD_OUT(매진)
+CREATE TABLE SHOP_ITEM(
+	ITEM_CODE INT AUTO_INCREMENT PRIMARY KEY
+	,	ITEM_NAME VARCHAR(50) NOT NULL UNIQUE
+	,	ITEM_PRICE INT NOT NULL
+	,	ITEM_INTRO VARCHAR(100)
+	,	ITEM_STOCK INT DEFAULT 20
+	,	ITEM_STATUS VARCHAR(10) DEFAULT 'FOR_SALE'
+	,	CATE_CODE INT NOT NULL REFERENCES item_category (CATE_CODE)
+);
+
+SELECT * FROM shop_item;
+DELETE FROM shop_item;
+
+-- 상품 이미지 정보 테이블
+-- ORIGIN_FILE_NAME : 원본 파일명
+-- ATTACHED_FILE_NAME : 첨부된 파일명
+-- IS_MAIN : 대표 이미지 여부 (Y, N)
+CREATE TABLE ITEM_IMG (
+	IMG_CODE INT AUTO_INCREMENT PRIMARY KEY
+	,	ORIGIN_FILE_NAME VARCHAR(100) NOT NULL
+	,	ATTACHED_FILE_NAME VARCHAR(100) NOT NULL
+	,	IS_MAIN VARCHAR(5) NOT NULL
+	,	ITEM_CODE INT NOT NULL REFERENCES shop_item (ITEM_CODE) ON DELETE CASCADE
+);
+
+SELECT * FROM item_img;
+
+-- 현재 저장된 ITEM_CODE 의 가장 큰 값을 조회
+SELECT MAX(ITEM_CODE)+1
+FROM shop_item;
+
+CREATE TABLE test_SHOP_item (
+	ITEM_CODE INT AUTO_INCREMENT PRIMARY KEY
+	, ITEM_NAME VARCHAR(50)
+);
+
+SELECT * FROM test_shop_item;
+
+INSERT INTO test_shop_item (ITEM_NAME) VALUES ('aaaa');
+INSERT INTO test_shop_item (ITEM_CODE, ITEM_NAME) VALUES (2, 'aaaa');
+DELETE FROM test_shop_item;
+
+
+-- 다음에 INSERT 할때 들어갈 ITEM_CODE 조회 
+-- 데이터가 하나도 없다면 1을 조회
+SELECT IFNULL(MAX(ITEM_CODE), 0)+1 FROM test_shop_item;
+
+-- 장바구니 정보 테이블
+CREATE TABLE SHOP_CART (
+	CART_CODE INT AUTO_INCREMENT PRIMARY KEY
+	,	ITEM_CODE INT NOT NULL REFERENCES shop_item (ITEM_CODE)
+	,	CART_CNT INT NOT NULL
+	,	MEM_ID VARCHAR(50) NOT NULL REFERENCES shop_member (MEM_ID)
+	,	CART_DATE DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+SELECT * FROM shop_cart;
+DELETE FROM shop_cart;
+
+-- 장바구니 조회 쿼리
+SELECT CART_CODE
+	,	ITEM_NAME
+	,	ITEM_PRICE
+	,	CART_CNT
+	,	ITEM_PRICE * CART_CNT
+	,	CART_DATE
+FROM shop_cart cart, shop_item item
+WHERE cart.ITEM_CODE = item.ITEM_CODE
+AND MEM_ID = 'fdskekk';
+
+SELECT CART_CODE
+	,	ITEM_NAME
+	,	ITEM_PRICE
+	,	CART_CNT
+	,	ITEM_PRICE * CART_CNT
+	,	DATE_FORMAT(CART_DATE, '%Y-%m-%d %H:%i')
+	,	ATTACHED_FILE_NAME
+FROM shop_cart cart, shop_item item, item_img img
+WHERE cart.ITEM_CODE = item.ITEM_CODE
+AND cart.ITEM_CODE = img.ITEM_CODE
+AND img.IS_MAIN = 'Y'
+AND MEM_ID = 'fdskekk';
+
+
+DELETE FROM shop_cart
+WHERE cart_code = 1
+OR cart_code = 2
+OR cart_code = 3;
+
+DELETE FROM shop_cart
+WHERE cart_code IN (1,2,3);
+

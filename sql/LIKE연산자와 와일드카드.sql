@@ -22,3 +22,12 @@ WHERE ENAME LIKE '%이'; -- 마지막 글자가 '이'로 끝나는 모든 이름
 SELECT * 
 FROM emp
 WHERE ENAME LIKE '_이%'; -- 두번째 글자가 '이'인 모든 이름 조회 
+
+-- 문자열 연결 함수 
+SELECT 'JAVA', 1+1, CONCAT('집에', '가고', '싶다');
+
+
+
+
+
+
