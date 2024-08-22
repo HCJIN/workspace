@@ -16,7 +16,15 @@ public class CartServiceImpl implements CartService {
     //카트 등록
     @Override
     public void insertCart(CartVO cartVO) {
-        sqlSession.insert("cartMapper.insertCart", cartVO);
+        //내 장바구니에 상품 존재 여부 확인
+        CartVO vo = sqlSession.selectOne("cartMapper.cartChk",cartVO);
+        //없으면 insert
+        if(vo == null){
+            sqlSession.insert("cartMapper.insertCart", cartVO);
+        }//없으면 update
+        else{
+            sqlSession.update("cartMapper.updateCartCntWhenReg", cartVO);
+        }
     }
 
     //장바구니 조회
@@ -35,13 +43,5 @@ public class CartServiceImpl implements CartService {
     public void cartDelete(int cartCode) {
         sqlSession.delete("cartMapper.cartDelete", cartCode);
     }
-
-    //장바구니 중복 데이터 확인
-    @Override
-    public boolean cartChk(String attachedFileName) {
-        String attChk = sqlSession.selectOne("cartMapper.cartChk", attachedFileName);
-        return  attChk == null;
-    }
-
 
 }

@@ -74,11 +74,21 @@
     </delete>
 
     <!-- 장바구니 담기 중복데이터 확인 -->
-    <select id="cartChk" resultType="String">
-        SELECT img.ATTACHED_FILE_NAME
-        FROM ITEM_IMG img
-        WHERE ATTACHED_FILE_NAME = #{attachedFileName}
+    <select id="cartChk" resultMap="cart">
+        SELECT CART_CODE
+        FROM SHOP_CART
+        WHERE ITEM_CODE = #{itemCode}
+        AND MEM_ID = #{memId}
     </select>
+
+    <!-- 장바구니 상품 등록 시 수량 업데이트 -->
+    <update id="updateCartCntWhenReg">
+        UPDATE shop_cart
+        SET CART_CNT = cart_cnt + #{cartCnt},
+        CART_DATE = NOW()
+        WHERE ITEM_CODE = #{itemCode}
+        AND MEM_ID = #{memId}
+    </update>
 
 </mapper>
 

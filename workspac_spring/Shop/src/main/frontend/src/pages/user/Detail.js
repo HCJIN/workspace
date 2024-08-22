@@ -87,34 +87,20 @@ const Detail = () => {
     )
   };
 
-  // function insertCart(){
-  //   axios
-  //   .post(`/cart/insertCart`, cart)
-  //   .then((res)=>{
-  //     const result = window.confirm('장바구니에 상품을 담았습니다. \n 계속 쇼핑하시겠습니까?')
-
-  //     //취소를 선택하면 자바구니 목록 페이지로 이동
-  //     if(!result){
-  //       navigate('/cart')
-  //     }else{
-
-  //     }
-
-
-  //   })
-  //   .catch((error)=>{
-  //     console.log(error)
-  //   })
-  // }
-
-  function cartChk(){
-
-    const attachedFileName = item.imgList[0].attachedFileName;
-
+  function insertCart(){
     axios
-    .get(`/cart/cartChk/${attachedFileName}`)
+    .post(`/cart/insertCart`, cart)
     .then((res)=>{
-      console.log(res.data)
+      const result = window.confirm('장바구니에 상품을 담았습니다. \n 계속 쇼핑하시겠습니까?')
+
+      //취소를 선택하면 자바구니 목록 페이지로 이동
+      if(!result){
+        navigate('/cart')
+      }else{
+
+      }
+
+
     })
     .catch((error)=>{
       console.log(error)
@@ -155,8 +141,7 @@ const Detail = () => {
             <p>총 가격 : <span>{price}</span></p>
             <div className='btn-div'>
               <button type='button' className='btn btn-primary'>구매하기</button>
-              {/* <button type='button' className='btn btn-primary' onClick={()=>{insertCart()}}>장바구니에 담기</button> */}
-              <button type='button' className='btn btn-primary' onClick={()=>{cartChk()}}>장바구니에 담기</button>
+              <button type='button' className='btn btn-primary' onClick={()=>{insertCart()}}>장바구니에 담기</button>
             </div>
           </div>
         </div>

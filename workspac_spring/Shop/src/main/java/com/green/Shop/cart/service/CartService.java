@@ -18,7 +18,4 @@ public interface CartService {
     //장바구니 목록 삭제
     void cartDelete(int cartCode);
 
-    //장바구니 중복 데이터 확인
-    boolean cartChk(String attachedFileName);
-
 }

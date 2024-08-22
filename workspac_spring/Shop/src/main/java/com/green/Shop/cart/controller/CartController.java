@@ -18,7 +18,6 @@ public class CartController {
     //카트등록
     @PostMapping("/insertCart")
     public void insertCart(@RequestBody CartVO cartVO){
-        System.out.println(cartVO);
         cartService.insertCart(cartVO);
     }
 
@@ -41,9 +40,4 @@ public class CartController {
         cartService.cartDelete(cartCode);
     }
 
-    //장바구니 중복 확인 true 면 중복이 없고 false 면 중복이 있음
-    @GetMapping("/cartChk/{attachedFileName}")
-    public boolean cartChk(@PathVariable("attachedFileName")String attachedFileName){
-        return cartService.cartChk(attachedFileName);
-    }
 }

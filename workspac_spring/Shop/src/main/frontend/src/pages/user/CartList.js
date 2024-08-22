@@ -145,6 +145,7 @@ const CartList = () => {
         cartCode: updateItem.cartCode,
       })
       .then(() => {
+        calculateTotalPrice()
       })
       .catch((error) => {
         console.log(error);
@@ -261,7 +262,6 @@ const CartList = () => {
                     type='number'
                     name='cartCnt'
                     min={1}
-                    max={10}
                     value={cart.cartCnt}
                     onChange={(e) => updateCart(e, i)}
                   />
