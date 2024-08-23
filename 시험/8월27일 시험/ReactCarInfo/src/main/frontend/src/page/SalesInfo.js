@@ -77,30 +77,35 @@ const SalesInfo = () => {
           <tr>
             <td><p>색상</p></td>
             <td>
-              <select name='color' value={sales.color} onChange={(e)=>{
-                onChange(e);
-              }}>
-                <option>블랙</option>
-                <option>화이트</option>
-                <option>실버</option>
-                <option>레드</option>
-              </select>
+              <div className='option'>
+                <select name='color' value={sales.color} onChange={(e)=>{
+                  onChange(e);
+                }}>
+                  <option>블랙</option>
+                  <option>화이트</option>
+                  <option>실버</option>
+                  <option>레드</option>
+                </select>
+                <div className='model-div'>
+                  <p>모델</p>
+                  <select name='modelNum' value={sales.modelNum} onChange={(e)=>{
+                    onChange(e)
+                  }}>
+                    {
+                      carList.map((car,i)=>{
+                        return(
+                          <option key={i} value={car.modelNum}>{
+                            car.modelName
+                          }</option>
+                        )
+                      })
+                    }
+                  </select>
+                </div>
+              </div>
             </td>
-            <td><p>모델</p></td>
+            <td></td>
             <td>
-              <select name='modelNum' value={sales.modelNum} onChange={(e)=>{
-                onChange(e)
-              }}>
-                {
-                  carList.map((car,i)=>{
-                    return(
-                      <option key={i} value={car.modelNum}>{
-                        car.modelName
-                      }</option>
-                    )
-                  })
-                }
-              </select>
             </td>
           </tr>
           <tr>

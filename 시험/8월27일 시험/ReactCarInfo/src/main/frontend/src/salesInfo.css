@@ -5,16 +5,34 @@
 }
 
 .sales-table{
-  width: 100%;
+  width: 60%;
+  margin: 0 auto;
 }
 
 #buyer{
-  width: 72%;
+  width: 50%;
 }
 
 .sales-table > tbody > tr, .sales-table > tbody td{
   padding: 5px;
 }
+
+.option{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.model-div{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.model-div p{
+  margin-right: 10px;
+}
+
 
 .sales-table > tbody > tr > td:nth-child(2){
   text-align: left;
