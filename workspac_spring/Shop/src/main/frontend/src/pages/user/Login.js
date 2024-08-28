@@ -56,7 +56,7 @@ const Login = ({loginInfo, setLoginInfo}) => {
         }
 
         //로그인 정보를 가진 객체를 문자열 형태로 변환
-        //객체 -> 문자열로 변환한 데이터를 JOSN 데이터로 부른다.
+        //객체 -> 문자열로 변환한 데이터를 JSON 데이터로 부른다.
         // JSON.stringify();
         window.sessionStorage.setItem('loginInfo', JSON.stringify(loginInfo));
 
