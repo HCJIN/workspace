@@ -33,7 +33,7 @@ public class AdminController {
     //첨부파일이 함께 전달되면 @RequestBody 어노테이션을 작성하지 않는다.
     //첨부파일 정보는 MultipartFile 객체를 사용하여 전달받을 수 있다.
     //MultipartFile 사용방법
-    //@RequestParam("전달되는 첨부팡리 데이터명") MultipartFile 변수명
+    //@RequestParam("전달되는 첨부파일 데이터명") MultipartFile 변수명
     @PostMapping("/insertItem")
     public void insertItem(ItemVO itemVO
             , @RequestParam("mainImg") MultipartFile mainImg

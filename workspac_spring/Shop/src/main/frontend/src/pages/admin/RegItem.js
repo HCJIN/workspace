@@ -160,13 +160,6 @@ const RegItem = () => {
           상품등록
         </button>
       </div>
-      {
-        show ?
-        <Modal content={drawModalContent}
-                setShow={setShow}
-                clickClosebtn={()=>{}}/>
-        : null
-      }
     </div>
   )
 }
