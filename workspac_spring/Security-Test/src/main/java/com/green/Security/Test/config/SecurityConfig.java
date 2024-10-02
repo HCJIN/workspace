@@ -1,15 +1,25 @@
 package com.green.Security.Test.config;
 
+import jakarta.websocket.Session;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 //이 클래스에서 시큐리티의 인증 및 인가에 대한 설정
 @Configuration //클래스에 대한 객체 생성 어노테이션
 @EnableWebSecurity //해당 클래스가 Security 설정 클래스임을 인지
 public class SecurityConfig {
+
+    //비밀번호를 암호화시켜줄 수 있는 객체 생성 메서드
+    @Bean
+    public PasswordEncoder getPasswordEncoder(){
+        return new BCryptPasswordEncoder();
+    }
 
    /*
 
@@ -35,12 +45,29 @@ public class SecurityConfig {
         // jwt 로그인은 csrf 공격에 상대적으로 안전하기 떄문에 사용 안 함
         httpSecurity.csrf(auth -> auth.disable());
 
+        //form 로그인 방식을 미사용으로 지정
+        //react 를 제외한 나머지 전통적인 프론트 단(thymeleaf, jsp)을 만드는 기술을 사용할 때는
+        //form 방식의 로그인 채택
+        httpSecurity.formLogin(auth -> auth.disable());
+
+        //http basic 인증 방식 미사용
+        //http basic : 요청 헤더에 id, pw 값을 담아서 백서버에 전달하는 방식
+        //보안에 취약하기 때문에 요즘은 안 씀
+        //http basic 방식을 사용하면 로그인 정보를 백서버의 세션에 저장
+        httpSecurity.httpBasic(auth -> auth.disable());
+
+        //백서버의 세션 사용을 비활성화
+        httpSecurity.sessionManagement(
+                Session -> Session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+        );
+
         //인증 및 인가 설정
         httpSecurity.authorizeHttpRequests(
             auth -> auth.requestMatchers(
                     "/",
                             "/member/loginForm",
-                            "/member/joinForm").permitAll() // "/" 요청은 누구나 접근 가능
+                            "/member/joinForm",
+                            "/member/join").permitAll() // "/" 요청은 누구나 접근 가능
                     .anyRequest().authenticated() // 나머지 요청은 인증 받아야 접근 가능
         );
 
