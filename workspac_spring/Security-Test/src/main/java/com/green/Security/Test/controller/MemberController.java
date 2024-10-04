@@ -64,4 +64,5 @@ public class MemberController {
 
         return "회원가입 성공";
     }
+
 }
