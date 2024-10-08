@@ -77,6 +77,9 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult) throws IOException, ServletException {
         log.info("로그인 성공");
+
+        //jws 토근 생성
+
     }
 
     //로그인 실패 시 실행되는 메서드

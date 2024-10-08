@@ -24,7 +24,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     //로그인 할때 자동으로 실행되는 메서드
     //매개변수 String username : 로그인 요청 시 화면에 입력한 회원 ID
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String username) {
         log.info("UserDetailsServiceImpl 클래스의 loadUserByUsername() 메서드 실행 ~ ");
 
         //로그인 하려는 회원의 정보를 조회
