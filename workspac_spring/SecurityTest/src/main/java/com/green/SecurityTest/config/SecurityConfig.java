@@ -91,12 +91,12 @@ public class SecurityConfig {
                         "/member/joinForm",
                         "/member/join",
                         "/login",
-                        "/getToken",
                         "/test1").permitAll()
-                    .requestMatchers("/test3").hasRole("USER")
-                    .requestMatchers("/test4").hasRole("ADMIN")
+                    .requestMatchers("/test3").hasAuthority("USER")
+                    .requestMatchers("/test4").hasAuthority("ADMIN")
                     .requestMatchers("/test5").hasAnyRole("MANAGER", "ADMIN")
-                    .anyRequest().authenticated()
+                    .anyRequest().authenticated(
+                    )
         );
 
         return httpSecurity.build();

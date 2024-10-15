@@ -24,9 +24,18 @@ const Login = () => {
       console.log(res);
 
       //응답 헤더에 담긴 토큰을 localStorage 저장
-      localStorage.setItem("authorization", res.headers.authorization);
+      localStorage.setItem("Authorization", res.headers.authorization);
     })
-    .catch(error => console.log("로그인 실패"));
+    .catch(error => {
+      //오류코드가 401이면 다시 로그인
+      if(error.status == 401){
+        alert('아이디, 비밀번호를 확인해주세요.');
+      }
+      //오류코드가 401이 아닐때
+      else{
+        alert('알수없는 오류발생');
+      }
+    });
   }
 
   //아이디와 비번 input 태그의 name 속성은 반드시
