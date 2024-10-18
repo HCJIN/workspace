@@ -4,7 +4,6 @@ package basic;
 
 //어떤 데이터든 넣고 뺄 수 있는 상자
 public class BeforeBox {
-
     private Object obj;
 
     //어떤 데이터든 저장할 수 있는 메서드
@@ -16,6 +15,13 @@ public class BeforeBox {
     public Object getData(){
         return obj;
     }
-
 }
+
+
+
+
+
+
+
+
 

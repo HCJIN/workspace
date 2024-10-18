@@ -1,6 +1,8 @@
 package basic;
 
-//보편적인 제네릭 탕비 선언 시 사용하는 문자
+import java.util.Map;
+
+//보편적인 제네릭 타입 선언 시 사용하는 문자
 // T - type
 // E - element
 // K - key
@@ -13,4 +15,6 @@ public class DoubleBox<K, V> {
     public void aa(){
         DoubleBox<String, Integer> a = new DoubleBox<>();
     }
+
+
 }
