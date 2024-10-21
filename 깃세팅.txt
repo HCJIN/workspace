@@ -1,0 +1,56 @@
+//-------------------------------//
+팀원 아이디
+kong2bine
+dlfjs4585
+bohyeonjeong50
+
+프로젝트 최초 깃허브 업로드(팀장)
+1.dev폴더에 프로젝트 생성 
+2.깃허브에 프로젝트 공유할 원격저장소 생성
+(원격저장소명은 프로젝트명이랑 동일하게 작성 권장)
+3.intellij로 프로젝트 실행 -> 기본적인 세팅 완료
+인텔리제이, 리액트 세팅
+4.세팅된 프로젝트 깃허브에 등록
+  1)git init
+  2)git branch -M main
+  3)git remote add origin 원격저장소url
+  4)git add . --오류발생 
+  5)git config --global core.autocrlf true (프로젝트 실행 최초 1회 실행)
+  6)git add .
+  7)git commit -m "코맨트"
+  8)git push origin 브랜치명
+
+//-------------------------------//
+프로젝트 최초 내려받기(팀원,집)
+1.프로젝트를 받을 경로에서 git bash 실행
+2.프로젝트 내려받기
+  git clone 원격저장소url
+
+//-------------------------------//
+1.본인이 작업할 개인 브랜치 생성
+  git branch 브랜치명 -> 브랜치명은 hcj 이니셜
+2.생성한 개인 브랜치로 이동
+  git checkout 브랜치명
+3.작업수행
+4.작업내용 스테이징 git add .
+5.커밋 실행 git commit -m "코맨트" (복원시점 생성)
+6.main 브랜치로 이동
+  git checkout main
+7.다른 팀원이 올린 파일을 내려받기
+  git pull origin main
+  * commit 오류 발생시 :exit 엔터
+8.main 브랜치로 개인브랜치에서 작업한 내용을 병합
+  git merge 병합할브랜치명
+9.이상이 없으면 main 브랜치를 팀원에게 공유
+  git push origin main
+10.다음 작업을 위해 개인브랜치 이동
+11.다른 팀원들이 공유한 내용을 개인브랜치에 받아 최신화
+   같은 브랜치 pull 내려받기 다른 브랜치 merge 병합
+  git merge main
+12.최신화된 개인브랜치를 공유한다.
+  git push origin 개인브랜치명
+13.3번부터 11번까지 반복
+
+
+
+

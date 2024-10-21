@@ -1,0 +1,40 @@
+app -> react native + spring
+
+vscode에서 앱 개발을 위한 세팅
+터미널의 cmd 모드에서 진행
+
+1) expo를 사용해서 app 프로젝트를 만들수 있는 세팅(최초 1회)
+npm install --global expo-cli
+
+2) app 프로젝트 생성         first-test-app
+npx create-expo-app 프로젝트명 --template blank
+
+3) 생성한 프로젝트로 이동
+cd 폴더명
+
+4) 프로젝트 실행 후 web으로 열기
+npm start -> w  (최초 실행 시 뭐 설치하러 뜸. 그대로 설치 후 다시 npm start)
+
+안드로이드 스튜디오 설치+ 에뮬레이터 실행(pc에 가상 휴대폰 개발 환경 세팅)
+https://velog.io/@bi-sz/ReactNative-Expo-Android-Studio-%EC%97%90%EB%AE%AC%EB%A0%88%EC%9D%B4%ED%84%B0-%EC%97%B0%EA%B2%B0
+
+폰에서 실행하기 위해서는 expo에 회원가입 + 폰에서 expo 설치
+
+ngrok 싸이트 방문 후 회원가입 -> authtoken 세팅
+자세한 사항은 https://cordcat.tistory.com/105
+
+ 에뮬레이터로 실행 
+   1)cmd 창에서 에뮬레이터 실행    emulator -avd expo
+   2) vscode에서 npm start -> a
+  폰에서 실행
+    vscode에서 npx expo start --tunnel
+
+
+
+
+
+
+
+
+
+
