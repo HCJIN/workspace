@@ -24,5 +24,15 @@ public class LambdaPracticeTest {
         LambdaPractice4 lam4 = (a, b) -> a + b;
         System.out.println(lam4.getResult(3, 4));
 
+        LambdaPractice5<Integer> lam5 = (a, b) -> a + b;
+        System.out.println(lam5.getResult(4,7));
+
+        LambdaPractice5<String> lam6 = (a, b) -> a + b;
+        System.out.println(lam6.getResult("안녕","하세요"));
+
+        LambdaPractice6<String, Integer> lam7 = (a,b) -> a.length() + b.length();
+        System.out.println(lam7.getResult("하이", "헬로"));
+
+
     }
 }
