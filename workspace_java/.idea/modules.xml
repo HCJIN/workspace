@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/JavaBasic/JavaBasic.iml" filepath="$PROJECT_DIR$/JavaBasic/JavaBasic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LamdbaStudy/LamdbaStudy.iml" filepath="$PROJECT_DIR$/LamdbaStudy/LamdbaStudy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MapTest/MapTest.iml" filepath="$PROJECT_DIR$/MapTest/MapTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ObjectOriented/ObjectOriented.iml" filepath="$PROJECT_DIR$/ObjectOriented/ObjectOriented.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RenericStudy/RenericStudy.iml" filepath="$PROJECT_DIR$/RenericStudy/RenericStudy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StreamStudy/StreamStudy.iml" filepath="$PROJECT_DIR$/StreamStudy/StreamStudy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/soloTest/soloTest.iml" filepath="$PROJECT_DIR$/soloTest/soloTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/workspace_java.iml" filepath="$PROJECT_DIR$/.idea/workspace_java.iml" />
+    </modules>
+  </component>
+</project>
