@@ -5,7 +5,7 @@ public class 심화문제_2 {
         int[] arr = new int[10];
 
         int max = 0;
-        int min = 0;
+        int min = 10000;
 
 
         for (int i = 0; i < arr.length; i++){
@@ -13,11 +13,9 @@ public class 심화문제_2 {
             arr[i] = rand;
             System.out.println(arr[i]);
             if(arr[i] > max){
-                min = max;
                 max = arr[i];
             }
             if(arr[i] < min){
-                max = min;
                 min = arr[i];
             }
         }

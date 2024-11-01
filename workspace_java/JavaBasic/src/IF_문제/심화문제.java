@@ -52,5 +52,30 @@ public class 심화문제 {
             System.out.println("박수짝짝");
         }
         System.out.println("--------------심화3번 끝--------------------");
+
+
+        //999번
+        int num5 = sc.nextInt();
+        int con2 = 0;
+
+        if(num5 / 100 == 3 || num5 / 100 == 6 || num5 / 100 == 9){
+            con2++;
+        }
+        if(num5 / 10 / 10 == 3 || num5 / 10 / 10 == 6 || num5 / 10 / 10 == 9){
+            con2++;
+        }
+        if(num5 % 10 == 3 || num5 % 10 == 6 || num5 % 10 == 9){
+            con2++;
+        }
+
+        if(con2 == 3){
+            System.out.println("박수 짝짝짝");
+        } else if (con2 == 2) {
+            System.out.println("박수 짝짝");
+        } else if (con2 == 1) {
+            System.out.println("박수 짝");
+        }else{
+            System.out.println("암것도 아님");
+        }
     }
 }
